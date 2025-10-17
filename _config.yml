@@ -1,0 +1,30 @@
+title: My Personal Blog
+description: A personal blog built with Jekyll on GitHub Pages
+baseurl: ""
+url: "https://username.github.io"
+theme: minima
+plugins:
+  - jekyll-feed
+collections:
+  posts:
+    output: true
+    permalink: /:collection/:path/
+
+# Markdown processor
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+# Permalinks
+permalink: /:year-:month-:day-:title/
+
+# Exclude files
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/

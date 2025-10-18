@@ -518,11 +518,11 @@
         
         .markdown-viewer pre {
             background-color: var(--light-bg);
-            padding: 8px 12px; /* 进一步减少内边距 */
+            padding: 8px 12px;
             border-radius: var(--border-radius);
             overflow-x: auto;
             margin-bottom: 1em;
-            line-height: 1.2; /* 进一步调整行高 */
+            line-height: 1.2;
             font-size: 0.9em;
         }
         
@@ -1102,8 +1102,12 @@
             
             // 替换图片 - 修复路径问题
             markdown = markdown.replace(/!\[([^\[]+)\]\(([^\)]+)\)/g, function(match, alt, src) {
-                // 如果图片路径是相对路径，转换为绝对路径
-                if (!src.startsWith('http') && !src.startsWith('/')) {
+                // 修复指向 /images 的路径，将其转换为 assets/images
+                if (src.startsWith('/images/')) {
+                    src = 'assets' + src; // 将 /images/xxx 转换为 assets/images/xxx
+                }
+                // 如果图片路径是相对路径，转换为正确路径
+                else if (!src.startsWith('http') && !src.startsWith('/')) {
                     src = 'assets/images/' + src;
                 }
                 return `<img src="${src}" alt="${alt}">`;
@@ -1180,9 +1184,21 @@
                     }
                     document.title = pageTitle;
                     
-                    // 重新渲染数学公式
+                    // 重新渲染数学公式 - 修复 MathJax 问题
                     if (window.MathJax) {
-                        window.MathJax.typesetPromise();
+                        // 检查 MathJax 是否已完全加载
+                        if (window.MathJax.typesetPromise) {
+                            window.MathJax.typesetPromise();
+                        } else if (window.MathJax.typeset) {
+                            window.MathJax.typeset();
+                        } else {
+                            // 如果 MathJax 尚未完全加载，等待一段时间后重试
+                            setTimeout(() => {
+                                if (window.MathJax && window.MathJax.typeset) {
+                                    window.MathJax.typeset();
+                                }
+                            }, 500);
+                        }
                     }
                 })
                 .catch(error => {

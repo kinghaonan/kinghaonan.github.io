@@ -518,11 +518,12 @@
         
         .markdown-viewer pre {
             background-color: var(--light-bg);
-            padding: 10px 15px; /* 减少内边距 */
+            padding: 8px 12px; /* 进一步减少内边距 */
             border-radius: var(--border-radius);
             overflow-x: auto;
             margin-bottom: 1em;
-            line-height: 1.4; /* 调整行高 */
+            line-height: 1.2; /* 进一步调整行高 */
+            font-size: 0.9em;
         }
         
         .markdown-viewer pre code {
@@ -590,6 +591,13 @@
         .mjx-chtml {
             line-height: 1.2 !important;
         }
+        
+        /* 修复数学公式显示 */
+        .MathJax_Display {
+            margin: 1em 0 !important;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- 添加 MathJax 支持数学公式 -->
@@ -601,6 +609,9 @@
             },
             svg: {
                 fontCache: 'global'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
             }
         };
     </script>
@@ -1074,8 +1085,14 @@
             // 替换斜体
             markdown = markdown.replace(/\*(.*)\*/gim, '<em>$1</em>');
             
-            // 替换代码块
-            markdown = markdown.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+            // 替换代码块 - 保护数学公式
+            markdown = markdown.replace(/```([\s\S]*?)```/g, function(match, code) {
+                // 检查是否包含数学公式
+                if (code.includes('$$') || code.includes('$')) {
+                    return '<pre><code>' + code + '</code></pre>';
+                }
+                return '<pre><code>' + code + '</code></pre>';
+            });
             
             // 替换行内代码
             markdown = markdown.replace(/`(.*?)`/g, '<code>$1</code>');

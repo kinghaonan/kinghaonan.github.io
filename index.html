@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站 | 金浩楠</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --text-color: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --sidebar-width: 280px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        /* 左侧目录 */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+            overflow-y: auto;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .profile {
+            text-align: center;
+            padding: 30px 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 5px solid var(--light-bg);
+            box-shadow: var(--shadow);
+        }
+
+        .profile h2 {
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .profile p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-links a {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-menu {
+            padding: 20px 0;
+        }
+
+        .nav-item {
+            padding: 12px 25px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+
+        .nav-item.active {
+            background-color: rgba(52, 152, 219, 0.1);
+            border-left-color: var(--secondary-color);
+            color: var(--secondary-color);
+        }
+
+        .nav-item i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+
+        .language-switcher {
+            padding: 20px 25px;
+            border-top: 1px solid #eee;
+        }
+
+        .language-btns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .language-btn {
+            flex: 1;
+            background: none;
+            border: 1px solid #ddd;
+            padding: 8px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .language-btn.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+
+        /* 主内容区域 */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-wrapper {
+            flex: 1;
+        }
+
+        .content-section {
+            display: none;
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-bottom: 30px;
+        }
+
+        .content-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+        }
+
+        /* 英雄区域 */
+        .hero {
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #666;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+
+        /* 技能区域 */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* 项目区域 */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 180px;
+            background-color: #ddd;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tag {
+            background-color: var(--light-bg);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+        }
+
+        /* 博客区域 */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .blog-card {
+            background-color: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .blog-content {
+            padding: 20px;
+        }
+
+        .blog-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        /* 联系区域 */
+        .contact-content {
+            display: flex;
+            gap: 40px;
+        }
+
+        .contact-info {
+            flex: 1;
+            background-color: var(--light-bg);
+            padding: 25px;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-form {
+            flex: 1;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* 页脚 - 尺寸减小一半 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 15px;
+            margin-top: auto;
+            border-radius: var(--border-radius);
+            font-size: 0.7rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .footer-section {
+            flex: 1;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 5px;
+            font-size: 0.8rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 3px;
+        }
+
+        .footer-section ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.65rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer-social-links a {
+            color: white;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-social-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.6rem;
+            opacity: 0.8;
+        }
+
+        /* 移动端菜单切换 */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 101;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .sidebar {
+                transform: translateX(-100%);
+            }
+
+            .sidebar.active {
+                transform: translateX(0);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .contact-content {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            footer {
+                padding: 8px 10px;
+            }
+        }
+        
+        /* Markdown 阅读器样式 */
+        .markdown-viewer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .markdown-viewer h1, 
+        .markdown-viewer h2, 
+        .markdown-viewer h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: var(--primary-color);
+        }
+        
+        .markdown-viewer p {
+            margin-bottom: 1em;
+        }
+        
+        .markdown-viewer code {
+            background-color: var(--light-bg);
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .markdown-viewer pre {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin-bottom: 1em;
+        }
+        
+        .markdown-viewer blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+            margin-left: 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .markdown-viewer ul, 
+        .markdown-viewer ol {
+            margin-bottom: 1em;
+            padding-left: 2em;
+        }
+        
+        .markdown-viewer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .markdown-viewer a:hover {
+            text-decoration: underline;
+        }
+        
+        .back-btn {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 移动端菜单切换按钮 -->
+    <button class="menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- 左侧目录 -->
+    <div class="sidebar">
+        <div class="profile">
+            <img src="https://via.placeholder.com/150" alt="个人照片" class="profile-image">
+            <h2 data-key="profileName">金浩楠</h2>
+            <p data-key="profileTitle">航空航天工程专业 本科生</p>
+            <p data-key="profileDesc">专注于创造优雅、高效的解决方案。</p>
+
+            <div class="social-links">
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="nav-menu">
+            <div class="nav-item active" data-target="home">
+                <i class="fas fa-home"></i>
+                <span data-key="home">首页</span>
+            </div>
+            <div class="nav-item" data-target="about">
+                <i class="fas fa-user"></i>
+                <span data-key="about">关于我</span>
+            </div>
+            <div class="nav-item" data-target="skills">
+                <i class="fas fa-code"></i>
+                <span data-key="skills">技能</span>
+            </div>
+            <div class="nav-item" data-target="projects">
+                <i class="fas fa-project-diagram"></i>
+                <span data-key="projects">项目</span>
+            </div>
+            <div class="nav-item" data-target="blog">
+                <i class="fas fa-blog"></i>
+                <span data-key="blog">博客</span>
+            </div>
+            <div class="nav-item" data-target="contact">
+                <i class="fas fa-envelope"></i>
+                <span data-key="contact">联系</span>
+            </div>
+        </div>
+
+        <div class="language-switcher">
+            <div class="language-btns">
+                <button class="language-btn active" data-lang="zh">中文</button>
+                <button class="language-btn" data-lang="en">English</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 主内容区域 -->
+    <div class="main-content">
+        <div class="content-wrapper">
+            <!-- 首页 -->
+            <section class="content-section active" id="home">
+                <div class="hero">
+                    <h1 data-key="heroTitle">您好，我是金浩楠</h1>
+                    <p data-key="heroDesc">一名充满热情的学生，专注于创造优雅、高效的解决方案。</p>
+                    <button class="btn" data-key="contactBtn">联系我</button>
+                </div>
+            </section>
+
+            <!-- 关于我 -->
+            <section class="content-section" id="about">
+                <h2 class="section-title" data-key="aboutTitle">关于我</h2>
+                <div style="display: flex; gap: 30px; align-items: flex-start;">
+                    <div style="flex: 2;">
+                        <p data-key="aboutText1" style="margin-bottom: 15px;">
+                            我是一名充满热情的开发者，拥有多年的开发经验。我热衷于学习新技术，解决复杂问题，并创造对用户有积极影响的产品。</p>
+                        <p data-key="aboutText2" style="margin-bottom: 15px;">
+                            在我的职业生涯中，我参与过各种项目，从简单的网站到复杂的企业级应用程序。我相信代码应该既高效又易于维护，并且用户界面应该直观且美观。</p>
+                        <p data-key="aboutText3" style="margin-bottom: 15px;">
+                            当我不在电脑前时，我喜欢阅读、旅行和探索新事物。我相信持续学习和自我提升是个人和专业成长的关键。</p>
+                    </div>
+                    <div style="flex: 1; text-align: center;">
+                        <img src="https://via.placeholder.com/300x400" alt="关于我图片"
+                            style="max-width: 100%; border-radius: var(--border-radius);">
+                    </div>
+                </div>
+            </section>
+
+            <!-- 技能 -->
+            <section class="content-section" id="skills">
+                <h2 class="section-title" data-key="skillsTitle">我的技能</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3 data-key="frontend">前端开发</h3>
+                        <p data-key="frontendSkills">HTML5, CSS3, JavaScript, React</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 data-key="backend">后端开发</h3>
+                        <p data-key="backendSkills">Node.js, Python, MySQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 data-key="uiux">UI/UX设计</h3>
+                        <p data-key="uiuxSkills">用户研究, 线框图, 原型设计, 视觉设计</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3 data-key="otherSkills">其他技能</h3>
+                        <p data-key="otherSkillsDesc">项目管理, 团队协作, 问题解决, 持续学习</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 项目 -->
+            <section class="content-section" id="projects">
+                <h2 class="section-title" data-key="projectsTitle">我的项目</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://via.placeholder.com/350x200')">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-key="project1Title">个人网站</h3>
+                            <p data-key="project1Desc">使用HTML、CSS和JavaScript构建的响应式个人网站，展示我的作品和技能。</p>
+                            <div class="project-tags">
+                                <span class="tag">HTML5</span>
+                                <span class="tag">CSS3</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <button class="btn view-details-btn" data-project="project1.md" data-key="viewDetails">查看详情</button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://via.placeholder.com/350x200')">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-key="project2Title">博客系统</h3>
+                            <p data-key="project2Desc">基于Markdown的博客系统，支持文章分类、标签和搜索功能。</p>
+                            <div class="project-tags">
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">MongoDB</span>
+                            </div>
+                            <button class="btn view-details-btn" data-project="project2.md" data-key="viewDetails">查看详情</button>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image" style="background-image: url('https://via.placeholder.com/350x200')">
+                        </div>
+                        <div class="project-content">
+                            <h3 data-key="project3Title">任务管理应用</h3>
+                            <p data-key="project3Desc">帮助用户管理日常任务和项目的Web应用，具有拖拽排序和优先级设置功能。</p>
+                            <div class="project-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">Redux</span>
+                                <span class="tag">Firebase</span>
+                            </div>
+                            <button class="btn view-details-btn" data-project="project3.md" data-key="viewDetails">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 博客 -->
+            <section class="content-section" id="blog">
+                <h2 class="section-title" data-key="blogTitle">最新博客</h2>
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3 data-key="blog1Title">我的第一篇博客文章</h3>
+                            <div class="blog-meta">
+                                <span data-key="blog1Date">2023年10月15日</span>
+                                <span data-key="blog1ReadTime">5分钟阅读</span>
+                            </div>
+                            <p data-key="blog1Desc">欢迎来到我的博客！这是我使用GitHub Pages搭建的个人网站。</p>
+                            <button class="btn read-more-btn" data-post="blog1.md" data-key="readMore">阅读更多</button>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3 data-key="blog2Title">学习前端开发的旅程</h3>
+                            <div class="blog-meta">
+                                <span data-key="blog2Date">2023年10月10日</span>
+                                <span data-key="blog2ReadTime">8分钟阅读</span>
+                            </div>
+                            <p data-key="blog2Desc">作为一名航空航天工程专业的学生，我发现自己对前端开发有着浓厚的兴趣。</p>
+                            <button class="btn read-more-btn" data-post="blog2.md" data-key="readMore">阅读更多</button>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <h3 data-key="blog3Title">航空航天与编程的交叉点</h3>
+                            <div class="blog-meta">
+                                <span data-key="blog3Date">2023年10月5日</span>
+                                <span data-key="blog3ReadTime">6分钟阅读</span>
+                            </div>
+                            <p data-key="blog3Desc">很多人认为航空航天和编程是两个完全不同的领域，但实际上它们有很多交叉点。</p>
+                            <button class="btn read-more-btn" data-post="blog3.md" data-key="readMore">阅读更多</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 联系 -->
+            <section class="content-section" id="contact">
+                <h2 class="section-title" data-key="contactTitle">联系我</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 data-key="contactInfo">联系信息</h3>
+                        <p data-key="contactDesc" style="margin-bottom: 20px;">如果您有任何问题或想讨论潜在的合作机会，请随时与我联系。</p>
+                        <p><strong data-key="email">邮箱:</strong> kihaonan@126.com</p>
+                        <p><strong data-key="address">地址:</strong> 南京，中国</p>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <label for="name" data-key="nameLabel">姓名</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" data-key="emailLabel">邮箱</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" data-key="subjectLabel">主题</label>
+                                <input type="text" id="subject" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" data-key="messageLabel">消息</label>
+                                <textarea id="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn" data-key="sendMessage">发送消息</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Markdown 阅读器 -->
+            <section class="content-section" id="markdown-viewer">
+                <button class="btn back-btn" id="back-to-list">
+                    <i class="fas fa-arrow-left"></i> 返回列表
+                </button>
+                <div class="markdown-viewer" id="markdown-content">
+                    <!-- Markdown内容将在这里显示 -->
+                </div>
+            </section>
+        </div>
+
+        <!-- 页脚 -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 data-key="footerName">金浩楠</h3>
+                    <p data-key="footerDesc">一名充满热情的开发者/工程师/创作者。</p>
+                </div>
+                <div class="footer-section">
+                    <h3 data-key="quickLinks">快速链接</h3>
+                    <ul>
+                        <li><a href="#" data-key="home">首页</a></li>
+                        <li><a href="#" data-key="about">关于我</a></li>
+                        <li><a href="#" data-key="projects">项目</a></li>
+                        <li><a href="#" data-key="blog">博客</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 data-key="followMe">关注我</h3>
+                    <div class="footer-social-links">
+                        <a href="https://github.com/kinghaonan" title="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p data-key="copyright">&copy; 2023 金浩楠. 保留所有权利.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // 语言切换功能
+        const translations = {
+            zh: {
+                home: "首页",
+                about: "关于我",
+                skills: "技能",
+                projects: "项目",
+                blog: "博客",
+                contact: "联系",
+                heroTitle: "您好，我是金浩楠",
+                heroDesc: "一名充满热情的开发者/工程师/创作者，专注于创造优雅、高效的解决方案。",
+                contactBtn: "联系我",
+                profileName: "金浩楠",
+                profileTitle: "航空航天工程专业 本科生",
+                profileDesc: "专注于创造优雅、高效的解决方案。",
+                aboutTitle: "关于我",
+                aboutText1: "我是一名充满热情的开发者，拥有多年的开发经验。我热衷于学习新技术，解决复杂问题，并创造对用户有积极影响的产品。",
+                aboutText2: "在我的职业生涯中，我参与过各种项目，从简单的网站到复杂的企业级应用程序。我相信代码应该既高效又易于维护，并且用户界面应该直观且美观。",
+                aboutText3: "当我不在电脑前时，我喜欢阅读、旅行和探索新事物。我相信持续学习和自我提升是个人和专业成长的关键。",
+                skillsTitle: "我的技能",
+                frontend: "前端开发",
+                frontendSkills: "HTML5, CSS3, JavaScript, React",
+                backend: "后端开发",
+                backendSkills: "Node.js, Python, MySQL",
+                uiux: "UI/UX设计",
+                uiuxSkills: "用户研究, 线框图, 原型设计, 视觉设计",
+                otherSkills: "其他技能",
+                otherSkillsDesc: "项目管理, 团队协作, 问题解决, 持续学习",
+                projectsTitle: "我的项目",
+                project1Title: "个人网站",
+                project1Desc: "使用HTML、CSS和JavaScript构建的响应式个人网站，展示我的作品和技能。",
+                project2Title: "博客系统",
+                project2Desc: "基于Markdown的博客系统，支持文章分类、标签和搜索功能。",
+                project3Title: "任务管理应用",
+                project3Desc: "帮助用户管理日常任务和项目的Web应用，具有拖拽排序和优先级设置功能。",
+                viewDetails: "查看详情",
+                blogTitle: "最新博客",
+                blog1Title: "我的第一篇博客文章",
+                blog1Date: "2023年10月15日",
+                blog1ReadTime: "5分钟阅读",
+                blog1Desc: "欢迎来到我的博客！这是我使用GitHub Pages搭建的个人网站。",
+                blog2Title: "学习前端开发的旅程",
+                blog2Date: "2023年10月10日",
+                blog2ReadTime: "8分钟阅读",
+                blog2Desc: "作为一名航空航天工程专业的学生，我发现自己对前端开发有着浓厚的兴趣。",
+                blog3Title: "航空航天与编程的交叉点",
+                blog3Date: "2023年10月5日",
+                blog3ReadTime: "6分钟阅读",
+                blog3Desc: "很多人认为航空航天和编程是两个完全不同的领域，但实际上它们有很多交叉点。",
+                readMore: "阅读更多",
+                contactTitle: "联系我",
+                contactInfo: "联系信息",
+                contactDesc: "如果您有任何问题或想讨论潜在的合作机会，请随时与我联系。",
+                email: "邮箱",
+                phone: "电话",
+                address: "地址",
+                nameLabel: "姓名",
+                emailLabel: "邮箱",
+                subjectLabel: "主题",
+                messageLabel: "消息",
+                sendMessage: "发送消息",
+                footerName: "金浩楠",
+                footerDesc: "一名充满热情的开发者/设计师/创作者。",
+                quickLinks: "快速链接",
+                followMe: "关注我",
+                github: "GitHub",
+                twitter: "Twitter",
+                linkedin: "LinkedIn",
+                instagram: "Instagram",
+                copyright: "© 2023 金浩楠. 保留所有权利."
+            },
+            en: {
+                home: "Home",
+                about: "About Me",
+                skills: "Skills",
+                projects: "Projects",
+                blog: "Blog",
+                contact: "Contact",
+                heroTitle: "Hello, I'm Jin Haonan",
+                heroDesc: "A passionate developer/engineer/creator focused on creating elegant and efficient solutions.",
+                contactBtn: "Contact Me",
+                profileName: "Jin Haonan",
+                profileTitle: "Engineer & Designer",
+                profileDesc: "Focused on creating elegant and efficient solutions.",
+                aboutTitle: "About Me",
+                aboutText1: "I am a passionate developer with years of experience. I love learning new technologies, solving complex problems, and creating products that have a positive impact on users.",
+                aboutText2: "Throughout my career, I've worked on various projects ranging from simple websites to complex enterprise applications. I believe code should be both efficient and maintainable, and user interfaces should be intuitive and beautiful.",
+                aboutText3: "When I'm not in front of a computer, I enjoy reading, traveling, and exploring new things. I believe continuous learning and self-improvement are key to personal and professional growth.",
+                skillsTitle: "My Skills",
+                frontend: "Frontend Development",
+                frontendSkills: "HTML5, CSS3, JavaScript, React",
+                backend: "Backend Development",
+                backendSkills: "Node.js, Python, MySQL",
+                uiux: "UI/UX Design",
+                uiuxSkills: "User Research, Wireframing, Prototyping, Visual Design",
+                otherSkills: "Other Skills",
+                otherSkillsDesc: "Project Management, Team Collaboration, Problem Solving, Continuous Learning",
+                projectsTitle: "My Projects",
+                project1Title: "Personal Website",
+                project1Desc: "A responsive personal website built with HTML, CSS and JavaScript to showcase my work and skills.",
+                project2Title: "Blog System",
+                project2Desc: "A Markdown-based blog system with article categorization, tagging and search functionality.",
+                project3Title: "Task Management App",
+                project3Desc: "A web application to help users manage daily tasks and projects, with drag-and-drop sorting and priority setting features.",
+                viewDetails: "View Details",
+                blogTitle: "Latest Blog",
+                blog1Title: "My First Blog Post",
+                blog1Date: "October 15, 2023",
+                blog1ReadTime: "5 min read",
+                blog1Desc: "Welcome to my blog! This is my personal website built with GitHub Pages.",
+                blog2Title: "Journey of Learning Frontend Development",
+                blog2Date: "October 10, 2023",
+                blog2ReadTime: "8 min read",
+                blog2Desc: "As a student majoring in aerospace engineering, I found myself deeply interested in frontend development.",
+                blog3Title: "Intersection of Aerospace and Programming",
+                blog3Date: "October 5, 2023",
+                blog3ReadTime: "6 min read",
+                blog3Desc: "Many people think aerospace and programming are two completely different fields, but in fact they have many intersections.",
+                readMore: "Read More",
+                contactTitle: "Contact Me",
+                contactInfo: "Contact Information",
+                contactDesc: "If you have any questions or would like to discuss potential collaboration opportunities, please feel free to contact me.",
+                email: "Email",
+                phone: "Phone",
+                address: "Address",
+                nameLabel: "Name",
+                emailLabel: "Email",
+                subjectLabel: "Subject",
+                messageLabel: "Message",
+                sendMessage: "Send Message",
+                footerName: "Jin Haonan",
+                footerDesc: "A passionate developer/designer/creator.",
+                quickLinks: "Quick Links",
+                followMe: "Follow Me",
+                github: "GitHub",
+                twitter: "Twitter",
+                linkedin: "LinkedIn",
+                instagram: "Instagram",
+                copyright: "© 2023 Jin Haonan. All rights reserved."
+            }
+        };
+
+        // 当前语言
+        let currentLang = 'zh';
+        let currentMarkdownType = ''; // 'blog' or 'project'
+
+        // 切换语言函数
+        function switchLanguage(lang) {
+            currentLang = lang;
+
+            // 更新所有带有data-key属性的元素
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.textContent = translations[lang][key];
+                    }
+                }
+            });
+
+            // 更新语言按钮状态
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                if (btn.getAttribute('data-lang') === lang) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // 保存语言偏好到localStorage
+            localStorage.setItem('preferred-language', lang);
+        }
+
+        // 简单的Markdown解析器
+        function parseMarkdown(markdown) {
+            // 替换标题
+            markdown = markdown.replace(/^# (.*$)/gim, '<h1>$1</h1>');
+            markdown = markdown.replace(/^## (.*$)/gim, '<h2>$1</h2>');
+            markdown = markdown.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            
+            // 替换粗体
+            markdown = markdown.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>');
+            
+            // 替换斜体
+            markdown = markdown.replace(/\*(.*)\*/gim, '<em>$1</em>');
+            
+            // 替换代码块
+            markdown = markdown.replace(/```([\s\S]*?)```/g, '<pre><code>$1</code></pre>');
+            
+            // 替换行内代码
+            markdown = markdown.replace(/`(.*?)`/g, '<code>$1</code>');
+            
+            // 替换链接
+            markdown = markdown.replace(/\[([^\[]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>');
+            
+            // 替换图片
+            markdown = markdown.replace(/!\[([^\[]+)\]\(([^\)]+)\)/g, '<img src="$2" alt="$1">');
+            
+            // 替换引用
+            markdown = markdown.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>');
+            
+            // 替换水平线
+            markdown = markdown.replace(/^\-\-\-$/gim, '<hr>');
+            
+            // 替换无序列表
+            markdown = markdown.replace(/^\s*\* (.*$)/gim, '<ul><li>$1</li></ul>');
+            markdown = markdown.replace(/<\/ul>\s*<ul>/g, '');
+            
+            // 替换有序列表
+            markdown = markdown.replace(/^\s*\d\. (.*$)/gim, '<ol><li>$1</li></ol>');
+            markdown = markdown.replace(/<\/ol>\s*<ol>/g, '');
+            
+            // 替换换行
+            markdown = markdown.replace(/\n$/gim, '<br>');
+            
+            // 段落
+            markdown = markdown.replace(/^\s*(\n)?(.+)/gim, function(m){
+                return /\<(\/)?(h\d|ul|ol|li|blockquote|pre|code)/.test(m) ? m : '<p>'+m+'</p>';
+            });
+            
+            return markdown;
+        }
+
+        // 加载并显示Markdown文件
+        function loadMarkdownFile(filename, type) {
+            currentMarkdownType = type; // Store the type of markdown being viewed
+            let filePath = '';
+            if (type === 'blog') {
+                filePath = `_posts/blog/${filename}`;
+            } else if (type === 'project') {
+                filePath = `_posts/projects/${filename}`;
+            } else {
+                // Default or error handling
+                console.error('Unknown markdown type:', type);
+                return;
+            }
+            
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('文件未找到');
+                    }
+                    return response.text();
+                })
+                .then(markdown => {
+                    document.getElementById('markdown-content').innerHTML = parseMarkdown(markdown);
+                    
+                    // 显示 Markdown 阅读器
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+                    document.getElementById('markdown-viewer').classList.add('active');
+                    
+                    // 更新导航菜单（如果需要，但通常在阅读Markdown时导航菜单不应处于活动状态）
+                    document.querySelectorAll('.nav-item').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                    // 不激活任何导航项，因为当前在详情页
+                    
+                    // 更新页面标题
+                    let pageTitle = '';
+                    if (type === 'blog') {
+                        pageTitle = `博客文章 - ${filename.replace('.md', '')} | 金浩楠`;
+                    } else if (type === 'project') {
+                        pageTitle = `项目详情 - ${filename.replace('.md', '')} | 金浩楠`;
+                    }
+                    document.title = pageTitle;
+                })
+                .catch(error => {
+                    console.error('加载 Markdown 文件出错:', error);
+                    document.getElementById('markdown-content').innerHTML = `
+                        <h1>加载失败</h1>
+                        <p>无法加载请求的文章。请检查文件是否存在或稍后重试。</p>
+                        <p>错误信息: ${error.message}</p>
+                    `;
+                });
+        }
+
+        // 初始化语言
+        document.addEventListener('DOMContentLoaded', function () {
+            // 检查是否有保存的语言偏好
+            const savedLang = localStorage.getItem('preferred-language');
+            if (savedLang) {
+                switchLanguage(savedLang);
+            }
+
+            // 添加语言切换事件监听器
+            document.querySelectorAll('.language-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const lang = this.getAttribute('data-lang');
+                    switchLanguage(lang);
+                });
+            });
+
+            // 添加导航项点击事件
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', function () {
+                    // 移除所有活动类
+                    document.querySelectorAll('.nav-item').forEach(i => {
+                        i.classList.remove('active');
+                    });
+                    document.querySelectorAll('.content-section').forEach(section => {
+                        section.classList.remove('active');
+                    });
+
+                    // 添加活动类到当前项
+                    this.classList.add('active');
+
+                    // 显示对应的内容区域
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+
+                    // 在移动端点击后关闭侧边栏
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('.sidebar').classList.remove('active');
+                    }
+                });
+            });
+
+            // 移动端菜单切换
+            document.querySelector('.menu-toggle').addEventListener('click', function () {
+                document.querySelector('.sidebar').classList.toggle('active');
+            });
+
+            // 联系按钮点击事件
+            document.querySelector('.btn[data-key="contactBtn"]').addEventListener('click', function () {
+                // 切换到联系页面
+                document.querySelectorAll('.nav-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                document.querySelector('.nav-item[data-target="contact"]').classList.add('active');
+                document.getElementById('contact').classList.add('active');
+            });
+            
+            // 博客阅读更多按钮点击事件
+            document.querySelectorAll('.read-more-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const postFile = this.getAttribute('data-post');
+                    loadMarkdownFile(postFile, 'blog');
+                });
+            });
+
+            // 项目查看详情按钮点击事件
+            document.querySelectorAll('.view-details-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectFile = this.getAttribute('data-project');
+                    loadMarkdownFile(projectFile, 'project');
+                });
+            });
+            
+            // 返回列表按钮
+            document.getElementById('back-to-list').addEventListener('click', function() {
+                document.querySelectorAll('.content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                if (currentMarkdownType === 'blog') {
+                    document.getElementById('blog').classList.add('active');
+                    document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
+                } else if (currentMarkdownType === 'project') {
+                    document.getElementById('projects').classList.add('active');
+                    document.querySelector('.nav-item[data-target="projects"]').classList.add('active');
+                } else {
+                    // 默认返回博客列表
+                    document.getElementById('blog').classList.add('active');
+                    document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
+                }
+                
+                // 恢复页面标题
+                document.title = "个人网站 | 金浩楠";
+            });
+            
+            // 联系表单提交处理
+            document.getElementById('contact-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('感谢您的留言！我会尽快回复您。');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -478,6 +478,11 @@
                 flex-direction: column;
             }
 
+            .footer-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
             footer {
                 padding: 8px 10px;
             }
@@ -675,7 +680,7 @@
                                 <span class="tag">CSS3</span>
                                 <span class="tag">JavaScript</span>
                             </div>
-                            <button class="btn" data-key="viewDetails">查看详情</button>
+                            <button class="btn view-details-btn" data-project="project1.md" data-key="viewDetails">查看详情</button>
                         </div>
                     </div>
                     <div class="project-card">
@@ -689,7 +694,7 @@
                                 <span class="tag">Express</span>
                                 <span class="tag">MongoDB</span>
                             </div>
-                            <button class="btn" data-key="viewDetails">查看详情</button>
+                            <button class="btn view-details-btn" data-project="project2.md" data-key="viewDetails">查看详情</button>
                         </div>
                     </div>
                     <div class="project-card">
@@ -703,7 +708,7 @@
                                 <span class="tag">Redux</span>
                                 <span class="tag">Firebase</span>
                             </div>
-                            <button class="btn" data-key="viewDetails">查看详情</button>
+                            <button class="btn view-details-btn" data-project="project3.md" data-key="viewDetails">查看详情</button>
                         </div>
                     </div>
                 </div>
@@ -721,7 +726,7 @@
                                 <span data-key="blog1ReadTime">5分钟阅读</span>
                             </div>
                             <p data-key="blog1Desc">欢迎来到我的博客！这是我使用GitHub Pages搭建的个人网站。</p>
-                            <button class="btn read-more-btn" data-post="2025-10-17-first-post.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="blog1.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                     <div class="blog-card">
@@ -732,7 +737,7 @@
                                 <span data-key="blog2ReadTime">8分钟阅读</span>
                             </div>
                             <p data-key="blog2Desc">作为一名航空航天工程专业的学生，我发现自己对前端开发有着浓厚的兴趣。</p>
-                            <button class="btn read-more-btn" data-post="2025-10-17-first-post.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="blog2.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                     <div class="blog-card">
@@ -743,7 +748,7 @@
                                 <span data-key="blog3ReadTime">6分钟阅读</span>
                             </div>
                             <p data-key="blog3Desc">很多人认为航空航天和编程是两个完全不同的领域，但实际上它们有很多交叉点。</p>
-                            <button class="btn read-more-btn" data-post="2025-10-17-first-post.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="blog3.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                 </div>
@@ -785,8 +790,8 @@
             
             <!-- Markdown 阅读器 -->
             <section class="content-section" id="markdown-viewer">
-                <button class="btn back-btn" id="back-to-blog">
-                    <i class="fas fa-arrow-left"></i> 返回博客列表
+                <button class="btn back-btn" id="back-to-list">
+                    <i class="fas fa-arrow-left"></i> 返回列表
                 </button>
                 <div class="markdown-viewer" id="markdown-content">
                     <!-- Markdown内容将在这里显示 -->
@@ -813,6 +818,7 @@
                 <div class="footer-section">
                     <h3 data-key="followMe">关注我</h3>
                     <div class="footer-social-links">
+                        <a href="https://github.com/kinghaonan" title="GitHub"><i class="fab fa-github"></i></a>
                         <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -839,7 +845,7 @@
                 heroDesc: "一名充满热情的开发者/工程师/创作者，专注于创造优雅、高效的解决方案。",
                 contactBtn: "联系我",
                 profileName: "金浩楠",
-                profileTitle: "工程师 & 设计师",
+                profileTitle: "航空航天工程专业 本科生",
                 profileDesc: "专注于创造优雅、高效的解决方案。",
                 aboutTitle: "关于我",
                 aboutText1: "我是一名充满热情的开发者，拥有多年的开发经验。我热衷于学习新技术，解决复杂问题，并创造对用户有积极影响的产品。",
@@ -895,7 +901,7 @@
                 twitter: "Twitter",
                 linkedin: "LinkedIn",
                 instagram: "Instagram",
-                copyright: "© 2023 金浩楠. 保留所有权利。"
+                copyright: "© 2023 金浩楠. 保留所有权利."
             },
             en: {
                 home: "Home",
@@ -970,6 +976,7 @@
 
         // 当前语言
         let currentLang = 'zh';
+        let currentMarkdownType = ''; // 'blog' or 'project'
 
         // 切换语言函数
         function switchLanguage(lang) {
@@ -983,6 +990,7 @@
                         element.placeholder = translations[lang][key];
                     } else {
                         element.textContent = translations[lang][key];
+                    }
                 }
             });
 
@@ -1050,9 +1058,20 @@
         }
 
         // 加载并显示Markdown文件
-        function loadMarkdownFile(filename) {
-            // 使用 fetch API 从 _posts 目录加载 Markdown 文件
-            fetch(`_posts/${filename}`)
+        function loadMarkdownFile(filename, type) {
+            currentMarkdownType = type; // Store the type of markdown being viewed
+            let filePath = '';
+            if (type === 'blog') {
+                filePath = `_posts/blog/${filename}`;
+            } else if (type === 'project') {
+                filePath = `_posts/projects/${filename}`;
+            } else {
+                // Default or error handling
+                console.error('Unknown markdown type:', type);
+                return;
+            }
+            
+            fetch(filePath)
                 .then(response => {
                     if (!response.ok) {
                         throw new Error('文件未找到');
@@ -1068,13 +1087,20 @@
                     });
                     document.getElementById('markdown-viewer').classList.add('active');
                     
-                    // 更新导航菜单
+                    // 更新导航菜单（如果需要，但通常在阅读Markdown时导航菜单不应处于活动状态）
                     document.querySelectorAll('.nav-item').forEach(item => {
                         item.classList.remove('active');
                     });
+                    // 不激活任何导航项，因为当前在详情页
                     
                     // 更新页面标题
-                    document.title = `博客文章 - ${filename.replace('.md', '')} | 金浩楠`;
+                    let pageTitle = '';
+                    if (type === 'blog') {
+                        pageTitle = `博客文章 - ${filename.replace('.md', '')} | 金浩楠`;
+                    } else if (type === 'project') {
+                        pageTitle = `项目详情 - ${filename.replace('.md', '')} | 金浩楠`;
+                    }
+                    document.title = pageTitle;
                 })
                 .catch(error => {
                     console.error('加载 Markdown 文件出错:', error);
@@ -1141,29 +1167,49 @@
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
                 });
+
                 document.querySelector('.nav-item[data-target="contact"]').classList.add('active');
                 document.getElementById('contact').classList.add('active');
             });
-
-            // 博客阅读更多按钮点击事件 - 从本地_posts目录加载Markdown文件
+            
+            // 博客阅读更多按钮点击事件
             document.querySelectorAll('.read-more-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const postFile = this.getAttribute('data-post');
-                    loadMarkdownFile(postFile);
+                    loadMarkdownFile(postFile, 'blog');
+                });
             });
 
-            // 返回博客列表按钮
-            document.getElementById('back-to-blog').addEventListener('click', function() {
+            // 项目查看详情按钮点击事件
+            document.querySelectorAll('.view-details-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const projectFile = this.getAttribute('data-project');
+                    loadMarkdownFile(projectFile, 'project');
+                });
+            });
+            
+            // 返回列表按钮
+            document.getElementById('back-to-list').addEventListener('click', function() {
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
                 });
-                document.getElementById('blog').classList.add('active');
-                document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
+
+                if (currentMarkdownType === 'blog') {
+                    document.getElementById('blog').classList.add('active');
+                    document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
+                } else if (currentMarkdownType === 'project') {
+                    document.getElementById('projects').classList.add('active');
+                    document.querySelector('.nav-item[data-target="projects"]').classList.add('active');
+                } else {
+                    // 默认返回博客列表
+                    document.getElementById('blog').classList.add('active');
+                    document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
+                }
                 
                 // 恢复页面标题
                 document.title = "个人网站 | 金浩楠";
             });
-
+            
             // 联系表单提交处理
             document.getElementById('contact-form').addEventListener('submit', function(e) {
                 e.preventDefault();

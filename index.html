@@ -373,7 +373,7 @@
             resize: vertical;
         }
 
-        /* 页脚 - 尺寸减小一半 */
+        /* 页脚 */
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -455,6 +455,124 @@
             z-index: 101;
         }
 
+        /* Markdown 阅读器样式 */
+        .markdown-viewer {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .markdown-viewer h1, 
+        .markdown-viewer h2, 
+        .markdown-viewer h3 {
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+            color: var(--primary-color);
+        }
+        
+        .markdown-viewer p {
+            margin-bottom: 1em;
+        }
+        
+        .markdown-viewer code {
+            background-color: var(--light-bg);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', 'Consolas', monospace;
+            font-size: 0.9em;
+        }
+        
+        .markdown-viewer pre {
+            background-color: var(--light-bg);
+            padding: 12px 16px;
+            border-radius: var(--border-radius);
+            overflow-x: auto;
+            margin: 1em 0;
+            line-height: 1.4;
+        }
+        
+        .markdown-viewer pre code {
+            background: none;
+            padding: 0;
+            font-size: 0.85em;
+            line-height: 1.4;
+            display: block;
+        }
+        
+        .markdown-viewer blockquote {
+            border-left: 4px solid var(--secondary-color);
+            padding-left: 15px;
+            margin: 1em 0;
+            color: #666;
+            font-style: italic;
+        }
+        
+        .markdown-viewer ul, 
+        .markdown-viewer ol {
+            margin-bottom: 1em;
+            padding-left: 2em;
+        }
+        
+        .markdown-viewer a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
+        
+        .markdown-viewer a:hover {
+            text-decoration: underline;
+        }
+        
+        .markdown-viewer img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            margin: 15px 0;
+            display: block;
+        }
+        
+        .markdown-viewer table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+        
+        .markdown-viewer th, 
+        .markdown-viewer td {
+            padding: 8px 12px;
+            border: 1px solid #ddd;
+        }
+        
+        .markdown-viewer th {
+            background-color: var(--light-bg);
+        }
+        
+        .back-btn {
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+        
+        /* MathJax 公式样式 */
+        .markdown-viewer .MathJax {
+            font-size: 1.1em !important;
+        }
+        
+        .markdown-viewer .mjx-chtml {
+            line-height: 1.5 !important;
+        }
+        
+        .markdown-viewer .math-display {
+            text-align: center;
+            margin: 1.5em 0;
+            overflow-x: auto;
+            overflow-y: hidden;
+        }
+        
+        .markdown-viewer .math-inline {
+            display: inline;
+        }
+
         /* 响应式设计 */
         @media (max-width: 768px) {
             .sidebar {
@@ -487,129 +605,8 @@
                 padding: 8px 10px;
             }
         }
-        
-        /* Markdown 阅读器样式 - 修复代码间距问题 */
-        .markdown-viewer {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        
-        .markdown-viewer h1, 
-        .markdown-viewer h2, 
-        .markdown-viewer h3 {
-            margin-top: 1.5em;
-            margin-bottom: 0.5em;
-            color: var(--primary-color);
-        }
-        
-        .markdown-viewer p {
-            margin-bottom: 1em;
-        }
-        
-        .markdown-viewer code {
-            background-color: var(--light-bg);
-            padding: 2px 4px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-        }
-        
-        .markdown-viewer pre {
-            background-color: var(--light-bg);
-            padding: 8px 12px;
-            border-radius: var(--border-radius);
-            overflow-x: auto;
-            margin-bottom: 1em;
-            line-height: 1.2;
-            font-size: 0.9em;
-        }
-        
-        .markdown-viewer pre code {
-            background: none;
-            padding: 0;
-            font-size: inherit;
-        }
-        
-        .markdown-viewer blockquote {
-            border-left: 4px solid var(--secondary-color);
-            padding-left: 15px;
-            margin-left: 0;
-            color: #666;
-            font-style: italic;
-        }
-        
-        .markdown-viewer ul, 
-        .markdown-viewer ol {
-            margin-bottom: 1em;
-            padding-left: 2em;
-        }
-        
-        .markdown-viewer a {
-            color: var(--secondary-color);
-            text-decoration: none;
-        }
-        
-        .markdown-viewer a:hover {
-            text-decoration: underline;
-        }
-        
-        .markdown-viewer img {
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-            margin: 15px 0;
-            display: block; /* 确保图片正常显示 */
-        }
-        
-        .markdown-viewer table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 1em;
-        }
-        
-        .markdown-viewer th, 
-        .markdown-viewer td {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-        }
-        
-        .markdown-viewer th {
-            background-color: var(--light-bg);
-        }
-        
-        .back-btn {
-            margin-bottom: 20px;
-            display: inline-block;
-        }
-        
-        /* MathJax 公式样式 */
-        .MathJax {
-            font-size: 1.1em !important;
-        }
-        
-        .mjx-chtml {
-            line-height: 1.2 !important;
-        }
-        
-        /* 修复数学公式显示 */
-        .MathJax_Display {
-            margin: 1em 0 !important;
-            overflow-x: auto;
-            overflow-y: hidden;
-            text-align: center;
-        }
-        
-        /* 数学公式块样式 */
-        .math-block {
-            text-align: center;
-            margin: 1.5em 0;
-        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- 添加 MathJax 支持数学公式 -->
     <script>
         window.MathJax = {
             tex: {
@@ -633,12 +630,10 @@
 </head>
 
 <body>
-    <!-- 移动端菜单切换按钮 -->
     <button class="menu-toggle">
         <i class="fas fa-bars"></i>
     </button>
 
-    <!-- 左侧目录 -->
     <div class="sidebar">
         <div class="profile">
             <img src="assets/images/profile.jpg" alt="个人照片" class="profile-image">
@@ -689,10 +684,8 @@
         </div>
     </div>
 
-    <!-- 主内容区域 -->
     <div class="main-content">
         <div class="content-wrapper">
-            <!-- 首页 -->
             <section class="content-section active" id="home">
                 <div class="hero">
                     <h1 data-key="heroTitle">您好，我是金浩楠</h1>
@@ -701,7 +694,6 @@
                 </div>
             </section>
 
-            <!-- 关于我 -->
             <section class="content-section" id="about">
                 <h2 class="section-title" data-key="aboutTitle">关于我</h2>
                 <div style="display: flex; gap: 30px; align-items: flex-start;">
@@ -720,7 +712,6 @@
                 </div>
             </section>
 
-            <!-- 技能 -->
             <section class="content-section" id="skills">
                 <h2 class="section-title" data-key="skillsTitle">我的技能</h2>
                 <div class="skills-grid">
@@ -743,13 +734,11 @@
                 </div>
             </section>
 
-            <!-- 项目 -->
             <section class="content-section" id="projects">
                 <h2 class="section-title" data-key="projectsTitle">我的项目</h2>
                 <div class="projects-grid">
                     <div class="project-card">
-                        <div class="project-image" style="background-image: url('assets/images/project1.jpg')">
-                        </div>
+                        <div class="project-image" style="background-image: url('assets/images/project1.jpg')"></div>
                         <div class="project-content">
                             <h3 data-key="project1Title">个人网站</h3>
                             <p data-key="project1Desc">使用HTML、CSS和JavaScript构建的响应式个人网站，展示我的作品和技能。</p>
@@ -762,8 +751,7 @@
                         </div>
                     </div>
                     <div class="project-card">
-                        <div class="project-image" style="background-image: url('assets/images/project2.jpg')">
-                        </div>
+                        <div class="project-image" style="background-image: url('assets/images/project2.jpg')"></div>
                         <div class="project-content">
                             <h3 data-key="project2Title">博客系统</h3>
                             <p data-key="project2Desc">基于Markdown的博客系统，支持文章分类、标签和搜索功能。</p>
@@ -776,8 +764,7 @@
                         </div>
                     </div>
                     <div class="project-card">
-                        <div class="project-image" style="background-image: url('assets/images/project3.jpg')">
-                        </div>
+                        <div class="project-image" style="background-image: url('assets/images/project3.jpg')"></div>
                         <div class="project-content">
                             <h3 data-key="project3Title">任务管理应用</h3>
                             <p data-key="project3Desc">帮助用户管理日常任务和项目的Web应用，具有拖拽排序和优先级设置功能。</p>
@@ -792,7 +779,6 @@
                 </div>
             </section>
 
-            <!-- 博客 -->
             <section class="content-section" id="blog">
                 <h2 class="section-title" data-key="blogTitle">最新博客</h2>
                 <div class="blog-grid">
@@ -832,7 +818,6 @@
                 </div>
             </section>
 
-            <!-- 联系 -->
             <section class="content-section" id="contact">
                 <h2 class="section-title" data-key="contactTitle">联系我</h2>
                 <div class="contact-content">
@@ -866,9 +851,9 @@
                 </div>
             </section>
             
-            <!-- Markdown 阅读器 -->
             <section class="content-section" id="markdown-viewer">
                 <button class="btn back-btn" id="back-to-list">
+```html
                     <i class="fas fa-arrow-left"></i> 返回列表
                 </button>
                 <div class="markdown-viewer" id="markdown-content">
@@ -877,7 +862,6 @@
             </section>
         </div>
 
-        <!-- 页脚 -->
         <footer>
             <div class="footer-content">
                 <div class="footer-section">
@@ -1052,15 +1036,11 @@
             }
         };
 
-        // 当前语言
         let currentLang = 'zh';
-        let currentMarkdownType = ''; // 'blog' or 'project'
+        let currentMarkdownType = '';
 
-        // 切换语言函数
         function switchLanguage(lang) {
             currentLang = lang;
-
-            // 更新所有带有data-key属性的元素
             document.querySelectorAll('[data-key]').forEach(element => {
                 const key = element.getAttribute('data-key');
                 if (translations[lang][key]) {
@@ -1071,8 +1051,6 @@
                     }
                 }
             });
-
-            // 更新语言按钮状态
             document.querySelectorAll('.language-btn').forEach(btn => {
                 if (btn.getAttribute('data-lang') === lang) {
                     btn.classList.add('active');
@@ -1080,97 +1058,88 @@
                     btn.classList.remove('active');
                 }
             });
-
-            // 保存语言偏好到localStorage
             localStorage.setItem('preferred-language', lang);
         }
 
-        // 简单的Markdown解析器
         function parseMarkdown(markdown) {
-            // 保护数学公式不被Markdown解析器处理
-            // 先提取所有数学公式块
             const mathBlocks = [];
-            markdown = markdown.replace(/\$\$[\s\S]*?\$\$/g, (match) => {
-                mathBlocks.push(match);
-                return `@@MATH_BLOCK_${mathBlocks.length - 1}@@`;
+            const inlineMathBlocks = [];
+            
+            markdown = markdown.replace(/\$\$([\s\S]*?)\$\$/g, (match, formula) => {
+                mathBlocks.push(formula.trim());
+                return `@@MATH_DISPLAY_${mathBlocks.length - 1}@@`;
+            });
+            
+            markdown = markdown.replace(/\$([^\$\n]+?)\$/g, (match, formula) => {
+                inlineMathBlocks.push(formula);
+                return `@@MATH_INLINE_${inlineMathBlocks.length - 1}@@`;
             });
 
-            // 替换标题
             markdown = markdown.replace(/^# (.*$)/gim, '<h1>$1</h1>');
             markdown = markdown.replace(/^## (.*$)/gim, '<h2>$1</h2>');
             markdown = markdown.replace(/^### (.*$)/gim, '<h3>$1</h3>');
+            markdown = markdown.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+            markdown = markdown.replace(/\*(.*?)\*/gim, '<em>$1</em>');
             
-            // 替换粗体
-            markdown = markdown.replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>');
-            
-            // 替换斜体
-            markdown = markdown.replace(/\*(.*)\*/gim, '<em>$1</em>');
-            
-            // 替换代码块
             markdown = markdown.replace(/```([\s\S]*?)```/g, function(match, code) {
+                code = code.trim();
                 return '<pre><code>' + code + '</code></pre>';
             });
             
-            // 替换行内代码
             markdown = markdown.replace(/`(.*?)`/g, '<code>$1</code>');
+            markdown = markdown.replace(/\[([^\[]+)\]\(([^\)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
             
-            // 替换链接
-            markdown = markdown.replace(/\[([^\[]+)\]\(([^\)]+)\)/g, '<a href="$2">$1</a>');
-            
-            // 替换图片 - 修复路径问题
-            markdown = markdown.replace(/!\[([^\[]+)\]\(([^\)]+)\)/g, function(match, alt, src) {
-                // 修复指向 /images 的路径，将其转换为 assets/images
+            markdown = markdown.replace(/!\[([^\]]*)\]\(([^\)]+)\)/g, function(match, alt, src) {
                 if (src.startsWith('/images/')) {
-                    src = 'assets' + src; // 将 /images/xxx 转换为 assets/images/xxx
-                }
-                // 如果图片路径是相对路径，转换为正确路径
-                else if (!src.startsWith('http') && !src.startsWith('/')) {
+                    src = 'assets' + src;
+                } else if (src.startsWith('images/')) {
+                    src = 'assets/' + src;
+                } else if (!src.startsWith('http') && !src.startsWith('/') && !src.startsWith('assets')) {
                     src = 'assets/images/' + src;
                 }
-                return `<img src="${src}" alt="${alt}">`;
+                return `<img src="${src}" alt="${alt}" loading="lazy">`;
             });
             
-            // 替换引用
             markdown = markdown.replace(/^\> (.*$)/gim, '<blockquote>$1</blockquote>');
-            
-            // 替换水平线
+            markdown = markdown.replace(/<\/blockquote>\s*<blockquote>/g, '\n');
             markdown = markdown.replace(/^\-\-\-$/gim, '<hr>');
-            
-            // 替换无序列表
-            markdown = markdown.replace(/^\s*\* (.*$)/gim, '<ul><li>$1</li></ul>');
+            markdown = markdown.replace(/^\s*[\*\-] (.*$)/gim, '<ul><li>$1</li></ul>');
             markdown = markdown.replace(/<\/ul>\s*<ul>/g, '');
-            
-            // 替换有序列表
-            markdown = markdown.replace(/^\s*\d\. (.*$)/gim, '<ol><li>$1</li></ol>');
+            markdown = markdown.replace(/^\s*\d+\. (.*$)/gim, '<ol><li>$1</li></ol>');
             markdown = markdown.replace(/<\/ol>\s*<ol>/g, '');
             
-            // 替换换行
-            markdown = markdown.replace(/\n$/gim, '<br>');
+            markdown = markdown.split('\n\n').map(block => {
+                if (block.match(/^<(h\d|ul|ol|li|blockquote|pre|hr|img)/)) {
+                    return block;
+                }
+                if (block.match(/@@MATH_(DISPLAY|INLINE)_\d+@@/)) {
+                    return block;
+                }
+                if (block.trim() === '') {
+                    return '';
+                }
+                return '<p>' + block + '</p>';
+            }).join('\n');
             
-            // 段落
-            markdown = markdown.replace(/^\s*(\n)?(.+)/gim, function(m){
-                return /\<(\/)?(h\d|ul|ol|li|blockquote|pre|code)/.test(m) ? m : '<p>'+m+'</p>';
+            markdown = markdown.replace(/@@MATH_DISPLAY_(\d+)@@/g, (match, index) => {
+                return `<div class="math-display">\\[${mathBlocks[index]}\\]</div>`;
             });
             
-            // 恢复数学公式块
-            markdown = markdown.replace(/@@MATH_BLOCK_(\d+)@@/g, (match, index) => {
-                return `<div class="math-block">${mathBlocks[index]}</div>`;
+            markdown = markdown.replace(/@@MATH_INLINE_(\d+)@@/g, (match, index) => {
+                return `<span class="math-inline">\\(${inlineMathBlocks[index]}\\)</span>`;
             });
             
             return markdown;
         }
 
-        // 加载并显示Markdown文件
         function loadMarkdownFile(filename, type) {
-            currentMarkdownType = type; // Store the type of markdown being viewed
+            currentMarkdownType = type;
             let filePath = '';
-            // 修复GitHub Pages上的路径问题
             if (type === 'blog') {
                 filePath = `_posts/blog/${filename}`;
             } else if (type === 'project') {
                 filePath = `_posts/projects/${filename}`;
             } else {
-                // Default or error handling
                 console.error('Unknown markdown type:', type);
                 return;
             }
@@ -1185,19 +1154,15 @@
                 .then(markdown => {
                     document.getElementById('markdown-content').innerHTML = parseMarkdown(markdown);
                     
-                    // 显示 Markdown 阅读器
                     document.querySelectorAll('.content-section').forEach(section => {
                         section.classList.remove('active');
                     });
                     document.getElementById('markdown-viewer').classList.add('active');
                     
-                    // 更新导航菜单（如果需要，但通常在阅读Markdown时导航菜单不应处于活动状态）
                     document.querySelectorAll('.nav-item').forEach(item => {
                         item.classList.remove('active');
                     });
-                    // 不激活任何导航项，因为当前在详情页
                     
-                    // 更新页面标题
                     let pageTitle = '';
                     if (type === 'blog') {
                         pageTitle = `博客文章 - ${filename.replace('.md', '')} | 金浩楠`;
@@ -1206,15 +1171,16 @@
                     }
                     document.title = pageTitle;
                     
-                    // 重新渲染数学公式 - 修复 MathJax 问题
+                    window.scrollTo(0, 0);
+                    
                     if (window.MathJax) {
-                        // 等待 MathJax 完全加载
                         setTimeout(() => {
-                            if (window.MathJax.typeset) {
+                            if (window.MathJax.typesetPromise) {
+                                window.MathJax.typesetPromise().catch((err) => console.log('MathJax typeset error:', err));
+                            } else if (window.MathJax.typeset) {
                                 window.MathJax.typeset();
                             } else if (window.MathJax.Hub && window.MathJax.Hub.Queue) {
-                                // 对于旧版本 MathJax
-                                window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub]);
+                                window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, "markdown-content"]);
                             }
                         }, 100);
                     }
@@ -1229,15 +1195,12 @@
                 });
         }
 
-        // 初始化语言
         document.addEventListener('DOMContentLoaded', function () {
-            // 检查是否有保存的语言偏好
             const savedLang = localStorage.getItem('preferred-language');
             if (savedLang) {
                 switchLanguage(savedLang);
             }
 
-            // 添加语言切换事件监听器
             document.querySelectorAll('.language-btn').forEach(btn => {
                 btn.addEventListener('click', function () {
                     const lang = this.getAttribute('data-lang');
@@ -1245,10 +1208,8 @@
                 });
             });
 
-            // 添加导航项点击事件
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.addEventListener('click', function () {
-                    // 移除所有活动类
                     document.querySelectorAll('.nav-item').forEach(i => {
                         i.classList.remove('active');
                     });
@@ -1256,28 +1217,21 @@
                         section.classList.remove('active');
                     });
 
-                    // 添加活动类到当前项
                     this.classList.add('active');
-
-                    // 显示对应的内容区域
                     const targetId = this.getAttribute('data-target');
                     document.getElementById(targetId).classList.add('active');
 
-                    // 在移动端点击后关闭侧边栏
                     if (window.innerWidth <= 768) {
                         document.querySelector('.sidebar').classList.remove('active');
                     }
                 });
             });
 
-            // 移动端菜单切换
             document.querySelector('.menu-toggle').addEventListener('click', function () {
                 document.querySelector('.sidebar').classList.toggle('active');
             });
 
-            // 联系按钮点击事件
             document.querySelector('.btn[data-key="contactBtn"]').addEventListener('click', function () {
-                // 切换到联系页面
                 document.querySelectorAll('.nav-item').forEach(i => {
                     i.classList.remove('active');
                 });
@@ -1289,7 +1243,6 @@
                 document.getElementById('contact').classList.add('active');
             });
             
-            // 博客阅读更多按钮点击事件
             document.querySelectorAll('.read-more-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const postFile = this.getAttribute('data-post');
@@ -1297,7 +1250,6 @@
                 });
             });
 
-            // 项目查看详情按钮点击事件
             document.querySelectorAll('.view-details-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const projectFile = this.getAttribute('data-project');
@@ -1305,10 +1257,12 @@
                 });
             });
             
-            // 返回列表按钮
             document.getElementById('back-to-list').addEventListener('click', function() {
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
+                });
+                document.querySelectorAll('.nav-item').forEach(item => {
+                    item.classList.remove('active');
                 });
 
                 if (currentMarkdownType === 'blog') {
@@ -1318,16 +1272,13 @@
                     document.getElementById('projects').classList.add('active');
                     document.querySelector('.nav-item[data-target="projects"]').classList.add('active');
                 } else {
-                    // 默认返回博客列表
                     document.getElementById('blog').classList.add('active');
                     document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
                 }
                 
-                // 恢复页面标题
                 document.title = "个人网站 | 金浩楠";
             });
             
-            // 联系表单提交处理
             document.getElementById('contact-form').addEventListener('submit', function(e) {
                 e.preventDefault();
                 alert('感谢您的留言！我会尽快回复您。');

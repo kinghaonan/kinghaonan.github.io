@@ -610,13 +610,6 @@
             },
             svg: {
                 fontCache: 'global'
-            },
-            startup: {
-                pageReady: function() {
-                    return MathJax.startup.defaultPageReady().then(function() {
-                        console.log('MathJax is ready');
-                    });
-                }
             }
         };
     </script>
@@ -1191,23 +1184,15 @@
                     
                     // 重新渲染数学公式 - 修复 MathJax 问题
                     if (window.MathJax) {
-                        // 等待 MathJax 完全加载
-                        if (window.MathJax.startup) {
-                            window.MathJax.startup.promise.then(() => {
-                                if (window.MathJax.typesetPromise) {
-                                    window.MathJax.typesetPromise();
-                                } else if (window.MathJax.typeset) {
-                                    window.MathJax.typeset();
-                                }
-                            });
-                        } else {
-                            // 备用方案：直接调用 MathJax 渲染
-                            setTimeout(() => {
-                                if (window.MathJax && window.MathJax.typeset) {
-                                    window.MathJax.typeset();
-                                }
-                            }, 500);
-                        }
+                        // 使用更简单的方法重绘数学公式
+                        setTimeout(() => {
+                            if (window.MathJax.typeset) {
+                                window.MathJax.typeset();
+                            } else if (window.MathJax.Hub && window.MathJax.Hub.Queue) {
+                                // 对于旧版本 MathJax
+                                window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub]);
+                            }
+                        }, 100);
                     }
                 })
                 .catch(error => {

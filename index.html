@@ -478,11 +478,6 @@
                 flex-direction: column;
             }
 
-            .footer-content {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
             footer {
                 padding: 8px 10px;
             }
@@ -726,7 +721,7 @@
                                 <span data-key="blog1ReadTime">5分钟阅读</span>
                             </div>
                             <p data-key="blog1Desc">欢迎来到我的博客！这是我使用GitHub Pages搭建的个人网站。</p>
-                            <button class="btn read-more-btn" data-post="blog1.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="2025-10-17-first-post.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                     <div class="blog-card">
@@ -737,7 +732,7 @@
                                 <span data-key="blog2ReadTime">8分钟阅读</span>
                             </div>
                             <p data-key="blog2Desc">作为一名航空航天工程专业的学生，我发现自己对前端开发有着浓厚的兴趣。</p>
-                            <button class="btn read-more-btn" data-post="blog2.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="2025-10-17-first-post.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                     <div class="blog-card">
@@ -748,7 +743,7 @@
                                 <span data-key="blog3ReadTime">6分钟阅读</span>
                             </div>
                             <p data-key="blog3Desc">很多人认为航空航天和编程是两个完全不同的领域，但实际上它们有很多交叉点。</p>
-                            <button class="btn read-more-btn" data-post="blog3.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="2025-10-17-first-post.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                 </div>
@@ -818,7 +813,6 @@
                 <div class="footer-section">
                     <h3 data-key="followMe">关注我</h3>
                     <div class="footer-social-links">
-                        <a href="https://github.com/kinghaonan" title="GitHub"><i class="fab fa-github"></i></a>
                         <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
@@ -901,7 +895,7 @@
                 twitter: "Twitter",
                 linkedin: "LinkedIn",
                 instagram: "Instagram",
-                copyright: "© 2023 金浩楠. 保留所有权利."
+                copyright: "© 2023 金浩楠. 保留所有权利。"
             },
             en: {
                 home: "Home",
@@ -989,7 +983,6 @@
                         element.placeholder = translations[lang][key];
                     } else {
                         element.textContent = translations[lang][key];
-                    }
                 }
             });
 
@@ -1148,35 +1141,29 @@
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
                 });
-
                 document.querySelector('.nav-item[data-target="contact"]').classList.add('active');
                 document.getElementById('contact').classList.add('active');
             });
-            
-            // 博客阅读更多按钮点击事件
+
+            // 博客阅读更多按钮点击事件 - 从本地_posts目录加载Markdown文件
             document.querySelectorAll('.read-more-btn').forEach(btn => {
                 btn.addEventListener('click', function() {
                     const postFile = this.getAttribute('data-post');
                     loadMarkdownFile(postFile);
-                });
             });
-            
+
             // 返回博客列表按钮
             document.getElementById('back-to-blog').addEventListener('click', function() {
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
                 });
                 document.getElementById('blog').classList.add('active');
-                
-                document.querySelectorAll('.nav-item').forEach(item => {
-                    item.classList.remove('active');
-                });
                 document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
                 
                 // 恢复页面标题
                 document.title = "个人网站 | 金浩楠";
             });
-            
+
             // 联系表单提交处理
             document.getElementById('contact-form').addEventListener('submit', function(e) {
                 e.preventDefault();

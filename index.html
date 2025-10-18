@@ -529,6 +529,7 @@
         .markdown-viewer pre code {
             background: none;
             padding: 0;
+            font-size: inherit;
         }
         
         .markdown-viewer blockquote {
@@ -610,8 +611,12 @@
             svg: {
                 fontCache: 'global'
             },
-            options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            startup: {
+                pageReady: function() {
+                    return MathJax.startup.defaultPageReady().then(function() {
+                        console.log('MathJax is ready');
+                    });
+                }
             }
         };
     </script>
@@ -1085,9 +1090,9 @@
             // 替换斜体
             markdown = markdown.replace(/\*(.*)\*/gim, '<em>$1</em>');
             
-            // 替换代码块 - 保护数学公式
+            // 替换代码块
             markdown = markdown.replace(/```([\s\S]*?)```/g, function(match, code) {
-                // 检查是否包含数学公式
+                // 保留数学公式不被代码块处理
                 if (code.includes('$$') || code.includes('$')) {
                     return '<pre><code>' + code + '</code></pre>';
                 }
@@ -1186,13 +1191,17 @@
                     
                     // 重新渲染数学公式 - 修复 MathJax 问题
                     if (window.MathJax) {
-                        // 检查 MathJax 是否已完全加载
-                        if (window.MathJax.typesetPromise) {
-                            window.MathJax.typesetPromise();
-                        } else if (window.MathJax.typeset) {
-                            window.MathJax.typeset();
+                        // 等待 MathJax 完全加载
+                        if (window.MathJax.startup) {
+                            window.MathJax.startup.promise.then(() => {
+                                if (window.MathJax.typesetPromise) {
+                                    window.MathJax.typesetPromise();
+                                } else if (window.MathJax.typeset) {
+                                    window.MathJax.typeset();
+                                }
+                            });
                         } else {
-                            // 如果 MathJax 尚未完全加载，等待一段时间后重试
+                            // 备用方案：直接调用 MathJax 渲染
                             setTimeout(() => {
                                 if (window.MathJax && window.MathJax.typeset) {
                                     window.MathJax.typeset();

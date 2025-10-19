@@ -607,6 +607,16 @@
             margin: 1em 0 !important;
             text-align: center;
         }
+        
+        /* 公式错误提示 */
+        .math-error {
+            color: #e74c3c;
+            background-color: #fdf2f2;
+            border: 1px solid #f5c6cb;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -1015,6 +1025,12 @@
             localStorage.setItem('preferred-language', lang);
         }
 
+        // 修复公式语法错误
+        function fixMathSyntax(text) {
+            // 修复 \bigg|{x=x_i} 为 \bigg|_{x=x_i}
+            return text.replace(/\\bigg\|(\{.*?\})/g, '\\bigg|_$1');
+        }
+
         // 加载并显示Markdown文件
         async function loadMarkdownFile(filename, type) {
             currentMarkdownType = type; // Store the type of markdown being viewed
@@ -1037,7 +1053,10 @@
                 if (!response.ok) {
                     throw new Error(`文件未找到: ${filePath}`);
                 }
-                const text = await response.text();
+                let text = await response.text();
+                
+                // 修复公式语法错误
+                text = fixMathSyntax(text);
 
                 const markdownContentDiv = document.getElementById("markdown-content");
                 // 使用 marked.js 渲染 Markdown
@@ -1048,7 +1067,14 @@
                     MathJax.typesetClear([markdownContentDiv]);
                     MathJax.typesetPromise([markdownContentDiv]).then(() => {
                         console.log('MathJax re-rendered');
-                    }).catch((err) => console.error('MathJax typesetting failed:', err));
+                    }).catch((err) => {
+                        console.error('MathJax typesetting failed:', err);
+                        // 显示公式错误信息
+                        const errorDiv = document.createElement('div');
+                        errorDiv.className = 'math-error';
+                        errorDiv.innerHTML = '<strong>公式渲染错误:</strong> 部分数学公式可能无法正确显示。请检查公式语法。';
+                        markdownContentDiv.prepend(errorDiv);
+                    });
                 }
 
                 // 更新页面标题

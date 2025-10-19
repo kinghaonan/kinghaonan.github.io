@@ -99,6 +99,7 @@
             align-items: center;
             padding: 15px 20px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
 
         .sidebar-controls {
@@ -123,6 +124,7 @@
             text-align: center;
             padding: 20px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
 
         .profile-image {
@@ -197,6 +199,7 @@
         .language-switcher {
             padding: 15px 25px;
             border-top: 1px solid rgba(0,0,0,0.1);
+            flex-shrink: 0;
         }
 
         .language-btns {
@@ -243,6 +246,31 @@
         }
 
         .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        /* 侧边栏显示/隐藏按钮 */
+        .sidebar-show {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 98;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: transform 0.3s;
+        }
+
+        .sidebar-show:hover {
             transform: scale(1.1);
         }
 
@@ -898,6 +926,11 @@
         <i class="fas fa-bars"></i>
     </button>
 
+    <!-- 侧边栏显示按钮 -->
+    <button class="sidebar-show" id="sidebar-show">
+        <i class="fas fa-bars"></i>
+    </button>
+
     <!-- 主题切换按钮 -->
     <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
@@ -906,7 +939,7 @@
     <!-- 左侧目录 -->
     <div class="sidebar">
         <div class="sidebar-header">
-            <h3>导航菜单</h3>
+            <h3 data-key="navigation">导航菜单</h3>
             <div class="sidebar-controls">
                 <button class="sidebar-control" id="sidebar-toggle" title="隐藏侧边栏">
                     <i class="fas fa-chevron-left"></i>
@@ -972,12 +1005,12 @@
             <!-- 首页 -->
             <section id="home" class="content-section active">
                 <div class="hero">
-                    <h1>您好，我是金浩楠</h1>
-                    <p>一名充满热情的学生，专注于创造优雅、高效的解决方案。</p>
+                    <h1 data-key="heroTitle">您好，我是金浩楠</h1>
+                    <p data-key="heroDesc">一名充满热情的学生，专注于创造优雅、高效的解决方案。</p>
                     <a href="#contact" class="btn" data-key="contactMe">联系我</a>
                     <div style="margin-top: 20px;">
                         <a href="mailto:kinghaonan@126.com" class="direct-contact-btn">
-                            <i class="fas fa-envelope"></i> 通过126邮箱联系
+                            <i class="fas fa-envelope"></i> <span data-key="contactVia126">通过126邮箱联系</span>
                         </a>
                     </div>
                 </div>
@@ -992,66 +1025,66 @@
                 
                 <div class="about-content">
                     <div class="about-text">
-                        <h3>个人介绍</h3>
-                        <p>我是一名航空航天工程专业的本科生，对技术和创新充满热情。我致力于将理论知识应用于实际项目中，解决复杂问题。</p>
-                        <p>除了专业学习，我还对编程、设计和产品开发有浓厚兴趣。我相信跨学科的知识融合能够带来创新的解决方案。</p>
-                        <p>在业余时间，我喜欢阅读科技类书籍、参与开源项目，以及探索新的技术趋势。</p>
+                        <h3 data-key="personalIntro">个人介绍</h3>
+                        <p data-key="aboutText1">我是一名航空航天工程专业的本科生，对技术和创新充满热情。我致力于将理论知识应用于实际项目中，解决复杂问题。</p>
+                        <p data-key="aboutText2">除了专业学习，我还对编程、设计和产品开发有浓厚兴趣。我相信跨学科的知识融合能够带来创新的解决方案。</p>
+                        <p data-key="aboutText3">在业余时间，我喜欢阅读科技类书籍、参与开源项目，以及探索新的技术趋势。</p>
                         
-                        <h3 style="margin-top: 30px;">专业技能</h3>
+                        <h3 style="margin-top: 30px;" data-key="professionalSkills">专业技能</h3>
                         <ul style="padding-left: 20px; margin-bottom: 20px;">
-                            <li>航空航天工程基础理论与设计</li>
-                            <li>计算机辅助设计 (CAD)</li>
-                            <li>编程语言：Python, C++, JavaScript</li>
-                            <li>数据分析与可视化</li>
-                            <li>项目管理与团队协作</li>
+                            <li data-key="skill1">航空航天工程基础理论与设计</li>
+                            <li data-key="skill2">计算机辅助设计 (CAD)</li>
+                            <li data-key="skill3">编程语言：Python, C++, JavaScript</li>
+                            <li data-key="skill4">数据分析与可视化</li>
+                            <li data-key="skill5">项目管理与团队协作</li>
                         </ul>
                     </div>
                     
                     <div>
-                        <h3>学习经历</h3>
+                        <h3 data-key="education">学习经历</h3>
                         <div class="timeline">
                             <div class="timeline-item">
-                                <div class="timeline-date">2020 - 至今</div>
+                                <div class="timeline-date" data-key="educationDate1">2020 - 至今</div>
                                 <div class="timeline-content">
-                                    <h3>航空航天工程 学士</h3>
-                                    <p>某某大学</p>
-                                    <p>主修航空航天工程，专注于飞行器设计与空气动力学。</p>
+                                    <h3 data-key="educationTitle1">航空航天工程 学士</h3>
+                                    <p data-key="educationSchool1">某某大学</p>
+                                    <p data-key="educationDesc1">主修航空航天工程，专注于飞行器设计与空气动力学。</p>
                                 </div>
                             </div>
                             <div class="timeline-item">
-                                <div class="timeline-date">2019 - 2020</div>
+                                <div class="timeline-date" data-key="educationDate2">2019 - 2020</div>
                                 <div class="timeline-content">
-                                    <h3>预科课程</h3>
-                                    <p>某某高级中学</p>
-                                    <p>专注于数学、物理和工程基础课程。</p>
+                                    <h3 data-key="educationTitle2">预科课程</h3>
+                                    <p data-key="educationSchool2">某某高级中学</p>
+                                    <p data-key="educationDesc2">专注于数学、物理和工程基础课程。</p>
                                 </div>
                             </div>
                             <div class="timeline-item">
-                                <div class="timeline-date">2018 - 2019</div>
+                                <div class="timeline-date" data-key="educationDate3">2018 - 2019</div>
                                 <div class="timeline-content">
-                                    <h3>STEM夏令营</h3>
-                                    <p>某某科技大学</p>
-                                    <p>参与航空航天主题夏令营，学习基础飞行原理和模型制作。</p>
+                                    <h3 data-key="educationTitle3">STEM夏令营</h3>
+                                    <p data-key="educationSchool3">某某科技大学</p>
+                                    <p data-key="educationDesc3">参与航空航天主题夏令营，学习基础飞行原理和模型制作。</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <h3 style="margin-top: 30px;">获奖经历</h3>
+                        <h3 style="margin-top: 30px;" data-key="awards">获奖经历</h3>
                         <div class="awards-grid">
                             <div class="award-card">
-                                <h3>全国大学生航空航天竞赛</h3>
-                                <div class="award-date">2022年</div>
-                                <p>一等奖 - 飞行器设计创新奖</p>
+                                <h3 data-key="awardTitle1">全国大学生航空航天竞赛</h3>
+                                <div class="award-date" data-key="awardDate1">2022年</div>
+                                <p data-key="awardDesc1">一等奖 - 飞行器设计创新奖</p>
                             </div>
                             <div class="award-card">
-                                <h3>校级科技创新大赛</h3>
-                                <div class="award-date">2021年</div>
-                                <p>二等奖 - 无人机控制系统优化项目</p>
+                                <h3 data-key="awardTitle2">校级科技创新大赛</h3>
+                                <div class="award-date" data-key="awardDate2">2021年</div>
+                                <p data-key="awardDesc2">二等奖 - 无人机控制系统优化项目</p>
                             </div>
                             <div class="award-card">
-                                <h3>优秀学生奖学金</h3>
-                                <div class="award-date">2020-2023年</div>
-                                <p>连续三年获得校级优秀学生奖学金</p>
+                                <h3 data-key="awardTitle3">优秀学生奖学金</h3>
+                                <div class="award-date" data-key="awardDate3">2020-2023年</div>
+                                <p data-key="awardDesc3">连续三年获得校级优秀学生奖学金</p>
                             </div>
                         </div>
                     </div>
@@ -1067,11 +1100,11 @@
                 <div class="skills-grid">
                     <div class="skill-card">
                         <h3 data-key="frontendDev">前端开发</h3>
-                        <p>HTML5, CSS3, JavaScript, React</p>
+                        <p data-key="frontendSkills">HTML5, CSS3, JavaScript, React</p>
                     </div>
                     <div class="skill-card">
                         <h3 data-key="backendDev">后端开发</h3>
-                        <p>Node.js, Python, MySQL</p>
+                        <p data-key="backendSkills">Node.js, Python, MySQL</p>
                     </div>
                     <div class="skill-card">
                         <h3 data-key="uiUxDesign">UI/UX设计</h3>
@@ -1187,15 +1220,15 @@
                         <h3 data-key="getInTouch">保持联系</h3>
                         <p data-key="contactInfoDesc">如果您有任何问题或合作意向，请随时通过以下方式联系我：</p>
                         <ul>
-                            <li><i class="fas fa-envelope"></i> <span>邮箱: kinghaonan@126.com</span></li>
+                            <li><i class="fas fa-envelope"></i> <span data-key="email">邮箱: kinghaonan@126.com</span></li>
                             <li><i class="fas fa-phone"></i> <span data-key="phone">电话: +123 456 7890</span></li>
                             <li><i class="fas fa-map-marker-alt"></i> <span data-key="location">地址: 某某市 某某区</span></li>
                         </ul>
                         
-                        <h4 style="margin-top: 20px; margin-bottom: 10px;">快速联系</h4>
+                        <h4 style="margin-top: 20px; margin-bottom: 10px;" data-key="quickContact">快速联系</h4>
                         <div class="direct-contact-buttons">
                             <a href="mailto:kinghaonan@126.com" class="direct-contact-btn">
-                                <i class="fas fa-envelope"></i> 126邮箱
+                                <i class="fas fa-envelope"></i> <span data-key="email126">126邮箱</span>
                             </a>
                             <a href="https://github.com/kinghaonan" class="direct-contact-btn" target="_blank">
                                 <i class="fab fa-github"></i> GitHub
@@ -1232,7 +1265,7 @@
                             </div>
                             <button type="submit" class="btn" data-key="sendMessage">发送消息</button>
                             <a href="mailto:kinghaonan@126.com?subject=网站联系&body=您好金浩楠，我从您的个人网站了解到您..." class="direct-contact-btn" style="margin-left: 10px;">
-                                <i class="fas fa-external-link-alt"></i> 直接发邮件
+                                <i class="fas fa-external-link-alt"></i> <span data-key="directEmail">直接发邮件</span>
                             </a>
                         </form>
                     </div>
@@ -1274,13 +1307,13 @@
                     </div>
                     <div style="margin-top: 8px;">
                         <a href="mailto:kinghaonan@126.com" class="direct-contact-btn" style="font-size: 0.6rem; padding: 4px 8px;">
-                            <i class="fas fa-envelope"></i> 126邮箱联系
+                            <i class="fas fa-envelope"></i> <span data-key="contactVia126">126邮箱联系</span>
                         </a>
                     </div>
                 </div>
             </div>
             <div class="copyright">
-                &copy; 2023 金浩楠. 保留所有权利。
+                &copy; 2023 <span data-key="profileName">金浩楠</span>. <span data-key="allRightsReserved">保留所有权利。</span>
             </div>
         </footer>
     </div>
@@ -1288,15 +1321,55 @@
     <script>
         const translations = {
             zh: {
+                navigation: "导航菜单",
                 profileName: "金浩楠",
                 profileTitle: "航空航天工程专业 本科生",
                 profileDesc: "专注于创造优雅、高效的解决方案。",
+                heroTitle: "您好，我是金浩楠",
+                heroDesc: "一名充满热情的学生，专注于创造优雅、高效的解决方案。",
                 contactMe: "联系我",
+                contactVia126: "通过126邮箱联系",
                 home: "首页",
-                aboutMe: "关于我",
+                about: "关于我",
+                aboutMeTitle: "关于我",
+                personalIntro: "个人介绍",
+                aboutText1: "我是一名航空航天工程专业的本科生，对技术和创新充满热情。我致力于将理论知识应用于实际项目中，解决复杂问题。",
+                aboutText2: "除了专业学习，我还对编程、设计和产品开发有浓厚兴趣。我相信跨学科的知识融合能够带来创新的解决方案。",
+                aboutText3: "在业余时间，我喜欢阅读科技类书籍、参与开源项目，以及探索新的技术趋势。",
+                professionalSkills: "专业技能",
+                skill1: "航空航天工程基础理论与设计",
+                skill2: "计算机辅助设计 (CAD)",
+                skill3: "编程语言：Python, C++, JavaScript",
+                skill4: "数据分析与可视化",
+                skill5: "项目管理与团队协作",
+                education: "学习经历",
+                educationDate1: "2020 - 至今",
+                educationTitle1: "航空航天工程 学士",
+                educationSchool1: "某某大学",
+                educationDesc1: "主修航空航天工程，专注于飞行器设计与空气动力学。",
+                educationDate2: "2019 - 2020",
+                educationTitle2: "预科课程",
+                educationSchool2: "某某高级中学",
+                educationDesc2: "专注于数学、物理和工程基础课程。",
+                educationDate3: "2018 - 2019",
+                educationTitle3: "STEM夏令营",
+                educationSchool3: "某某科技大学",
+                educationDesc3: "参与航空航天主题夏令营，学习基础飞行原理和模型制作。",
+                awards: "获奖经历",
+                awardTitle1: "全国大学生航空航天竞赛",
+                awardDate1: "2022年",
+                awardDesc1: "一等奖 - 飞行器设计创新奖",
+                awardTitle2: "校级科技创新大赛",
+                awardDate2: "2021年",
+                awardDesc2: "二等奖 - 无人机控制系统优化项目",
+                awardTitle3: "优秀学生奖学金",
+                awardDate3: "2020-2023年",
+                awardDesc3: "连续三年获得校级优秀学生奖学金",
                 mySkillsTitle: "我的技能",
                 frontendDev: "前端开发",
+                frontendSkills: "HTML5, CSS3, JavaScript, React",
                 backendDev: "后端开发",
+                backendSkills: "Node.js, Python, MySQL",
                 uiUxDesign: "UI/UX设计",
                 uiUxDesc: "用户研究, 线框图, 原型设计, 视觉设计",
                 otherSkills: "其他技能",
@@ -1330,6 +1403,8 @@
                 email: "邮箱: kinghaonan@126.com",
                 phone: "电话: +123 456 7890",
                 location: "地址: 某某市 某某区",
+                quickContact: "快速联系",
+                email126: "126邮箱",
                 nameLabel: "姓名",
                 namePlaceholder: "您的姓名",
                 emailLabel: "邮箱",
@@ -1339,22 +1414,64 @@
                 messageLabel: "消息",
                 messagePlaceholder: "您的消息",
                 sendMessage: "发送消息",
+                directEmail: "直接发邮件",
                 backToList: "返回列表",
                 aboutSite: "关于本站",
                 footerDesc: "一名充满热情的开发者/工程师/创作者。",
                 quickLinks: "快速链接",
-                followMe: "关注我"
+                followMe: "关注我",
+                allRightsReserved: "保留所有权利。"
             },
             en: {
+                navigation: "Navigation Menu",
                 profileName: "King Haonan",
                 profileTitle: "Aerospace Engineering Student",
                 profileDesc: "A passionate student focused on creating elegant, efficient solutions.",
+                heroTitle: "Hello, I'm King Haonan",
+                heroDesc: "A passionate student focused on creating elegant, efficient solutions.",
                 contactMe: "Contact Me",
+                contactVia126: "Contact via 126 Email",
                 home: "Home",
-                aboutMe: "About Me",
+                about: "About Me",
+                aboutMeTitle: "About Me",
+                personalIntro: "Personal Introduction",
+                aboutText1: "I am an undergraduate student in aerospace engineering with a passion for technology and innovation. I am committed to applying theoretical knowledge to practical projects to solve complex problems.",
+                aboutText2: "In addition to my major studies, I have a strong interest in programming, design, and product development. I believe that interdisciplinary knowledge integration can bring innovative solutions.",
+                aboutText3: "In my spare time, I enjoy reading technology books, participating in open source projects, and exploring new technology trends.",
+                professionalSkills: "Professional Skills",
+                skill1: "Aerospace engineering fundamentals and design",
+                skill2: "Computer-Aided Design (CAD)",
+                skill3: "Programming languages: Python, C++, JavaScript",
+                skill4: "Data analysis and visualization",
+                skill5: "Project management and team collaboration",
+                education: "Education",
+                educationDate1: "2020 - Present",
+                educationTitle1: "Bachelor of Aerospace Engineering",
+                educationSchool1: "Some University",
+                educationDesc1: "Major in Aerospace Engineering, focusing on aircraft design and aerodynamics.",
+                educationDate2: "2019 - 2020",
+                educationTitle2: "Preparatory Courses",
+                educationSchool2: "Some High School",
+                educationDesc2: "Focused on mathematics, physics, and engineering fundamentals.",
+                educationDate3: "2018 - 2019",
+                educationTitle3: "STEM Summer Camp",
+                educationSchool3: "Some University of Technology",
+                educationDesc3: "Participated in aerospace-themed summer camp, learning basic flight principles and model making.",
+                awards: "Awards",
+                awardTitle1: "National College Aerospace Competition",
+                awardDate1: "2022",
+                awardDesc1: "First Prize - Aircraft Design Innovation Award",
+                awardTitle2: "University Innovation Competition",
+                awardDate2: "2021",
+                awardDesc2: "Second Prize - UAV Control System Optimization Project",
+                awardTitle3: "Outstanding Student Scholarship",
+                awardDate3: "2020-2023",
+                awardDesc3: "Received university outstanding student scholarship for three consecutive years",
                 mySkillsTitle: "My Skills",
                 frontendDev: "Frontend Development",
+                frontendSkills: "HTML5, CSS3, JavaScript, React",
                 backendDev: "Backend Development",
+                backendSkills: "Node.js, Python, MySQL",
                 uiUxDesign: "UI/UX Design",
                 uiUxDesc: "User Research, Wireframing, Prototyping, Visual Design",
                 otherSkills: "Other Skills",
@@ -1388,6 +1505,8 @@
                 email: "Email: kinghaonan@126.com",
                 phone: "Phone: +123 456 7890",
                 location: "Address: City, District",
+                quickContact: "Quick Contact",
+                email126: "126 Email",
                 nameLabel: "Name",
                 namePlaceholder: "Your Name",
                 emailLabel: "Email",
@@ -1397,11 +1516,13 @@
                 messageLabel: "Message",
                 messagePlaceholder: "Your Message",
                 sendMessage: "Send Message",
+                directEmail: "Direct Email",
                 backToList: "Back to List",
                 aboutSite: "About This Site",
                 footerDesc: "A passionate developer/engineer/creator.",
                 quickLinks: "Quick Links",
-                followMe: "Follow Me"
+                followMe: "Follow Me",
+                allRightsReserved: "All rights reserved."
             }
         };
 
@@ -1462,19 +1583,33 @@
         function toggleSidebar() {
             const sidebar = document.querySelector('.sidebar');
             const mainContent = document.querySelector('.main-content');
-            const toggleBtn = document.getElementById('sidebar-toggle');
+            const sidebarShow = document.getElementById('sidebar-show');
             
             if (isSidebarHidden) {
                 sidebar.style.transform = 'translateX(0)';
                 mainContent.classList.remove('sidebar-hidden');
-                toggleBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                sidebarShow.style.display = 'none';
                 isSidebarHidden = false;
             } else {
                 sidebar.style.transform = 'translateX(-100%)';
                 mainContent.classList.add('sidebar-hidden');
-                toggleBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                sidebarShow.style.display = 'flex';
                 isSidebarHidden = true;
             }
+            
+            localStorage.setItem('sidebar-hidden', isSidebarHidden);
+        }
+
+        // 显示侧边栏
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            const sidebarShow = document.getElementById('sidebar-show');
+            
+            sidebar.style.transform = 'translateX(0)';
+            mainContent.classList.remove('sidebar-hidden');
+            sidebarShow.style.display = 'none';
+            isSidebarHidden = false;
             
             localStorage.setItem('sidebar-hidden', isSidebarHidden);
         }
@@ -1571,7 +1706,7 @@
             if (isSidebarHidden) {
                 document.querySelector('.sidebar').style.transform = 'translateX(-100%)';
                 document.querySelector('.main-content').classList.add('sidebar-hidden');
-                document.getElementById('sidebar-toggle').innerHTML = '<i class="fas fa-chevron-right"></i>';
+                document.getElementById('sidebar-show').style.display = 'flex';
             }
 
             applyTranslations(currentLanguage);
@@ -1617,6 +1752,9 @@
 
             // 侧边栏切换按钮
             document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
+
+            // 侧边栏显示按钮
+            document.getElementById('sidebar-show').addEventListener('click', showSidebar);
 
             // 侧边栏关闭按钮
             document.getElementById('sidebar-close').addEventListener('click', () => {

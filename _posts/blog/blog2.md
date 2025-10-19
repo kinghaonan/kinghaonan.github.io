@@ -136,11 +136,11 @@ end
 
 $$H(x, u, \lambda, t) = \lambda^T f(x, u, t) + L(x, u, t)$$
 
-最优控制$u^*(t)$满足：
+最优控制 $u^*(t)$ 满足：
 
-$$u^*(t) = \arg\min_u H(x^*(t), u, \lambda^*(t), t)$$
+$$u^*(t) = \arg \min_u H(x^*(t), u, \lambda^*(t), t)$$
 
-状态和协态方程构成Hamilton系统：
+其中 $x^*(t)$ 是最优状态，$\lambda^*(t)$ 是协状态。
 
 $$\begin{aligned} \dot{x} &= \frac{\partial H}{\partial \lambda} \\ \dot{\lambda} &= -\frac{\partial H}{\partial x} \end{aligned}$$
 
@@ -501,3 +501,4 @@ end
   - 微分扰动：ε = 1e-6
   - 正则化参数：δ = 1e-6
   - 缓存大小：5000项
+

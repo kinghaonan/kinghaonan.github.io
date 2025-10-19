@@ -138,7 +138,7 @@ $$H(x, u, \lambda, t) = \lambda^T f(x, u, t) + L(x, u, t)$$
 
 最优控制 $u^*(t)$ 满足：
 
-$$u^*(t) = \arg \min_u H(x^*(t), u, \lambda^*(t), t)$$
+$$u^{\ast}(t) = \text{arg}\min_{u} H(x^{\ast}(t), u, \lambda^{\ast}(t), t)$$
 
 其中 $x^*(t)$ 是最优状态，$\lambda^*(t)$ 是协状态。
 
@@ -501,4 +501,5 @@ end
   - 微分扰动：ε = 1e-6
   - 正则化参数：δ = 1e-6
   - 缓存大小：5000项
+
 

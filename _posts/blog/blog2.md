@@ -15,6 +15,7 @@
 伪谱法和打靶法作为两种经典的最优控制数值方法，在航天轨迹规划中具有重要应用价值。伪谱法通过全局近似策略获得高精度解，打靶法则通过边值问题求解实现精确控制。理解这两种方法的原理特点和适用场景，对于提高深空探测任务的可靠性和效率具有重要意义。
 
 ### 1.2 研究内容与贡献
+
 ![图片描述](/images/imagesblog1.png)
 
 本文的主要研究内容包括：
@@ -38,9 +39,7 @@
 
 伪谱法使用正交多项式（如切比雪夫多项式、勒让德多项式）作为基函数，这些多项式在特定区间上具有权重正交性：
 
-$$
-\int_{-1}^{1} P_m(x)P_n(x)w(x)dx = \delta_{mn}
-$$
+$$\int_{-1}^{1} P_m(x)P_n(x)w(x)dx = \delta_{mn}$$
 
 其中$w(x)$是权重函数，$\delta_{mn}$是Kronecker delta函数。这种正交性保证了近似解的最佳平方逼近特性。
 
@@ -60,18 +59,11 @@ $$
 
 微分矩阵是伪谱法的核心，它将函数导数表示为节点函数值的线性组合：
 
-$$
-\frac{df}{dx}\bigg|_{x=x_i} \approx \sum_{j=0}^{N} D_{ij}f(x_j)
-$$
+$$\frac{df}{dx}\bigg|_{x=x_i} \approx \sum_{j=0}^{N} D_{ij}f(x_j)$$
 
 其中微分矩阵$D$的元素计算基于重心权重公式：
 
-$$
-D_{ij} = \begin{cases}
-\frac{w_j/w_i}{x_i-x_j} & i \neq j \\
--\sum_{k\neq i} D_{ik} & i = j
-\end{cases}
-$$
+$$D_{ij} = \begin{cases} \frac{w_j/w_i}{x_i-x_j} & i \neq j \\ -\sum_{k\neq i} D_{ik} & i = j \end{cases}$$
 
 这种计算方式保证了数值稳定性和高精度。
 
@@ -98,9 +90,7 @@ $$
 
 对于光滑函数，伪谱法具有指数收敛性：
 
-$$
-\|f - f_N\| \leq C e^{-\alpha N}
-$$
+$$\|f - f_N\| \leq C e^{-\alpha N}$$
 
 其中$f_N$是N阶近似，$C$和$\alpha$是常数。这种超代数收敛性使得伪谱法在相对较少的节点下就能获得高精度解。
 
@@ -144,35 +134,21 @@ end
 
 对于最优控制问题，定义Hamilton函数：
 
-$$
-H(x, u, \lambda, t) = \lambda^T f(x, u, t) + L(x, u, t)
-$$
+$$H(x, u, \lambda, t) = \lambda^T f(x, u, t) + L(x, u, t)$$
 
 最优控制$u^*(t)$满足：
 
-$$
-u^*(t) = \arg\min_u H(x^*(t), u, \lambda^*(t), t)
-$$
+$$u^*(t) = \arg\min_u H(x^*(t), u, \lambda^*(t), t)$$
 
 状态和协态方程构成Hamilton系统：
 
-$$
-\begin{aligned}
-\dot{x} &= \frac{\partial H}{\partial \lambda} \\
-\dot{\lambda} &= -\frac{\partial H}{\partial x}
-\end{aligned}
-$$
+$$\begin{aligned} \dot{x} &= \frac{\partial H}{\partial \lambda} \\ \dot{\lambda} &= -\frac{\partial H}{\partial x} \end{aligned}$$
 
 #### 3.1.2 边值问题 formulation
 
 打靶法通过求解初值问题来满足终端条件：
 
-$$
-\Phi(\lambda_0) = \begin{bmatrix}
-x(t_f; \lambda_0) - x_f \\
-\psi(\lambda(t_f))
-\end{bmatrix} = 0
-$$
+$$\Phi(\lambda_0) = \begin{bmatrix} x(t_f; \lambda_0) - x_f \\ \psi(\lambda(t_f)) \end{bmatrix} = 0$$
 
 其中$\psi$是横截条件。
 
@@ -182,9 +158,7 @@ $$
 
 同伦法通过引入同伦参数$\zeta \in [0,1]$，构造一族连续变化的问题：
 
-$$
-H(\zeta) = (1-\zeta)J_{energy} + \zeta J_{fuel}
-$$
+$$H(\zeta) = (1-\zeta)J_{energy} + \zeta J_{fuel}$$
 
 当$\zeta=0$时对应能量最优问题，$\zeta=1$时对应燃料最优问题。
 
@@ -222,9 +196,7 @@ end
 
 打靶法的核心是牛顿迭代求解非线性方程$\Phi(\lambda_0)=0$：
 
-$$
-\lambda_0^{(k+1)} = \lambda_0^{(k)} - [J(\lambda_0^{(k)})]^{-1} \Phi(\lambda_0^{(k)})
-$$
+$$\lambda_0^{(k+1)} = \lambda_0^{(k)} - [J(\lambda_0^{(k)})]^{-1} \Phi(\lambda_0^{(k)})$$
 
 其中雅可比矩阵$J$通过数值微分计算。
 
@@ -232,9 +204,7 @@ $$
 
 采用前向差分法计算雅可比矩阵：
 
-$$
-J_{ij} = \frac{\Phi_i(\lambda_0 + \epsilon e_j) - \Phi_i(\lambda_0)}{\epsilon}
-$$
+$$J_{ij} = \frac{\Phi_i(\lambda_0 + \epsilon e_j) - \Phi_i(\lambda_0)}{\epsilon}$$
 
 其中$e_j$是第j个单位向量，$\epsilon$是适当选择的小正数。
 
@@ -242,9 +212,7 @@ $$
 
 为防止雅可比矩阵奇异，采用Tikhonov正则化：
 
-$$
-J_{reg} = J^T J + \delta I
-$$
+$$J_{reg} = J^T J + \delta I$$
 
 其中$\delta$是正则化参数，$I$是单位矩阵。
 
@@ -301,11 +269,9 @@ end
 
 能量最优问题表述为：
 
-$$
-\min J = \int_0^{t_f} \|u(t)\|^2 dt
-$$
+$$\min J = \int_0^{t_f} \|u(t)\|^2 dt$$
 
- subject to动力学约束和边界条件。
+subject to动力学约束和边界条件。
 
 #### 4.2.2 离散化策略
 
@@ -329,9 +295,7 @@ $$
 
 引入同伦参数构造混合性能指标：
 
-$$
-J(\zeta) = (1-\zeta)\int \|u\|^2 dt + \zeta\int \|u\| dt
-$$
+$$J(\zeta) = (1-\zeta)\int \|u\|^2 dt + \zeta\int \|u\| dt$$
 
 #### 4.3.2 横截条件变化
 
@@ -537,9 +501,3 @@ end
   - 微分扰动：ε = 1e-6
   - 正则化参数：δ = 1e-6
   - 缓存大小：5000项
-
-本文通过深入的理论分析和实际的代码实现，全面阐述了伪谱法和打靶法在轨迹规划中的应用，为相关领域的研究者和工程师提供了有价值的参考。
-
-
-
-

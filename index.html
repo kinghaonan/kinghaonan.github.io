@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人网站 | 金浩楠</title>
     <!-- MathJax for LaTeX/MathML rendering -->
+    <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        packages: {'[+]': ['amsmath', 'amssymb', 'bm']}
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        renderActions: {
+          addMenu: [0, '', '']
+        }
+      },
+      startup: {
+        pageReady: function() {
+          return MathJax.startup.defaultPageReady().then(function() {
+            console.log('MathJax initialized');
+          });
+        }
+      }
+    };
+    </script>
     <script type="text/javascript" id="MathJax-script" async
         src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
     </script>
@@ -574,6 +597,16 @@
             margin-bottom: 20px;
             display: inline-block;
         }
+        
+        /* MathJax公式样式优化 */
+        .MathJax {
+            font-size: 1.1em !important;
+        }
+        
+        mjx-container[jax="CHTML"][display="true"] {
+            margin: 1em 0 !important;
+            text-align: center;
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -736,7 +769,7 @@
                                 <span data-key="blog1ReadTime">5分钟阅读</span>
                             </div>
                             <p data-key="blog1Desc">欢迎来到我的博客！这是我使用GitHub Pages搭建的个人网站。</p>
-                            <button class="btn read-more-btn" data-post="blog1.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="blog2.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                     <div class="blog-card">
@@ -758,7 +791,7 @@
                                 <span data-key="blog3ReadTime">6分钟阅读</span>
                             </div>
                             <p data-key="blog3Desc">很多人认为航空航天和编程是两个完全不同的领域，但实际上它们有很多交叉点。</p>
-                            <button class="btn read-more-btn" data-post="blog3.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="blog2.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                 </div>
@@ -1010,9 +1043,12 @@
                 // 使用 marked.js 渲染 Markdown
                 markdownContentDiv.innerHTML = marked.parse(text);
                 
-                // 触发 MathJax 重新排版
+                // 重新渲染数学公式 - 添加这部分
                 if (window.MathJax) {
-                    window.MathJax.typesetPromise([markdownContentDiv]).catch((err) => console.error('MathJax typesetting failed:', err));
+                    MathJax.typesetClear([markdownContentDiv]);
+                    MathJax.typesetPromise([markdownContentDiv]).then(() => {
+                        console.log('MathJax re-rendered');
+                    }).catch((err) => console.error('MathJax typesetting failed:', err));
                 }
 
                 // 更新页面标题

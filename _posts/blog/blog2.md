@@ -59,7 +59,7 @@ $$\int_{-1}^{1} P_m(x)P_n(x)w(x)dx = \delta_{mn}$$
 
 微分矩阵是伪谱法的核心，它将函数导数表示为节点函数值的线性组合：
 
-$$\frac{df}{dx}\bigg|_{x=x_i} \approx \sum_{j=0}^{N} D_{ij}f(x_j)$$
+$$\left.\frac{df}{dx}\right|_{x=x_i} \approx \sum_{j=0}^{N} D_{ij}f(x_j)$$
 
 其中微分矩阵$D$的元素计算基于重心权重公式：
 
@@ -501,5 +501,6 @@ end
   - 微分扰动：ε = 1e-6
   - 正则化参数：δ = 1e-6
   - 缓存大小：5000项
+
 
 

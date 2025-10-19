@@ -41,6 +41,23 @@
             --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             --border-radius: 8px;
             --sidebar-width: 280px;
+            --card-bg: #ffffff;
+            --sidebar-bg: #ffffff;
+            --footer-bg: #2c3e50;
+        }
+
+        /* 黑夜主题变量 */
+        [data-theme="dark"] {
+            --primary-color: #bb86fc;
+            --secondary-color: #03dac6;
+            --accent-color: #cf6679;
+            --text-color: #e0e0e0;
+            --light-bg: #121212;
+            --white: #1e1e1e;
+            --shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            --card-bg: #2d2d2d;
+            --sidebar-bg: #252525;
+            --footer-bg: #1a1a1a;
         }
 
         * {
@@ -57,12 +74,13 @@
             display: flex;
             min-height: 100vh;
             flex-direction: column;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         /* 左侧目录 */
         .sidebar {
             width: var(--sidebar-width);
-            background-color: var(--white);
+            background-color: var(--sidebar-bg);
             box-shadow: var(--shadow);
             height: 100vh;
             position: fixed;
@@ -70,13 +88,41 @@
             top: 0;
             overflow-y: auto;
             z-index: 100;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .sidebar-controls {
+            display: flex;
+            gap: 10px;
+        }
+
+        .sidebar-control {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .sidebar-control:hover {
+            color: var(--secondary-color);
         }
 
         .profile {
             text-align: center;
-            padding: 30px 20px;
-            border-bottom: 1px solid #eee;
+            padding: 20px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
 
         .profile-image {
@@ -95,8 +141,9 @@
         }
 
         .profile p {
-            color: #666;
+            color: var(--text-color);
             margin-bottom: 15px;
+            opacity: 0.8;
         }
 
         .social-links {
@@ -117,7 +164,9 @@
         }
 
         .nav-menu {
-            padding: 20px 0;
+            padding: 10px 0;
+            flex: 1;
+            overflow-y: auto;
         }
 
         .nav-item {
@@ -146,8 +195,8 @@
         }
 
         .language-switcher {
-            padding: 20px 25px;
-            border-top: 1px solid #eee;
+            padding: 15px 25px;
+            border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         .language-btns {
@@ -163,12 +212,38 @@
             border-radius: 4px;
             cursor: pointer;
             transition: all 0.3s;
+            color: var(--text-color);
         }
 
         .language-btn.active {
             background-color: var(--secondary-color);
             color: white;
             border-color: var(--secondary-color);
+        }
+
+        /* 主题切换按钮 */
+        .theme-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: transform 0.3s;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
         }
 
         /* 主内容区域 */
@@ -178,6 +253,11 @@
             padding: 30px;
             display: flex;
             flex-direction: column;
+            transition: margin-left 0.3s;
+        }
+
+        .main-content.sidebar-hidden {
+            margin-left: 0;
         }
 
         .content-wrapper {
@@ -186,11 +266,12 @@
 
         .content-section {
             display: none;
-            background-color: var(--white);
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
             box-shadow: var(--shadow);
             padding: 30px;
             margin-bottom: 30px;
+            transition: background-color 0.3s;
         }
 
         .content-section.active {
@@ -216,6 +297,13 @@
             color: var(--primary-color);
             padding-bottom: 10px;
             border-bottom: 2px solid var(--light-bg);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            font-size: 1.5rem;
         }
 
         /* 英雄区域 */
@@ -234,7 +322,8 @@
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 30px;
-            color: #666;
+            color: var(--text-color);
+            opacity: 0.9;
         }
 
         .btn {
@@ -252,6 +341,8 @@
 
         .btn:hover {
             background-color: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         /* 技能区域 */
@@ -265,7 +356,8 @@
             background-color: var(--light-bg);
             padding: 20px;
             border-radius: var(--border-radius);
-            transition: transform 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
+            border-left: 4px solid var(--secondary-color);
         }
 
         .skill-card:hover {
@@ -277,6 +369,99 @@
             color: var(--primary-color);
         }
 
+        /* 关于我区域 */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .about-text {
+            line-height: 1.8;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--secondary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -23px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content h3 {
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .timeline-content p {
+            margin-bottom: 5px;
+            opacity: 0.9;
+        }
+
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .award-card {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: transform 0.3s;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .award-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .award-card h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .award-date {
+            font-style: italic;
+            color: var(--text-color);
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+
         /* 项目区域 */
         .projects-grid {
             display: grid;
@@ -285,11 +470,11 @@
         }
 
         .project-card {
-            background-color: var(--white);
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: transform 0.3s;
+            transition: transform 0.3s, background-color 0.3s;
         }
 
         .project-card:hover {
@@ -334,10 +519,15 @@
         }
 
         .blog-card {
-            background-color: var(--white);
+            background-color: var(--card-bg);
             border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
         }
 
         .blog-content {
@@ -353,7 +543,8 @@
             display: flex;
             justify-content: space-between;
             font-size: 0.9rem;
-            color: #777;
+            color: var(--text-color);
+            opacity: 0.7;
             margin-bottom: 15px;
         }
 
@@ -368,6 +559,7 @@
             background-color: var(--light-bg);
             padding: 25px;
             border-radius: var(--border-radius);
+            transition: background-color 0.3s;
         }
 
         .contact-form {
@@ -382,6 +574,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: 500;
+            color: var(--text-color);
         }
 
         .form-group input,
@@ -391,6 +584,9 @@
             border: 1px solid #ddd;
             border-radius: var(--border-radius);
             font-family: inherit;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .form-group textarea {
@@ -398,20 +594,20 @@
             resize: vertical;
         }
 
-        /* 页脚 - 尺寸减小一半 */
+        /* 页脚 */
         footer {
-            background-color: var(--primary-color);
+            background-color: var(--footer-bg);
             color: white;
-            padding: 8px 15px;
+            padding: 15px;
             margin-top: auto;
             border-radius: var(--border-radius);
-            font-size: 0.7rem;
+            transition: background-color 0.3s;
         }
 
         .footer-content {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
         }
 
         .footer-section {
@@ -419,8 +615,8 @@
         }
 
         .footer-section h3 {
-            margin-bottom: 5px;
-            font-size: 0.8rem;
+            margin-bottom: 10px;
+            font-size: 1rem;
         }
 
         .footer-section ul {
@@ -428,13 +624,13 @@
         }
 
         .footer-section ul li {
-            margin-bottom: 3px;
+            margin-bottom: 5px;
         }
 
         .footer-section ul li a {
             color: white;
             text-decoration: none;
-            font-size: 0.65rem;
+            font-size: 0.8rem;
             transition: color 0.3s;
         }
 
@@ -444,12 +640,12 @@
 
         .footer-social-links {
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
 
         .footer-social-links a {
             color: white;
-            font-size: 0.8rem;
+            font-size: 1rem;
             transition: color 0.3s;
         }
 
@@ -459,9 +655,9 @@
 
         .copyright {
             text-align: center;
-            padding-top: 5px;
+            padding-top: 10px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.6rem;
+            font-size: 0.8rem;
             opacity: 0.8;
         }
 
@@ -505,11 +701,23 @@
 
             .footer-content {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
             }
             
             footer {
-                padding: 8px 10px;
+                padding: 10px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .theme-toggle {
+                bottom: 10px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
             }
         }
         
@@ -541,12 +749,12 @@
         }
         
         .markdown-viewer pre {
-            background-color: #f5f5f5;
+            background-color: var(--light-bg);
             padding: 12px 15px;
             border-radius: var(--border-radius);
             overflow-x: auto;
             margin-bottom: 1em;
-            border: 1px solid #ddd;
+            border: 1px solid rgba(0,0,0,0.1);
         }
         
         .markdown-viewer pre code {
@@ -554,16 +762,17 @@
             padding: 0;
             font-size: 0.9em;
             line-height: 1.4;
-            color: #333;
-            white-space: pre-wrap; /* 允许代码换行 */
-            word-break: break-all; /* 强制长单词断行 */
+            color: var(--text-color);
+            white-space: pre-wrap;
+            word-break: break-all;
         }
         
         .markdown-viewer blockquote {
             border-left: 4px solid var(--secondary-color);
             padding-left: 15px;
             margin-left: 0;
-            color: #666;
+            color: var(--text-color);
+            opacity: 0.8;
             font-style: italic;
         }
         
@@ -583,10 +792,10 @@
         }
 
         .markdown-viewer img {
-            max-width: 100%; /* 确保图片不会超出容器 */
-            height: auto; /* 保持图片比例 */
-            display: block; /* 避免图片下方出现额外空间 */
-            margin: 1em 0; /* 图片上下间距 */
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1em 0;
         }
         
         .back-btn {
@@ -613,6 +822,72 @@
             border-radius: 4px;
             margin: 10px 0;
         }
+        
+        /* 消息提示样式 */
+        .message {
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+        }
+        
+        .message.success {
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        /* 直接联系按钮样式 */
+        .direct-contact-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .direct-contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            padding: 8px 15px;
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .direct-contact-btn:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+        
+        .contact-info ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info ul li i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+            color: var(--secondary-color);
+        }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -623,8 +898,25 @@
         <i class="fas fa-bars"></i>
     </button>
 
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle" id="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- 左侧目录 -->
     <div class="sidebar">
+        <div class="sidebar-header">
+            <h3>导航菜单</h3>
+            <div class="sidebar-controls">
+                <button class="sidebar-control" id="sidebar-toggle" title="隐藏侧边栏">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="sidebar-control" id="sidebar-close" title="关闭侧边栏">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+
         <div class="profile">
             <img src="https://via.placeholder.com/150" alt="个人照片" class="profile-image">
             <h2 data-key="profileName">金浩楠</h2>
@@ -632,10 +924,10 @@
             <p data-key="profileDesc">专注于创造优雅、高效的解决方案。</p>
 
             <div class="social-links">
-                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/kinghaonan" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://twitter.com/kinghaonan" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://linkedin.com/in/kinghaonan" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://instagram.com/kinghaonan" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
@@ -683,20 +975,95 @@
                     <h1>您好，我是金浩楠</h1>
                     <p>一名充满热情的学生，专注于创造优雅、高效的解决方案。</p>
                     <a href="#contact" class="btn" data-key="contactMe">联系我</a>
+                    <div style="margin-top: 20px;">
+                        <a href="mailto:kinghaonan@126.com" class="direct-contact-btn">
+                            <i class="fas fa-envelope"></i> 通过126邮箱联系
+                        </a>
+                    </div>
                 </div>
             </section>
 
             <!-- 关于我 -->
             <section id="about" class="content-section">
-                <h2 class="section-title" data-key="aboutMeTitle">关于我</h2>
-                <p data-key="aboutMeP1">我是一名充满热情的开发者。我热衷于学习新技术，解决复杂问题。</p>
-                <p data-key="aboutMeP2">我相信代码应该既高效又易于维护，并且用户界面应该直观且美观。</p>
-                <p data-key="aboutMeP3">当我不在电脑前时，我喜欢阅读、旅行和探索新事物。我相信持续学习和自我提升是个人和专业成长的关键。</p>
+                <h2 class="section-title">
+                    <i class="fas fa-user"></i>
+                    <span data-key="aboutMeTitle">关于我</span>
+                </h2>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>个人介绍</h3>
+                        <p>我是一名航空航天工程专业的本科生，对技术和创新充满热情。我致力于将理论知识应用于实际项目中，解决复杂问题。</p>
+                        <p>除了专业学习，我还对编程、设计和产品开发有浓厚兴趣。我相信跨学科的知识融合能够带来创新的解决方案。</p>
+                        <p>在业余时间，我喜欢阅读科技类书籍、参与开源项目，以及探索新的技术趋势。</p>
+                        
+                        <h3 style="margin-top: 30px;">专业技能</h3>
+                        <ul style="padding-left: 20px; margin-bottom: 20px;">
+                            <li>航空航天工程基础理论与设计</li>
+                            <li>计算机辅助设计 (CAD)</li>
+                            <li>编程语言：Python, C++, JavaScript</li>
+                            <li>数据分析与可视化</li>
+                            <li>项目管理与团队协作</li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3>学习经历</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2020 - 至今</div>
+                                <div class="timeline-content">
+                                    <h3>航空航天工程 学士</h3>
+                                    <p>某某大学</p>
+                                    <p>主修航空航天工程，专注于飞行器设计与空气动力学。</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2019 - 2020</div>
+                                <div class="timeline-content">
+                                    <h3>预科课程</h3>
+                                    <p>某某高级中学</p>
+                                    <p>专注于数学、物理和工程基础课程。</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2018 - 2019</div>
+                                <div class="timeline-content">
+                                    <h3>STEM夏令营</h3>
+                                    <p>某某科技大学</p>
+                                    <p>参与航空航天主题夏令营，学习基础飞行原理和模型制作。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 30px;">获奖经历</h3>
+                        <div class="awards-grid">
+                            <div class="award-card">
+                                <h3>全国大学生航空航天竞赛</h3>
+                                <div class="award-date">2022年</div>
+                                <p>一等奖 - 飞行器设计创新奖</p>
+                            </div>
+                            <div class="award-card">
+                                <h3>校级科技创新大赛</h3>
+                                <div class="award-date">2021年</div>
+                                <p>二等奖 - 无人机控制系统优化项目</p>
+                            </div>
+                            <div class="award-card">
+                                <h3>优秀学生奖学金</h3>
+                                <div class="award-date">2020-2023年</div>
+                                <p>连续三年获得校级优秀学生奖学金</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <!-- 技能 -->
             <section id="skills" class="content-section">
-                <h2 class="section-title" data-key="mySkillsTitle">我的技能</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-code"></i>
+                    <span data-key="mySkillsTitle">我的技能</span>
+                </h2>
                 <div class="skills-grid">
                     <div class="skill-card">
                         <h3 data-key="frontendDev">前端开发</h3>
@@ -719,7 +1086,10 @@
 
             <!-- 项目 -->
             <section id="projects" class="content-section">
-                <h2 class="section-title" data-key="myProjectsTitle">我的项目</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-project-diagram"></i>
+                    <span data-key="myProjectsTitle">我的项目</span>
+                </h2>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image" style="background-image: url('https://via.placeholder.com/400x200');"></div>
@@ -765,7 +1135,10 @@
 
             <!-- 博客 -->
             <section id="blog" class="content-section">
-                <h2 class="section-title" data-key="latestBlogTitle">最新博客</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-blog"></i>
+                    <span data-key="latestBlogTitle">最新博客</span>
+                </h2>
                 <div class="blog-grid">
                     <div class="blog-card">
                         <div class="blog-content">
@@ -775,7 +1148,7 @@
                                 <span data-key="blog1ReadTime">5分钟阅读</span>
                             </div>
                             <p data-key="blog1Desc">欢迎来到我的博客！这是我使用GitHub Pages搭建的个人网站。</p>
-                            <button class="btn read-more-btn" data-post="blog2.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="blog1.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                     <div class="blog-card">
@@ -797,7 +1170,7 @@
                                 <span data-key="blog3ReadTime">6分钟阅读</span>
                             </div>
                             <p data-key="blog3Desc">很多人认为航空航天和编程是两个完全不同的领域，但实际上它们有很多交叉点。</p>
-                            <button class="btn read-more-btn" data-post="blog2.md" data-key="readMore">阅读更多</button>
+                            <button class="btn read-more-btn" data-post="blog3.md" data-key="readMore">阅读更多</button>
                         </div>
                     </div>
                 </div>
@@ -805,19 +1178,42 @@
 
             <!-- 联系 -->
             <section id="contact" class="content-section">
-                <h2 class="section-title" data-key="contactMeTitle">联系我</h2>
+                <h2 class="section-title">
+                    <i class="fas fa-envelope"></i>
+                    <span data-key="contactMeTitle">联系我</span>
+                </h2>
                 <div class="contact-content">
                     <div class="contact-info">
                         <h3 data-key="getInTouch">保持联系</h3>
                         <p data-key="contactInfoDesc">如果您有任何问题或合作意向，请随时通过以下方式联系我：</p>
                         <ul>
-                            <li><i class="fas fa-envelope"></i> <span data-key="email">邮箱: your_email@example.com</span></li>
+                            <li><i class="fas fa-envelope"></i> <span>邮箱: kinghaonan@126.com</span></li>
                             <li><i class="fas fa-phone"></i> <span data-key="phone">电话: +123 456 7890</span></li>
                             <li><i class="fas fa-map-marker-alt"></i> <span data-key="location">地址: 某某市 某某区</span></li>
                         </ul>
+                        
+                        <h4 style="margin-top: 20px; margin-bottom: 10px;">快速联系</h4>
+                        <div class="direct-contact-buttons">
+                            <a href="mailto:kinghaonan@126.com" class="direct-contact-btn">
+                                <i class="fas fa-envelope"></i> 126邮箱
+                            </a>
+                            <a href="https://github.com/kinghaonan" class="direct-contact-btn" target="_blank">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/kinghaonan" class="direct-contact-btn" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                            <a href="https://twitter.com/kinghaonan" class="direct-contact-btn" target="_blank">
+                                <i class="fab fa-twitter"></i> Twitter
+                            </a>
+                            <a href="https://instagram.com/kinghaonan" class="direct-contact-btn" target="_blank">
+                                <i class="fab fa-instagram"></i> Instagram
+                            </a>
+                        </div>
                     </div>
                     <div class="contact-form">
                         <form id="contact-form">
+                            <div id="form-message"></div>
                             <div class="form-group">
                                 <label for="name" data-key="nameLabel">姓名</label>
                                 <input type="text" id="name" name="name" required data-key="namePlaceholder" placeholder="您的姓名">
@@ -827,10 +1223,17 @@
                                 <input type="email" id="email" name="email" required data-key="emailPlaceholder" placeholder="您的邮箱">
                             </div>
                             <div class="form-group">
+                                <label for="subject" data-key="subjectLabel">主题</label>
+                                <input type="text" id="subject" name="subject" required data-key="subjectPlaceholder" placeholder="消息主题">
+                            </div>
+                            <div class="form-group">
                                 <label for="message" data-key="messageLabel">消息</label>
                                 <textarea id="message" name="message" required data-key="messagePlaceholder" placeholder="您的消息"></textarea>
                             </div>
                             <button type="submit" class="btn" data-key="sendMessage">发送消息</button>
+                            <a href="mailto:kinghaonan@126.com?subject=网站联系&body=您好金浩楠，我从您的个人网站了解到您..." class="direct-contact-btn" style="margin-left: 10px;">
+                                <i class="fas fa-external-link-alt"></i> 直接发邮件
+                            </a>
                         </form>
                     </div>
                 </div>
@@ -864,10 +1267,15 @@
                 <div class="footer-section">
                     <h3 data-key="followMe">关注我</h3>
                     <div class="footer-social-links">
-                        <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://github.com/kinghaonan" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://twitter.com/kinghaonan" title="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="https://linkedin.com/in/kinghaonan" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://instagram.com/kinghaonan" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div style="margin-top: 8px;">
+                        <a href="mailto:kinghaonan@126.com" class="direct-contact-btn" style="font-size: 0.6rem; padding: 4px 8px;">
+                            <i class="fas fa-envelope"></i> 126邮箱联系
+                        </a>
                     </div>
                 </div>
             </div>
@@ -919,13 +1327,15 @@
                 contact: "联系",
                 getInTouch: "保持联系",
                 contactInfoDesc: "如果您有任何问题或合作意向，请随时通过以下方式联系我：",
-                email: "邮箱: your_email@example.com",
+                email: "邮箱: kinghaonan@126.com",
                 phone: "电话: +123 456 7890",
                 location: "地址: 某某市 某某区",
                 nameLabel: "姓名",
                 namePlaceholder: "您的姓名",
                 emailLabel: "邮箱",
                 emailPlaceholder: "您的邮箱",
+                subjectLabel: "主题",
+                subjectPlaceholder: "消息主题",
                 messageLabel: "消息",
                 messagePlaceholder: "您的消息",
                 sendMessage: "发送消息",
@@ -975,13 +1385,15 @@
                 contact: "Contact",
                 getInTouch: "Get in Touch",
                 contactInfoDesc: "If you have any questions or collaboration interests, feel free to contact me through the following ways:",
-                email: "Email: your_email@example.com",
+                email: "Email: kinghaonan@126.com",
                 phone: "Phone: +123 456 7890",
                 location: "Address: City, District",
                 nameLabel: "Name",
                 namePlaceholder: "Your Name",
                 emailLabel: "Email",
                 emailPlaceholder: "Your Email",
+                subjectLabel: "Subject",
+                subjectPlaceholder: "Message Subject",
                 messageLabel: "Message",
                 messagePlaceholder: "Your Message",
                 sendMessage: "Send Message",
@@ -995,6 +1407,17 @@
 
         let currentLanguage = localStorage.getItem('preferred-language') || 'zh';
         let currentMarkdownType = '';
+        let isSidebarHidden = localStorage.getItem('sidebar-hidden') === 'true';
+        let currentTheme = localStorage.getItem('theme') || 'light';
+
+        // 社交媒体链接配置
+        const socialLinks = {
+            github: "https://github.com/kinghaonan",
+            twitter: "https://twitter.com/kinghaonan",
+            linkedin: "https://linkedin.com/in/kinghaonan",
+            instagram: "https://instagram.com/kinghaonan",
+            email: "mailto:kinghaonan@126.com"
+        };
 
         function applyTranslations(lang) {
             document.querySelectorAll('[data-key]').forEach(element => {
@@ -1021,10 +1444,56 @@
             localStorage.setItem('preferred-language', lang);
         }
 
+        // 切换主题
+        function toggleTheme() {
+            if (currentTheme === 'light') {
+                currentTheme = 'dark';
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+            } else {
+                currentTheme = 'light';
+                document.documentElement.removeAttribute('data-theme');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-moon"></i>';
+            }
+            localStorage.setItem('theme', currentTheme);
+        }
+
+        // 切换侧边栏显示状态
+        function toggleSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const mainContent = document.querySelector('.main-content');
+            const toggleBtn = document.getElementById('sidebar-toggle');
+            
+            if (isSidebarHidden) {
+                sidebar.style.transform = 'translateX(0)';
+                mainContent.classList.remove('sidebar-hidden');
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-left"></i>';
+                isSidebarHidden = false;
+            } else {
+                sidebar.style.transform = 'translateX(-100%)';
+                mainContent.classList.add('sidebar-hidden');
+                toggleBtn.innerHTML = '<i class="fas fa-chevron-right"></i>';
+                isSidebarHidden = true;
+            }
+            
+            localStorage.setItem('sidebar-hidden', isSidebarHidden);
+        }
+
         // 修复公式语法错误
         function fixMathSyntax(text) {
             // 修复 \bigg|{x=x_i} 为 \bigg|_{x=x_i}
             return text.replace(/\\bigg\|(\{.*?\})/g, '\\bigg|_$1');
+        }
+
+        // 显示消息提示
+        function showMessage(message, type = 'success') {
+            const messageDiv = document.getElementById('form-message');
+            messageDiv.innerHTML = `<div class="message ${type}">${message}</div>`;
+            
+            // 5秒后自动隐藏消息
+            setTimeout(() => {
+                messageDiv.innerHTML = '';
+            }, 5000);
         }
 
         // 加载并显示Markdown文件
@@ -1092,6 +1561,19 @@
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // 初始化主题
+            if (currentTheme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                document.getElementById('theme-toggle').innerHTML = '<i class="fas fa-sun"></i>';
+            }
+
+            // 初始化侧边栏状态
+            if (isSidebarHidden) {
+                document.querySelector('.sidebar').style.transform = 'translateX(-100%)';
+                document.querySelector('.main-content').classList.add('sidebar-hidden');
+                document.getElementById('sidebar-toggle').innerHTML = '<i class="fas fa-chevron-right"></i>';
+            }
+
             applyTranslations(currentLanguage);
 
             // 菜单切换
@@ -1114,6 +1596,11 @@
 
                     // 恢复页面标题
                     document.title = "个人网站 | 金浩楠";
+
+                    // 在移动端点击菜单项后自动隐藏侧边栏
+                    if (window.innerWidth <= 768) {
+                        document.querySelector('.sidebar').classList.remove('active');
+                    }
                 });
             });
 
@@ -1123,6 +1610,17 @@
                     currentLanguage = this.getAttribute('data-lang');
                     applyTranslations(currentLanguage);
                 });
+            });
+
+            // 主题切换按钮
+            document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+
+            // 侧边栏切换按钮
+            document.getElementById('sidebar-toggle').addEventListener('click', toggleSidebar);
+
+            // 侧边栏关闭按钮
+            document.getElementById('sidebar-close').addEventListener('click', () => {
+                document.querySelector('.sidebar').classList.remove('active');
             });
 
             // 博客阅读更多按钮点击事件
@@ -1164,10 +1662,36 @@
             });
             
             // 联系表单提交处理
-            document.getElementById('contact-form').addEventListener('submit', function(e) {
+            document.getElementById('contact-form').addEventListener('submit', async function(e) {
                 e.preventDefault();
-                alert('表单已提交！(此为演示功能，实际不会发送邮件)');
-                this.reset();
+                
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+
+                // 显示加载状态
+                const submitBtn = this.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = '发送中...';
+                submitBtn.disabled = true;
+
+                try {
+                    // 这里可以添加表单提交到后端或邮件服务的代码
+                    // 暂时模拟成功发送
+                    await new Promise(resolve => setTimeout(resolve, 1000));
+                    showMessage('消息已发送成功！我会尽快回复您。', 'success');
+                    this.reset();
+                } catch (error) {
+                    console.error('表单提交错误:', error);
+                    showMessage('发送消息时出错，请稍后重试。', 'error');
+                } finally {
+                    // 恢复按钮状态
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                }
             });
         });
     </script>

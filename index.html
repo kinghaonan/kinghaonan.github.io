@@ -714,9 +714,45 @@
         }
 
         /* 响应式设计 */
+        @media (max-width: 1024px) {
+            /* 平板设备优化 */
+            .sidebar {
+                width: 250px;
+            }
+            
+            .main-content {
+                margin-left: 250px;
+                padding: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .contact-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .skills-grid,
+            .projects-grid,
+            .blog-grid,
+            .awards-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+
         @media (max-width: 768px) {
+            /* 手机设备优化 */
             .sidebar {
                 transform: translateX(-100%);
+                width: 280px;
             }
 
             .sidebar.active {
@@ -725,17 +761,42 @@
 
             .main-content {
                 margin-left: 0;
-                padding: 20px;
+                padding: 15px;
             }
 
             .menu-toggle {
                 display: block;
             }
 
-            .contact-content {
-                flex-direction: column;
+            .hero {
+                padding: 20px 0;
             }
-
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .content-section {
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .skills-grid,
+            .projects-grid,
+            .blog-grid,
+            .awards-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
             .footer-content {
                 flex-direction: column;
                 gap: 15px;
@@ -745,16 +806,88 @@
                 padding: 10px;
             }
             
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-            
             .theme-toggle {
                 bottom: 10px;
                 right: 10px;
                 width: 40px;
                 height: 40px;
                 font-size: 1rem;
+            }
+            
+            .sidebar-show {
+                top: 15px;
+                left: 15px;
+                width: 35px;
+                height: 35px;
+                font-size: 1rem;
+            }
+            
+            .profile {
+                padding: 15px;
+            }
+            
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .nav-item {
+                padding: 10px 20px;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .direct-contact-buttons {
+                flex-direction: column;
+            }
+            
+            .direct-contact-btn {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* 小屏幕手机优化 */
+            .main-content {
+                padding: 10px;
+            }
+            
+            .content-section {
+                padding: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .profile h2 {
+                font-size: 1.2rem;
+            }
+            
+            .profile p {
+                font-size: 0.9rem;
+            }
+            
+            .form-group input,
+            .form-group textarea {
+                padding: 8px;
+            }
+            
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .project-content,
+            .blog-content {
+                padding: 15px;
             }
         }
         
@@ -994,46 +1127,6 @@
                 <div class="nav-item" data-target="contact">
                     <i class="fas fa-envelope"></i>
                     <span data-key="contact">联系</span>
-                </div>
-                <div class="nav-item" data-target="test1">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 1</span>
-                </div>
-                <div class="nav-item" data-target="test2">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 2</span>
-                </div>
-                <div class="nav-item" data-target="test3">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 3</span>
-                </div>
-                <div class="nav-item" data-target="test4">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 4</span>
-                </div>
-                <div class="nav-item" data-target="test5">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 5</span>
-                </div>
-                <div class="nav-item" data-target="test6">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 6</span>
-                </div>
-                <div class="nav-item" data-target="test7">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 7</span>
-                </div>
-                <div class="nav-item" data-target="test8">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 8</span>
-                </div>
-                <div class="nav-item" data-target="test9">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 9</span>
-                </div>
-                <div class="nav-item" data-target="test10">
-                    <i class="fas fa-flask"></i>
-                    <span>测试项 10</span>
                 </div>
             </div>
 
@@ -1317,17 +1410,6 @@
                 <h2 id="markdown-title" class="section-title"></h2>
                 <div id="markdown-content" class="markdown-viewer"></div>
             </section>
-            
-            <section id="test1" class="content-section"></section>
-            <section id="test2" class="content-section"></section>
-            <section id="test3" class="content-section"></section>
-            <section id="test4" class="content-section"></section>
-            <section id="test5" class="content-section"></section>
-            <section id="test6" class="content-section"></section>
-            <section id="test7" class="content-section"></section>
-            <section id="test8" class="content-section"></section>
-            <section id="test9" class="content-section"></section>
-            <section id="test10" class="content-section"></section>
         </div>
 
         <footer>

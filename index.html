@@ -669,6 +669,7 @@
             text-decoration: none;
             font-size: 0.8rem;
             transition: color 0.3s;
+            cursor: pointer;
         }
 
         .footer-section ul li a:hover {
@@ -1421,11 +1422,11 @@
                 <div class="footer-section">
                     <h3 data-key="quickLinks">快速链接</h3>
                     <ul>
-                        <li><a href="#home" data-key="home">首页</a></li>
-                        <li><a href="#about" data-key="aboutMe">关于我</a></li>
-                        <li><a href="#projects" data-key="projects">项目</a></li>
-                        <li><a href="#blog" data-key="blog">博客</a></li>
-                        <li><a href="#contact" data-key="contact">联系</a></li>
+                        <li><a href="#home" class="footer-nav-link" data-target="home" data-key="home">首页</a></li>
+                        <li><a href="#about" class="footer-nav-link" data-target="about" data-key="aboutMe">关于我</a></li>
+                        <li><a href="#projects" class="footer-nav-link" data-target="projects" data-key="projects">项目</a></li>
+                        <li><a href="#blog" class="footer-nav-link" data-target="blog" data-key="blog">博客</a></li>
+                        <li><a href="#contact" class="footer-nav-link" data-target="contact" data-key="contact">联系</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -1752,6 +1753,34 @@
             }, 5000);
         }
 
+        // 导航到指定部分
+        function navigateToSection(targetId) {
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            } else {
+                console.warn(`Content section for target ID "${targetId}" not found. Showing no section.`);
+            }
+
+            document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
+            
+            const targetNav = document.querySelector(`.nav-item[data-target="${targetId}"]`);
+            if (targetNav) {
+                targetNav.classList.add('active');
+            }
+
+            document.title = "个人网站 | 金浩楠";
+
+            // 在移动端点击菜单项后自动隐藏侧边栏
+            if (window.innerWidth <= 768) {
+                document.querySelector('.sidebar').classList.remove('active');
+            }
+        }
+
         // 加载并显示Markdown文件
         async function loadMarkdownFile(filename, type) {
             currentMarkdownType = type;
@@ -1838,28 +1867,16 @@
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.addEventListener('click', function() {
                     const targetId = this.getAttribute('data-target');
+                    navigateToSection(targetId);
+                });
+            });
 
-                    document.querySelectorAll('.content-section').forEach(section => {
-                        section.classList.remove('active');
-                    });
-                    
-                    // 检查目标内容区域是否存在，如果不存在（例如测试项），则只更新导航状态
-                    const targetSection = document.getElementById(targetId);
-                    if (targetSection) {
-                        targetSection.classList.add('active');
-                    } else {
-                        console.warn(`Content section for target ID "${targetId}" not found. Showing no section.`);
-                    }
-
-                    document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
-                    this.classList.add('active');
-
-                    document.title = "个人网站 | 金浩楠";
-
-                    // 在移动端点击菜单项后自动隐藏侧边栏
-                    if (window.innerWidth <= 768) {
-                        document.querySelector('.sidebar').classList.remove('active');
-                    }
+            // 页脚快速链接点击事件
+            document.querySelectorAll('.footer-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('data-target');
+                    navigateToSection(targetId);
                 });
             });
 

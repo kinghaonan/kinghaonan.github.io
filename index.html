@@ -87,7 +87,7 @@
             z-index: 100;
             transition: transform 0.3s ease, background-color 0.3s;
             display: flex;
-            flex-direction: column;
+            flex-direction: column; /* 垂直 Flex 布局：核心 */
         }
 
         .sidebar-header {
@@ -96,7 +96,7 @@
             align-items: center;
             padding: 15px 20px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
-            flex-shrink: 0;
+            flex-shrink: 0; /* 确保头部不被压缩 */
         }
 
         .sidebar-controls {
@@ -121,7 +121,7 @@
             text-align: center;
             padding: 20px;
             border-bottom: 1px solid rgba(0,0,0,0.1);
-            flex-shrink: 0;
+            flex-shrink: 0; /* 确保个人信息块不被压缩 */
         }
 
         .profile-image {
@@ -162,21 +162,21 @@
             color: var(--secondary-color);
         }
         
-        /* --- 修复侧边栏滚动：确保内容区域占据剩余空间并允许滚动 --- */
+        /* --- 关键修复点：侧边栏内容滚动容器 --- */
         .sidebar-content {
-            flex: 1;
+            flex: 1; /* **占据侧边栏的剩余所有垂直空间** */
             display: flex;
             flex-direction: column;
-            overflow: hidden; /* 防止溢出 */
+            min-height: 0; /* **关键：允许 flex 容器正确计算剩余空间** */
+            overflow: hidden; /* 防止 .nav-menu 溢出外部 */
         }
 
         .nav-menu {
             padding: 10px 0;
-            flex: 1; /* 占据剩余空间 */
-            overflow-y: auto; /* 允许垂直滚动 */
-            /* 移除 max-height: calc(100vh - 400px); 让 flex: 1; 控制高度 */
+            flex: 1; /* **占据 .sidebar-content 的剩余垂直空间** */
+            overflow-y: auto; /* **核心：激活垂直滚动** */
         }
-        /* --- 修复侧边栏滚动 END --- */
+        /* --- 关键修复点 END --- */
 
         .nav-item {
             padding: 12px 25px;
@@ -206,7 +206,7 @@
         .language-switcher {
             padding: 15px 25px;
             border-top: 1px solid rgba(0,0,0,0.1);
-            flex-shrink: 0;
+            flex-shrink: 0; /* 确保语言切换器不被压缩 */
             background-color: var(--sidebar-bg);
         }
 
@@ -235,7 +235,7 @@
         /* 主题切换按钮 */
         .theme-toggle {
             position: fixed;
-            bottom: 22px; /* 稍微调整以防移动端遮挡 */
+            bottom: 22px; 
             right: 22px;
             width: 50px;
             height: 50px;
@@ -755,11 +755,6 @@
                 height: 40px;
                 font-size: 1rem;
             }
-            
-            /* 在移动端保留 max-height 作为安全措施 */
-            .nav-menu {
-                max-height: calc(100vh - 380px); 
-            }
         }
         
         /* Markdown 阅读器样式 */
@@ -998,6 +993,46 @@
                 <div class="nav-item" data-target="contact">
                     <i class="fas fa-envelope"></i>
                     <span data-key="contact">联系</span>
+                </div>
+                <div class="nav-item" data-target="test1">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 1</span>
+                </div>
+                <div class="nav-item" data-target="test2">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 2</span>
+                </div>
+                <div class="nav-item" data-target="test3">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 3</span>
+                </div>
+                <div class="nav-item" data-target="test4">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 4</span>
+                </div>
+                <div class="nav-item" data-target="test5">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 5</span>
+                </div>
+                <div class="nav-item" data-target="test6">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 6</span>
+                </div>
+                <div class="nav-item" data-target="test7">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 7</span>
+                </div>
+                <div class="nav-item" data-target="test8">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 8</span>
+                </div>
+                <div class="nav-item" data-target="test9">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 9</span>
+                </div>
+                <div class="nav-item" data-target="test10">
+                    <i class="fas fa-flask"></i>
+                    <span>测试项 10</span>
                 </div>
             </div>
 
@@ -1281,6 +1316,17 @@
                 <h2 id="markdown-title" class="section-title"></h2>
                 <div id="markdown-content" class="markdown-viewer"></div>
             </section>
+            
+            <section id="test1" class="content-section"></section>
+            <section id="test2" class="content-section"></section>
+            <section id="test3" class="content-section"></section>
+            <section id="test4" class="content-section"></section>
+            <section id="test5" class="content-section"></section>
+            <section id="test6" class="content-section"></section>
+            <section id="test7" class="content-section"></section>
+            <section id="test8" class="content-section"></section>
+            <section id="test9" class="content-section"></section>
+            <section id="test10" class="content-section"></section>
         </div>
 
         <footer>
@@ -1713,7 +1759,14 @@
                     document.querySelectorAll('.content-section').forEach(section => {
                         section.classList.remove('active');
                     });
-                    document.getElementById(targetId).classList.add('active');
+                    
+                    // 检查目标内容区域是否存在，如果不存在（例如测试项），则只更新导航状态
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('active');
+                    } else {
+                        console.warn(`Content section for target ID "${targetId}" not found. Showing no section.`);
+                    }
 
                     document.querySelectorAll('.nav-item').forEach(nav => nav.classList.remove('active'));
                     this.classList.add('active');
@@ -1826,4 +1879,5 @@
         });
     </script>
 </body>
+
 </html>

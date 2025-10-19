@@ -5,32 +5,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人网站 | 金浩楠</title>
-    <!-- MathJax for LaTeX/MathML rendering -->
-    <script>
-    window.MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']],
-        displayMath: [['$$', '$$'], ['\\[', '\\]']],
-        processEscapes: true,
-        packages: {'[+]': ['amsmath', 'amssymb', 'bm']}
-      },
-      options: {
-        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        renderActions: {
-          addMenu: [0, '', '']
-        }
-      },
-      startup: {
-        pageReady: function() {
-          return MathJax.startup.defaultPageReady().then(function() {
-            console.log('MathJax initialized');
-          });
-        }
-      }
-    };
+    <!-- MathJax 2 for LaTeX/MathML rendering -->
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+            tex2jax: {
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true
+            },
+            "HTML-CSS": {
+                availableFonts: ["TeX"],
+                scale: 90
+            },
+            CommonHTML: {
+                scale: 90
+            },
+            SVG: {
+                scale: 90
+            }
+        });
     </script>
-    <script type="text/javascript" id="MathJax-script" async
-        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
     <!-- marked.js for Markdown to HTML conversion -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -603,7 +599,7 @@
             font-size: 1.1em !important;
         }
         
-        mjx-container[jax="CHTML"][display="true"] {
+        .MathJax_Display {
             margin: 1em 0 !important;
             text-align: center;
         }
@@ -1062,19 +1058,9 @@
                 // 使用 marked.js 渲染 Markdown
                 markdownContentDiv.innerHTML = marked.parse(text);
                 
-                // 重新渲染数学公式 - 添加这部分
+                // 使用MathJax 2重新渲染数学公式
                 if (window.MathJax) {
-                    MathJax.typesetClear([markdownContentDiv]);
-                    MathJax.typesetPromise([markdownContentDiv]).then(() => {
-                        console.log('MathJax re-rendered');
-                    }).catch((err) => {
-                        console.error('MathJax typesetting failed:', err);
-                        // 显示公式错误信息
-                        const errorDiv = document.createElement('div');
-                        errorDiv.className = 'math-error';
-                        errorDiv.innerHTML = '<strong>公式渲染错误:</strong> 部分数学公式可能无法正确显示。请检查公式语法。';
-                        markdownContentDiv.prepend(errorDiv);
-                    });
+                    MathJax.Hub.Queue(["Typeset", MathJax.Hub, markdownContentDiv]);
                 }
 
                 // 更新页面标题

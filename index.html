@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人网站 | 金浩楠</title>
-    <!-- MathJax 2 for LaTeX/MathML rendering -->
     <script type="text/x-mathjax-config">
         MathJax.Hub.Config({
             tex2jax: {
@@ -28,7 +27,6 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
-    <!-- marked.js for Markdown to HTML conversion -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
         :root {
@@ -163,20 +161,22 @@
         .social-links a:hover {
             color: var(--secondary-color);
         }
-
+        
+        /* --- 修复侧边栏滚动：确保内容区域占据剩余空间并允许滚动 --- */
         .sidebar-content {
             flex: 1;
             display: flex;
             flex-direction: column;
-            overflow: hidden;
+            overflow: hidden; /* 防止溢出 */
         }
 
         .nav-menu {
             padding: 10px 0;
-            flex: 1;
-            overflow-y: auto;
-            max-height: calc(100vh - 400px);
+            flex: 1; /* 占据剩余空间 */
+            overflow-y: auto; /* 允许垂直滚动 */
+            /* 移除 max-height: calc(100vh - 400px); 让 flex: 1; 控制高度 */
         }
+        /* --- 修复侧边栏滚动 END --- */
 
         .nav-item {
             padding: 12px 25px;
@@ -235,8 +235,8 @@
         /* 主题切换按钮 */
         .theme-toggle {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 22px; /* 稍微调整以防移动端遮挡 */
+            right: 22px;
             width: 50px;
             height: 50px;
             border-radius: 50%;
@@ -756,8 +756,9 @@
                 font-size: 1rem;
             }
             
+            /* 在移动端保留 max-height 作为安全措施 */
             .nav-menu {
-                max-height: calc(100vh - 350px);
+                max-height: calc(100vh - 380px); 
             }
         }
         
@@ -933,22 +934,18 @@
 </head>
 
 <body>
-    <!-- 移动端菜单切换按钮 -->
     <button class="menu-toggle">
         <i class="fas fa-bars"></i>
     </button>
 
-    <!-- 侧边栏显示按钮 -->
     <button class="sidebar-show" id="sidebar-show">
         <i class="fas fa-bars"></i>
     </button>
 
-    <!-- 主题切换按钮 -->
     <button class="theme-toggle" id="theme-toggle">
         <i class="fas fa-moon"></i>
     </button>
 
-    <!-- 左侧目录 -->
     <div class="sidebar">
         <div class="sidebar-header">
             <h3 data-key="navigation">导航菜单</h3>
@@ -1013,10 +1010,8 @@
         </div>
     </div>
 
-    <!-- 主内容区域 -->
     <div class="main-content">
         <div class="content-wrapper">
-            <!-- 首页 -->
             <section id="home" class="content-section active">
                 <div class="hero">
                     <h1 data-key="heroTitle">您好，我是金浩楠</h1>
@@ -1030,7 +1025,6 @@
                 </div>
             </section>
 
-            <!-- 关于我 -->
             <section id="about" class="content-section">
                 <h2 class="section-title">
                     <i class="fas fa-user"></i>
@@ -1105,7 +1099,6 @@
                 </div>
             </section>
 
-            <!-- 技能 -->
             <section id="skills" class="content-section">
                 <h2 class="section-title">
                     <i class="fas fa-code"></i>
@@ -1131,7 +1124,6 @@
                 </div>
             </section>
 
-            <!-- 项目 -->
             <section id="projects" class="content-section">
                 <h2 class="section-title">
                     <i class="fas fa-project-diagram"></i>
@@ -1180,7 +1172,6 @@
                 </div>
             </section>
 
-            <!-- 博客 -->
             <section id="blog" class="content-section">
                 <h2 class="section-title">
                     <i class="fas fa-blog"></i>
@@ -1223,7 +1214,6 @@
                 </div>
             </section>
 
-            <!-- 联系 -->
             <section id="contact" class="content-section">
                 <h2 class="section-title">
                     <i class="fas fa-envelope"></i>
@@ -1286,15 +1276,13 @@
                 </div>
             </section>
 
-            <!-- Markdown详情页 -->
-            <section id="markdown-detail" class="content-content-section">
+            <section id="markdown-detail" class="content-section">
                 <button id="back-to-list" class="btn back-btn" data-key="backToList">返回列表</button>
                 <h2 id="markdown-title" class="section-title"></h2>
                 <div id="markdown-content" class="markdown-viewer"></div>
             </section>
         </div>
 
-        <!-- 页脚 -->
         <footer>
             <div class="footer-content">
                 <div class="footer-section">
@@ -1641,6 +1629,7 @@
             let filePath = '';
             const baseUrl = window.location.origin + window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
             
+            // 注意：这些路径需要在实际部署时确保文件存在
             if (type === 'blog') {
                 filePath = `${baseUrl}_posts/blog/${filename}`;
             } else if (type === 'project') {
@@ -1671,11 +1660,14 @@
                 document.getElementById('markdown-title').textContent = markdownTitle;
                 document.title = `${markdownTitle} | 个人网站`;
 
+                // 统一隐藏所有主内容区
                 document.querySelectorAll('.content-section').forEach(section => {
                     section.classList.remove('active');
                 });
+                // 显示详情页
                 document.getElementById('markdown-detail').classList.add('active');
 
+                // 清除导航菜单的 active 状态
                 document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
 
             } catch (error) {
@@ -1779,15 +1771,24 @@
                     section.classList.remove('active');
                 });
 
+                let targetId = 'home'; // 默认返回首页
+                let targetNavSelector = '.nav-item[data-target="home"]';
+
                 if (currentMarkdownType === 'blog') {
-                    document.getElementById('blog').classList.add('active');
-                    document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
+                    targetId = 'blog';
+                    targetNavSelector = '.nav-item[data-target="blog"]';
                 } else if (currentMarkdownType === 'project') {
-                    document.getElementById('projects').classList.add('active');
-                    document.querySelector('.nav-item[data-target="projects"]').classList.add('active');
-                } else {
-                    document.getElementById('blog').classList.add('active');
-                    document.querySelector('.nav-item[data-target="blog"]').classList.add('active');
+                    targetId = 'projects';
+                    targetNavSelector = '.nav-item[data-target="projects"]';
+                }
+                
+                document.getElementById(targetId).classList.add('active');
+                
+                // 清除所有导航激活状态，并激活目标导航项
+                document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                const targetNav = document.querySelector(targetNavSelector);
+                if (targetNav) {
+                    targetNav.classList.add('active');
                 }
                 
                 document.title = "个人网站 | 金浩楠";
@@ -1810,6 +1811,7 @@
                 submitBtn.disabled = true;
 
                 try {
+                    // 模拟网络请求和发送过程
                     await new Promise(resolve => setTimeout(resolve, 1000));
                     showMessage('消息已发送成功！我会尽快回复您。', 'success');
                     this.reset();

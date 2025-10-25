@@ -34,13 +34,13 @@ $$ F_{lift} = \frac{1}{2} \rho A C_L V_n^2 \tag{1} $$
 
 由公式(1)可知，升力与速度的平方成正比，前进侧因速度较大产生的升力显著大于后退侧，最终形成驱动回旋镖运动的不对称升力。
 
-![图2 不对称升力的产生](./blog1/fig2.png)
+![图2 不对称升力的产生](_posts/blog/blog1/fig2.png)
 图2 不对称升力的产生  
 Fig.2 The generation of asymmetric lift
 
 该不对称升力对回旋镖质心形成一个滚转力矩，如图3所示，力矩的方向垂直于回旋镖的自转角动量。根据陀螺进动原理[1]，该力矩会导致角动量的方向随时间偏转，即回旋镖的自转轴绕惯性系的竖直轴做进动，进动角速度与滚转力矩成正比。随着进动的持续，回旋镖的飞行方向逐渐偏转，最终形成闭合的圆周轨迹，实现返回。
 
-![图3 回旋镖的回旋原理](./blog1/fig3.png)
+![图3 回旋镖的回旋原理](_posts/blog/blog1/fig3.png)
 图3 回旋镖的回旋原理[7]  
 Fig.3 The principle of the boomerang's spin
 
@@ -109,7 +109,7 @@ $$ \begin{cases} M_n = I_{rr} (\ddot{\theta} \cos\phi + \ddot{\phi} \sin\phi \co
 
 为精确控制回旋镖的出射速度、角速度与出射倾角等，本研究采用CATIA进行三维建模，并基于该模型通过 3D 打印技术制作实体装置，其结构如图11所示。其核心组件包括一个角度可调（通过底部滑块控制）的发射平台，以及一个提供可控发射动力的橡皮筋机构。
 
-![图4 回旋镖发射装置模型图](./blog1/fig4.png)
+![图4 回旋镖发射装置模型图](_posts/blog/blog1/fig4.png)
 图4 回旋镖发射装置模型图  
 Fig.4 Model diagram of the boomerang launcher
 
@@ -125,15 +125,15 @@ $$ E_R = \frac{A_i - B_i}{R_l} \times 100\% \tag{29} $$
 
 进行多次重复实验，使用matlab对回旋镖轨迹进行了重建如图13所示，并将最大相对偏差列在表1上。由表可知最大相对偏差没有超过 15.25%，可见构建的模型很好的符合了回旋镖的运动状态。
 
-![图5 Ansys Fluent 升力系数和阻力系数的仿真计算结果](./blog1/fig5.png)
+![图5 Ansys Fluent 升力系数和阻力系数的仿真计算结果](_posts/blog/blog1/fig5.png)
 图5 Ansys Fluent 升力系数和阻力系数的仿真计算结果  
 Fig.5 Simulation results of lift coefficient and drag coefficient in Ansys Fluent
 
-![表1 不同状态下的速度和角速度以及偏差 ](./blog1/fig6.png)
+![表1 不同状态下的速度和角速度以及偏差 ](_posts/blog/blog1/fig6.png)
 表1 不同状态下的速度和角速度以及偏差  
 Table1 Speed and angular velocity under different conditions and deviations
 
-![图6 回旋镖轨迹图](./blog1/fig7.png)图6 回旋镖轨迹图  
+![图6 回旋镖轨迹图](_posts/blog/blog1/fig7.png)图6 回旋镖轨迹图  
 Fig.6 Boomerang trajectory diagram
 ## 4 结论
 

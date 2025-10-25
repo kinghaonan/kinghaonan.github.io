@@ -16,7 +16,7 @@
 
 ## 1 回旋镖的回旋原理
 
-![图1 回旋镖模型图](_post/blog/blog1/fig1.png)
+![图1 回旋镖模型图](_posts/blog/blog1/fig1.png)
 图1 回旋镖模型图  
 Fig.1 Boomerang Model Diagram
 

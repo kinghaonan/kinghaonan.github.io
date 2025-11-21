@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Volantis</title>
+  
+  
+  <link href="https://volantis.js.org/atom.xml" rel="self"/>
+  
+  <link href="https://volantis.js.org/"/>
+  <updated>2025-10-24T16:00:00.000Z</updated>
+  <id>https://volantis.js.org/</id>
+  
+  <author>
+    <name>Volantis Team</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何在Volantis主题上优雅地书写数学公式</title>
+    <link href="https://volantis.js.org/blogs/2025-10-25-latex/"/>
+    <id>https://volantis.js.org/blogs/2025-10-25-latex/</id>
+    <published>2025-10-24T16:00:00.000Z</published>
+    <updated>2025-10-24T16:00:00.000Z</updated>
+    
+    <content type="html"><![CDATA[<div class="story post-story"><h2 id="数学公式渲染引擎选择"><a href="#数学公式渲染引擎选择" class="headerlink" title="数学公式渲染引擎选择"></a>数学公式渲染引擎选择</h2><h3 id="MathJax方案（兼容性优先）"><a href="#MathJax方案（兼容性优先）" class="headerlink" title="MathJax方案（兼容性优先）"></a>MathJax方案（兼容性优先）</h3><p>适合需要完整LaTeX支持的场景，尤其推荐用于学术类内容。</p><h3 id="KaTeX方案（性能优先）"><a href="#KaTeX方案（性能优先）" class="headerlink" title="KaTeX方案（性能优先）"></a>KaTeX方案（性能优先）</h3><p>适合追求加载速度的场景，KaTeX渲染速度比MathJax快约60%，但对部分复杂公式支持有限。</p></div><div class="story post-story"><h2 id="Volantis-主题内置前端渲染方案"><a href="#Volantis-主题内置前端渲染方案" class="headerlink" title="Volantis 主题内置前端渲染方案"></a>Volantis 主题内置前端渲染方案</h2><p>Volantis 6 中在 front-matter 中配置页面插件<a href="https://volantis.js.org/v6/page-settings/?keyword=math">...</a> 即可。</p><figure class="highlight yaml"><figcaption><span>front-matter</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">mathjax</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">katex</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><p>例如：</p><figure class="highlight yaml"><figcaption><span>example.md:</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">渲染公式（MathJax）</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2025-10-25</span></span><br><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">mathjax</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="string">添加一段描述性文字</span></span><br><span class="line"></span><br><span class="line"><span class="string">&lt;!--</span> <span class="string">more</span> <span class="string">--&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="string">$$</span></span><br><span class="line"><span class="string">\eta(s)</span> <span class="string">=</span> <span class="string">(1-2^&#123;1-s&#125;)\zeta(s)</span></span><br><span class="line"><span class="string">$$</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></div><div class="story post-story"><h2 id="数学公式的语法冲突"><a href="#数学公式的语法冲突" class="headerlink" title="数学公式的语法冲突"></a>数学公式的语法冲突</h2><p>这里以 Mathjax 为例：</p></div><div class="story post-story"><h2 id="Mathjax-与-Markdown-的语法冲突"><a href="#Mathjax-与-Markdown-的语法冲突" class="headerlink" title="Mathjax 与 Markdown 的语法冲突"></a>Mathjax 与 Markdown 的语法冲突</h2><p>MathJax 与 Markdown 的语法冲突源于两者部分符号的语义重叠，如 <code>_</code>（Markdown 斜体 vs LaTeX 下标）、<code>*</code>（Markdown 粗体 vs LaTeX 星号）和 <code>\</code>（Markdown 转义符 vs LaTeX 命令前缀）。例如，公式 <code>x_i</code> 可能被 Markdown 引擎误解析为 <code>&lt;em&gt;i&lt;/em&gt;</code> 标签，导致 MathJax 无法识别。</p><p>一种方法是使用 <code>\</code> 转义这些冲突的部分符号。例如：对于多行公式中的换行 <code>\\</code> ，需要转义成 <code>\\\\</code> 。</p><p>另一种方法是逆向渲染流程，先让 MathJax 解析公式，再用 Markdown 引擎处理文本。由于理论上 MathJax 生成的 HTML 不含 Markdown 语法，可从根本上避免冲突。</p><p>还有一种方案是修改 Markdown 引擎规则，移除语义重叠的部分。 </p><p>极端的方案是直接使用图片。</p></div><div class="story post-story"><h2 id="Mathjax-与-Nunjucks-的语法冲突"><a href="#Mathjax-与-Nunjucks-的语法冲突" class="headerlink" title="Mathjax 与 Nunjucks 的语法冲突"></a>Mathjax 与 Nunjucks 的语法冲突</h2><p>Nunjucks 是 Hexo 内置的模板语法。</p><p>Nunjucks 模板引擎与 MathJax 的语法冲突主要源于两者对特殊字符的解析规则重叠。</p><p><img src="https://volantis.js.org/v6/faq/images/12.png" class="lazyload" data-srcset="https://volantis.js.org/v6/faq/images/12.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Nunjucks"></p><p>符号优先级冲突：</p><p>MathJax 的 <code>_</code>（下标）和 <code>^</code>（上标）会被 Nunjucks 误认为模板语法的一部分。例如 <code>x_i</code> 可能被解析为变量 <code>i</code> 的属性，而非数学符号 <code>x_i</code> 。类似地， <code>\frac&#123;1&#125;&#123;2&#125;</code> 中的反斜杠可能被 Nunjucks 转义为普通字符，导致 MathJax 无法识别分式结构。</p><p>模板变量标识符冲突：</p>MathJax 的某些分隔符（如 `$$..$$` ）虽然与 Nunjucks 的 `{{ }}` 不直接重叠，但复杂公式中嵌套的大括号 `{ }` 可能触发模板引擎的语法检查错误，尤其在未正确转义时。一种解决方法是加空格，例如在两个连续的大括号之间加入空格。另一种解决方法是在公式前后添加 Nunjucks 的 raw 标签，使模板引擎跳过对中间内容的解析：<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line">&#123;<span class="string">%</span> <span class="string">raw</span> <span class="string">%</span>&#125;</span><br><span class="line"><span class="string">$$</span> <span class="string">E=mc^2</span> <span class="string">$$</span>  <span class="string">&lt;!--</span> <span class="string">不受</span> <span class="string">Nunjucks</span> <span class="string">影响的公式</span> <span class="string">--&gt;</span></span><br><span class="line">&#123;<span class="string">%</span> <span class="string">endraw</span> <span class="string">%</span>&#125;</span><br></pre></td></tr></table></figure><p>这种解决方法适用于单页少量公式，无需修改全局配置。缺点是侵入式语法，降低文档可移植性。</p></div><div class="story post-story"><h2 id="第三方插件数学公式渲染器的选择"><a href="#第三方插件数学公式渲染器的选择" class="headerlink" title="第三方插件数学公式渲染器的选择"></a>第三方插件数学公式渲染器的选择</h2><p>第三方数学公式渲染器插件需要配套使用对应的 markdown 渲染器才能解决语义重叠冲突的问题。</p><p>以下是推荐的组合：</p></div><div class="story post-story"><h2 id="marked"><a href="#marked" class="headerlink" title="marked"></a>marked</h2><p>对于 <a href="https://github.com/hexojs/hexo-renderer-marked" target="_blank" rel="noopener external nofollow noreferrer">hexo-renderer-marked</a> 配套使用 <a href="https://github.com/MHuiG/hexo-xmath" target="_blank" rel="noopener external nofollow noreferrer">hexo-xmath</a> 。</p><p>或者直接使用懒人包 <a href="https://github.com/MHuiG/hexo-xm" target="_blank" rel="noopener external nofollow noreferrer">hexo-xm</a> ，开箱即用。</p></div><div class="story post-story"><h2 id="pandoc"><a href="#pandoc" class="headerlink" title="pandoc"></a>pandoc</h2><p>对于 <a href="https://github.com/hexojs/hexo-renderer-pandoc" target="_blank" rel="noopener external nofollow noreferrer">hexo-renderer-pandoc</a> 配套使用 <a href="https://github.com/next-theme/hexo-filter-mathjax" target="_blank" rel="noopener external nofollow noreferrer">hexo-filter-mathjax</a> 。</p><p><a href="https://shiraha.cn/2021/use-pandoc-to-render-multiline-formulas-correctly/" target="_blank" rel="noopener external nofollow noreferrer">使用 pandoc 正确渲染多行 MathJax 公式</a></p></div><div class="story post-story"><h2 id="markdown-it"><a href="#markdown-it" class="headerlink" title="markdown-it"></a>markdown-it</h2><p>对于 <a href="https://github.com/CHENXCHEN/hexo-renderer-markdown-it-plus" target="_blank" rel="noopener external nofollow noreferrer">hexo-renderer-markdown-it-plus</a> 配套使用 @iktakahiro&#x2F;markdown-it-katex 。</p></div>]]></content>
+    
+    
+    <summary type="html">在Volantis主题上优雅地书写数学公式的记录。</summary>
+    
+    
+    
+    <category term="blog" scheme="https://volantis.js.org/categories/blog/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>关于主题与文档的更新</title>
+    <link href="https://volantis.js.org/projects/2020-04-04/"/>
+    <id>https://volantis.js.org/projects/2020-04-04/</id>
+    <published>2020-04-03T16:00:00.000Z</published>
+    <updated>2025-11-21T13:35:00.047Z</updated>
+    
+    <content type="html"><![CDATA[<p>由于主题目前仍处于青少年阶段，更新迭代速度比较快，所以不会保留旧版本的文档，如果需要查看旧版本的文档，请下载主题文档的源码，回退到旧版本，本地运行查看。</p><ul><li>计划 <code>2.x</code> 的最后一个版本的文档会保留至 <code>5.0</code> 发布时，即最终会同时维护3个大版本的文档。</li><li>当主题稳定后会提供英文文档。</li></ul><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;由于主题目前仍处于青少年阶段，更新迭代速度比较快，所以不会保留旧版本的文档，如果需要查看旧版本的文档，请下载主题文档的源码，回退到旧版本，本地运行查看。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;计划 &lt;code&gt;2.x&lt;/code&gt; 的最后一个版本的文档会保留至 &lt;code&gt;5.0&lt;/code&gt; 发布时，即最终会同时维护3个大版本的文档。&lt;/li&gt;
+&lt;li&gt;当主题稳定后会提供英文文档。&lt;/li&gt;
+&lt;/ul&gt;</summary>
+    
+    
+    
+    <category term="project" scheme="https://volantis.js.org/categories/project/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>中文測試</title>
+    <link href="https://volantis.js.org/notes/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/"/>
+    <id>https://volantis.js.org/notes/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/</id>
+    <published>2013-12-24T15:31:30.000Z</published>
+    <updated>2025-11-21T11:14:06.865Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is a Chinese test post.</p><p>善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。</p><p>以也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？</p><p>就竟在，是我童示讓利分和異種百路關母信過明驗有個歷洋中前合著區亮風值新底車有正結，進快保的行戰從：弟除文辦條國備當來際年每小腳識世可的的外的廣下歌洲保輪市果底天影；全氣具些回童但倒影發狀在示，數上學大法很，如要我……月品大供這起服滿老？應學傳者國：山式排只不之然清同關；細車是！停屋常間又，資畫領生，相們制在？公別的人寫教資夠。資再我我！只臉夫藝量不路政吃息緊回力之；兒足灣電空時局我怎初安。意今一子區首者微陸現際安除發連由子由而走學體區園我車當會，經時取頭，嚴了新科同？很夫營動通打，出和導一樂，查旅他。坐是收外子發物北看蘭戰坐車身做可來。道就學務。</p><p>國新故。</p><blockquote><p>工步他始能詩的，裝進分星海演意學值例道……於財型目古香亮自和這乎？化經溫詩。只賽嚴大一主價世哥受的沒有中年即病行金拉麼河。主小路了種就小為廣不？</p></blockquote><p><em>From <a href="http://www.richyli.com/tool/loremipsum/" target="_blank" rel="noopener external nofollow noreferrer">亂數假文產生器 - Chinese Lorem Ipsum</a></em></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;This is a Chinese test post.&lt;/p&gt;
+&lt;p&gt;善我王上魚、產生資西員合兒臉趣論。畫衣生這著爸毛親可時，安程幾？合學作。觀經而作建。都非子作這！法如言子你關！手師也。&lt;/p&gt;
+&lt;p&gt;以也座論頭室業放。要車時地變此親不老高小是統習直麼調未，行年香一？&lt;</summary>
+      
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+  </entry>
+  
+</feed>

@@ -9,6 +9,30 @@
 
 
     <url>
+        <loc>https://volantis.js.org/blogs/2025-10-16-my-first-post/</loc>
+        <lastmod>2025-11-22T02:25:21.801Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://volantis.js.org/blogs/2025-10-17-first-post/</loc>
+        <lastmod>2025-11-22T02:24:07.982Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://volantis.js.org/blogs/2025-10-17-welcome/</loc>
+        <lastmod>2025-11-22T02:13:39.537Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://volantis.js.org/projects/2020-04-04/</loc>
         <lastmod>2025-11-21T13:35:00.047Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -26,6 +50,14 @@
 
     <url>
         <loc>https://volantis.js.org/blogs/2025-10-25-latex/</loc>
+        <lastmod>2025-10-24T16:00:00.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://volantis.js.org/blogs/blog1/</loc>
         <lastmod>2025-10-24T16:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

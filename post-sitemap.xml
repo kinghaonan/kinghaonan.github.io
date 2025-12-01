@@ -9,24 +9,8 @@
 
 
     <url>
-        <loc>https://volantis.js.org/blogs/2025-10-16-my-first-post/</loc>
-        <lastmod>2025-11-22T02:25:21.801Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://volantis.js.org/blogs/2025-10-17-first-post/</loc>
-        <lastmod>2025-11-22T02:24:07.982Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://volantis.js.org/blogs/2025-10-17-welcome/</loc>
-        <lastmod>2025-11-22T02:13:39.537Z</lastmod>
+        <loc>https://volantis.js.org/blogs/%E5%9B%9E%E6%97%8B%E9%95%96/</loc>
+        <lastmod>2025-12-01T08:14:43.053Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -34,30 +18,30 @@
 
     <url>
         <loc>https://volantis.js.org/projects/2020-04-04/</loc>
-        <lastmod>2025-11-21T13:35:00.047Z</lastmod>
+        <lastmod>2025-12-01T08:07:52.616Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://volantis.js.org/notes/%E4%B8%AD%E6%96%87%E6%B8%AC%E8%A9%A6/</loc>
-        <lastmod>2025-11-21T11:14:06.865Z</lastmod>
+        <loc>https://volantis.js.org/blogs/Volantis%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/</loc>
+        <lastmod>2025-12-01T07:57:24.592Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://volantis.js.org/blogs/2025-10-25-latex/</loc>
-        <lastmod>2025-10-24T16:00:00.000Z</lastmod>
+        <loc>https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61/</loc>
+        <lastmod>2025-11-30T13:42:33.236Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
     </url>
 
     <url>
-        <loc>https://volantis.js.org/blogs/blog1/</loc>
+        <loc>https://volantis.js.org/blogs/Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/</loc>
         <lastmod>2025-10-24T16:00:00.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>

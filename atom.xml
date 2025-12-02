@@ -6,7 +6,7 @@
   <link href="https://volantis.js.org/atom.xml" rel="self"/>
   
   <link href="https://volantis.js.org/"/>
-  <updated>2025-11-30T13:42:33.236Z</updated>
+  <updated>2025-12-02T12:04:09.525Z</updated>
   <id>https://volantis.js.org/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61/"/>
     <id>https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61/</id>
     <published>2025-11-24T15:31:30.000Z</published>
-    <updated>2025-11-30T13:42:33.236Z</updated>
+    <updated>2025-12-02T12:04:09.525Z</updated>
     
-    <content type="html"><![CDATA[<p>笔记基于 Howard D.Curtis (周建华 徐波 冯全胜) 的轨道力学书籍以及教师PPT整理而成。</p><div class="story post-story"><h2 id="1-1运动学"><a href="#1-1运动学" class="headerlink" title="1.1运动学"></a>1.1运动学</h2><ul><li>全书时间单位使用 s</li><li>长度单位使用 m &#x2F; km</li></ul><p>给定义一个坐标系，质点P在时刻 t 的位置可以用位置矢量 $\mathbf{r}(t)$ 表示:<br>$$<br>\mathbf{r}(t)&#x3D;x(t)\hat{\mathbf{i}}+y(t)\hat{\mathbf{j}}+z(t)\hat{\mathbf{k}}<br>$$<br>任何具有 “ $\hat{}$ ”的向量都是单位向量。</p></div>]]></content>
+    <content type="html"><![CDATA[<p>笔记基于 Howard D.Curtis (周建华 徐波 冯全胜) 的轨道力学书籍以及教师PPT整理而成。</p><div class="story post-story"><h2 id="运动学"><a href="#运动学" class="headerlink" title="运动学"></a>运动学</h2><ul><li><p>全书时间单位使用 s</p></li><li><p>长度单位使用 m &#x2F; km</p><div galleryFlag itemscope itemtype="http://schema.org/ImageGallery" class="gallery " data-group='default'><div align='center'>    <div class='fancybox'><a class='fancybox' itemscope itemtype="http://schema.org/ImageObject" itemprop="url" href='./../../image/轨道力学/1/矢量.jpg' data-fancybox='default' data-caption='矢量'><img fancybox itemprop="contentUrl" src='./../../image/轨道力学/1/矢量.jpg' alt='矢量' width='30%' ></a><span class='image-caption'>矢量</span></div></div></div></li></ul><p>给定义一个坐标系，质点P在时刻 t 的位置可以用位置矢量$\mathbf{r}(t)$表示:<br>$$<br>\mathbf{r}(t)&#x3D;x(t)\hat{\mathbf{i}}+y(t)\hat{\mathbf{j}}+z(t)\hat{\mathbf{k}}<br>$$<br>任何具有“ $\hat{}$ ”的向量都是单位向量。</p><p><strong>矢量的模</strong>：<br>$$<br>| \mathbf{r} |&#x3D;r&#x3D;\sqrt{x^2+y^2+z^2}<br>$$<br>亦可通过点乘计算，$r&#x3D;\sqrt{\mathbf{r}\bullet\mathbf{r}}$,$|\mathbf{A}|&#x3D;\sqrt{\mathbf{A}\bullet\mathbf{A}}$.</p><p><strong>速度</strong>$\mathbf{v}$:<br>$$<br>\mathbf{v}(t)&#x3D;\frac{dx(t)}{dt}\mathbf{\hat{i}}+\frac{dy(t)}{dt}\mathbf{\hat{j}}+\frac{dz(t)}{dt}\mathbf{\hat{k}}&#x3D;v_x(t)\mathbf{\hat{i}}+v_y(t)\mathbf{\hat{j}}+v_z\mathbf{\hat{k}}<br>$$<br><strong>加速度</strong>$\mathbf{a}$:<br>$$<br>\mathbf{a}(t)&#x3D;\frac{dv_x(t)}{dt}\mathbf{\hat{i}}+\frac{dv_y(t)}{dt}\mathbf{\hat{j}}+\frac{dv_z(t)}{dt}\mathbf{\hat{z}}&#x3D;a_x(t)\mathbf{\hat{i}}+a_y(t)\mathbf{\hat{j}}+a_z(t)\mathbf{\hat{k}}<br>$$<br><strong>速率</strong>$v$:<br>$$<br>\mathbf{v}&#x3D;v\mathbf{\dot{u}_t}<br>$$<br>其中$\mathbf{\dot{u}_t}$为与轨迹相切的单位矢量。</p><p><strong>距离</strong>$s$:<br>$$<br>v&#x3D;\dot{s}<br>$$</p><blockquote><p>注意：某矢量导数的模不等于模的导数。</p></blockquote></div><div class="story post-story"><h2 id="质量、力和万有引力定律"><a href="#质量、力和万有引力定律" class="headerlink" title="质量、力和万有引力定律"></a>质量、力和万有引力定律</h2><p><strong>万有引力</strong>：<br>$$<br>F_g&#x3D;G\frac{m_1m_2}{r^2}<br>$$<br>这里的力只表示大小，两质量分别为$m_1$和$m_2$的中心距离为$r$的物体产生的万有引力。</p><blockquote><p>这里的两物体距离要远大于物体直径，对于近距离不规则天体，如小行星着陆不能简单的视为质点。</p></blockquote><p><strong>重力</strong>：<br>$$<br>W&#x3D;G\frac{Mm}{r^2}&#x3D;m(\frac{GM}{r^2})<br>$$<br>或表示为：<br>$$<br>\begin{gathered}<br>W &#x3D; mg \\<br>g &#x3D; \frac{GM}{r^2}<br>\end{gathered}<br>$$</p><blockquote><p>这里使用万有引力表示重力是基于<strong>壳层定理</strong>，对球对称物体适用。</p><p>还需要指出的是重力是万有引力和离心力的合力，但离心力很小就近似为万有引力。</p></blockquote></div><div class="story post-story"><h2 id="牛顿运动定律"><a href="#牛顿运动定律" class="headerlink" title="牛顿运动定律"></a>牛顿运动定律</h2><p>牛二可以表示为：<br>$$<br>\mathbf{F_{合}}&#x3D;m\mathbf{a}<br>$$</p><p>或者更严谨的表示为：</p>$$\mathbf{F}_{合}=\frac{d\mathbf{p}}{dt}$$<p>冲量：<br>$$<br>\mathbf{I}&#x3D;\int_{t_1}^{t_2}\mathbf{F}dt<br>$$<br>当速度较小，质量为一定值时：<br>$$<br>\mathbf{I}<em>{合}&#x3D;\int</em>{t_1}^{t_2}{m}\frac{d\mathbf{v}}{dt}dt&#x3D;m\mathbf{v_2}-m\mathbf{v_1}<br>$$</p></div>]]></content>
     
     
     <summary type="html">轨道力学笔记</summary>

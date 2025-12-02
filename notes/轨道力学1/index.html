@@ -97,7 +97,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-11-24T15:31:30.000Z">
-<meta property="article:modified_time" content="2025-11-30T13:42:33.236Z">
+<meta property="article:modified_time" content="2025-12-02T12:04:09.525Z">
 <meta property="article:author" content="Volantis Team">
 <meta property="article:tag" content="轨道力学">
 <meta name="twitter:card" content="summary">
@@ -2318,7 +2318,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1764576888761),
+    lastupdate: new Date(1764677055844),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -3149,11 +3149,37 @@ document.addEventListener('DOMContentLoaded', function() {
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>笔记基于 Howard D.Curtis (周建华 徐波 冯全胜) 的轨道力学书籍以及教师PPT整理而成。</p>
-<div class="story post-story"><h2 id="1-1运动学"><a href="#1-1运动学" class="headerlink" title="1.1运动学"></a>1.1运动学</h2><ul>
-<li>全书时间单位使用 s</li>
-<li>长度单位使用 m &#x2F; km</li>
+<div class="story post-story"><h2 id="运动学"><a href="#运动学" class="headerlink" title="运动学"></a>运动学</h2><ul>
+<li><p>全书时间单位使用 s</p>
+</li>
+<li><p>长度单位使用 m &#x2F; km</p>
+<div galleryflag itemscope itemtype="http://schema.org/ImageGallery" class="gallery " data-group="default"><div align="center">    <div class="fancybox"><a class="fancybox" itemscope itemtype="http://schema.org/ImageObject" itemprop="url" href="./../../image/轨道力学/1/矢量.jpg" data-fancybox="default" data-caption="矢量"><img fancybox itemprop="contentUrl" src="./../../image/轨道力学/1/矢量.jpg" class="lazyload" data-srcset="./../../image/轨道力学/1/矢量.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="矢量" width="30%"></a><span class="image-caption">矢量</span></div></div></div></li>
 </ul>
-<p>给定义一个坐标系，质点P在时刻 t 的位置可以用位置矢量 $\mathbf{r}(t)$ 表示:<br>$$<br>\mathbf{r}(t)&#x3D;x(t)\hat{\mathbf{i}}+y(t)\hat{\mathbf{j}}+z(t)\hat{\mathbf{k}}<br>$$<br>任何具有 “ $\hat{}$ ”的向量都是单位向量。</p>
+<p>给定义一个坐标系，质点P在时刻 t 的位置可以用位置矢量$\mathbf{r}(t)$表示:<br>$$<br>\mathbf{r}(t)&#x3D;x(t)\hat{\mathbf{i}}+y(t)\hat{\mathbf{j}}+z(t)\hat{\mathbf{k}}<br>$$<br>任何具有“ $\hat{}$ ”的向量都是单位向量。</p>
+<p><strong>矢量的模</strong>：<br>$$<br>| \mathbf{r} |&#x3D;r&#x3D;\sqrt{x^2+y^2+z^2}<br>$$<br>亦可通过点乘计算，$r&#x3D;\sqrt{\mathbf{r}\bullet\mathbf{r}}$,$|\mathbf{A}|&#x3D;\sqrt{\mathbf{A}\bullet\mathbf{A}}$.</p>
+<p><strong>速度</strong>$\mathbf{v}$:<br>$$<br>\mathbf{v}(t)&#x3D;\frac{dx(t)}{dt}\mathbf{\hat{i}}+\frac{dy(t)}{dt}\mathbf{\hat{j}}+\frac{dz(t)}{dt}\mathbf{\hat{k}}&#x3D;v_x(t)\mathbf{\hat{i}}+v_y(t)\mathbf{\hat{j}}+v_z\mathbf{\hat{k}}<br>$$<br><strong>加速度</strong>$\mathbf{a}$:<br>$$<br>\mathbf{a}(t)&#x3D;\frac{dv_x(t)}{dt}\mathbf{\hat{i}}+\frac{dv_y(t)}{dt}\mathbf{\hat{j}}+\frac{dv_z(t)}{dt}\mathbf{\hat{z}}&#x3D;a_x(t)\mathbf{\hat{i}}+a_y(t)\mathbf{\hat{j}}+a_z(t)\mathbf{\hat{k}}<br>$$<br><strong>速率</strong>$v$:<br>$$<br>\mathbf{v}&#x3D;v\mathbf{\dot{u}_t}<br>$$<br>其中$\mathbf{\dot{u}_t}$为与轨迹相切的单位矢量。</p>
+<p><strong>距离</strong>$s$:<br>$$<br>v&#x3D;\dot{s}<br>$$</p>
+<blockquote>
+<p>注意：某矢量导数的模不等于模的导数。</p>
+</blockquote>
+</div><div class="story post-story"><h2 id="质量、力和万有引力定律"><a href="#质量、力和万有引力定律" class="headerlink" title="质量、力和万有引力定律"></a>质量、力和万有引力定律</h2><p><strong>万有引力</strong>：<br>$$<br>F_g&#x3D;G\frac{m_1m_2}{r^2}<br>$$<br>这里的力只表示大小，两质量分别为$m_1$和$m_2$的中心距离为$r$的物体产生的万有引力。</p>
+<blockquote>
+<p>这里的两物体距离要远大于物体直径，对于近距离不规则天体，如小行星着陆不能简单的视为质点。</p>
+</blockquote>
+<p><strong>重力</strong>：<br>$$<br>W&#x3D;G\frac{Mm}{r^2}&#x3D;m(\frac{GM}{r^2})<br>$$<br>或表示为：<br>$$<br>\begin{gathered}<br>W &#x3D; mg \\<br>g &#x3D; \frac{GM}{r^2}<br>\end{gathered}<br>$$</p>
+<blockquote>
+<p>这里使用万有引力表示重力是基于<strong>壳层定理</strong>，对球对称物体适用。</p>
+<p>还需要指出的是重力是万有引力和离心力的合力，但离心力很小就近似为万有引力。</p>
+</blockquote>
+</div><div class="story post-story"><h2 id="牛顿运动定律"><a href="#牛顿运动定律" class="headerlink" title="牛顿运动定律"></a>牛顿运动定律</h2><p>牛二可以表示为：<br>$$<br>\mathbf{F_{合}}&#x3D;m\mathbf{a}<br>$$</p>
+<p>或者更严谨的表示为：</p>
+
+$$
+\mathbf{F}_{合}=\frac{d\mathbf{p}}{dt}
+$$
+
+
+<p>冲量：<br>$$<br>\mathbf{I}&#x3D;\int_{t_1}^{t_2}\mathbf{F}dt<br>$$<br>当速度较小，质量为一定值时：<br>$$<br>\mathbf{I}<em>{合}&#x3D;\int</em>{t_1}^{t_2}{m}\frac{d\mathbf{v}}{dt}dt&#x3D;m\mathbf{v_2}-m\mathbf{v_1}<br>$$</p>
 
 </div>
   </div>
@@ -3179,10 +3205,10 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-11-30T21:42:33+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-12-02T20:04:09+08:00">
   <a class="notlink">
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：2025年11月30日</p>
+    <p>本页文档最后更新于：2025年12月2日</p>
   </a>
 </div>
 
@@ -3379,7 +3405,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2025-12-01 日</div>
+          <div id="last-update-show">2025-12-02 日</div>
         </div>
       
     </div>
@@ -3406,7 +3432,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   <div class="content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1%E8%BF%90%E5%8A%A8%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text">1.1运动学</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text">运动学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E3%80%81%E5%8A%9B%E5%92%8C%E4%B8%87%E6%9C%89%E5%BC%95%E5%8A%9B%E5%AE%9A%E5%BE%8B"><span class="toc-number">2.</span> <span class="toc-text">质量、力和万有引力定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E8%BF%90%E5%8A%A8%E5%AE%9A%E5%BE%8B"><span class="toc-number">3.</span> <span class="toc-text">牛顿运动定律</span></a></li></ol>
   </div>
 </section>
 
@@ -4399,7 +4425,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4552,17 +4578,6 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
   }
 </script>
 
-        <script>
-  // https://www.micdz.cn/article/katex-on-volantis/
-  if (typeof renderMathInElement == "undefined") {
-    volantis.css("https://unpkg.com/katex@0.16.11/dist/katex.min.css")
-    volantis.js("https://unpkg.com/katex@0.16.11/dist/katex.min.js").then(() => {
-      volantis.js("https://unpkg.com/katex@0.16.11/dist/contrib/auto-render.min.js").then(() => {
-        renderMathInElement(document.body);
-      })
-    })
-  }
-</script>
 
 
 
@@ -4788,7 +4803,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","sameAs":["https://github.com/volantis-x"],"description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://volantis.js.org/","name":"King haonan"}},{"@type":"ListItem","position":2,"item":{"@id":"https://volantis.js.org/categories/note/","name":"note"}},{"@type":"ListItem","position":3,"item":{"@id":"https://volantis.js.org/notes/轨道力学1/","name":"轨道力学-运动学和符号表示"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"King haonan","url":"https://volantis.js.org/","keywords":"Volantis,Hexo,Hexo主题,Blog,博客","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。","author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},"publisher":{"@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://volantis.js.org?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"轨道力学-运动学和符号表示","description":"轨道力学笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61/"},"author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/"},"publisher":{"@type":"Organization","name":"King haonan","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61/","wordCount":0,"datePublished":"2025-11-24T15:31:30.000Z","dateModified":"2025-11-30T13:42:33.236Z","articleSection":"note","keywords":"轨道力学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","sameAs":["https://github.com/volantis-x"],"description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://volantis.js.org/","name":"King haonan"}},{"@type":"ListItem","position":2,"item":{"@id":"https://volantis.js.org/categories/note/","name":"note"}},{"@type":"ListItem","position":3,"item":{"@id":"https://volantis.js.org/notes/轨道力学1/","name":"轨道力学-运动学和符号表示"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"King haonan","url":"https://volantis.js.org/","keywords":"Volantis,Hexo,Hexo主题,Blog,博客","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。","author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},"publisher":{"@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://volantis.js.org?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"轨道力学-运动学和符号表示","description":"轨道力学笔记","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61/"},"author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/"},"publisher":{"@type":"Organization","name":"King haonan","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61/","wordCount":0,"datePublished":"2025-11-24T15:31:30.000Z","dateModified":"2025-12-02T12:04:09.525Z","articleSection":"note","keywords":"轨道力学","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 

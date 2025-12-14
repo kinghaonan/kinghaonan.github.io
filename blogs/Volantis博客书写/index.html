@@ -2318,7 +2318,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1764731656380),
+    lastupdate: new Date(1765722776517),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -3086,7 +3086,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
     <div class="headimg-div">
       <a class="headimg-a">
-        <img itemprop="image" class="headimg lazyload" src="https://youke1.picui.cn/s1/2025/10/25/68fc17128a78b.jpg" class="lazyload" data-srcset="https://youke1.picui.cn/s1/2025/10/25/68fc17128a78b.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+        <img itemprop="image" class="headimg lazyload" src="./../../image/博客书写/background.png" class="lazyload" data-srcset="./../../image/博客书写/background.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
       </a>
     </div>
   
@@ -3150,7 +3150,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <div class="story post-story"><h2 id="数学公式渲染引擎选择"><a href="#数学公式渲染引擎选择" class="headerlink" title="数学公式渲染引擎选择"></a>数学公式渲染引擎选择</h2><h3 id="MathJax方案（兼容性优先）"><a href="#MathJax方案（兼容性优先）" class="headerlink" title="MathJax方案（兼容性优先）"></a>MathJax方案（兼容性优先）</h3><p>适合需要完整LaTeX支持的场景，尤其推荐用于学术类内容。</p>
+    <p>" class="lazyload" data-srcset="" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==<img src></p>
+<div class="story post-story"><h2 id="数学公式渲染引擎选择"><a href="#数学公式渲染引擎选择" class="headerlink" title="数学公式渲染引擎选择"></a>数学公式渲染引擎选择</h2><h3 id="MathJax方案（兼容性优先）"><a href="#MathJax方案（兼容性优先）" class="headerlink" title="MathJax方案（兼容性优先）"></a>MathJax方案（兼容性优先）</h3><p>适合需要完整LaTeX支持的场景，尤其推荐用于学术类内容。</p>
 <h3 id="KaTeX方案（性能优先）"><a href="#KaTeX方案（性能优先）" class="headerlink" title="KaTeX方案（性能优先）"></a>KaTeX方案（性能优先）</h3><p>适合追求加载速度的场景，KaTeX渲染速度比MathJax快约60%，但对部分复杂公式支持有限。</p>
 </div><div class="story post-story"><h2 id="Volantis-主题内置前端渲染方案"><a href="#Volantis-主题内置前端渲染方案" class="headerlink" title="Volantis 主题内置前端渲染方案"></a>Volantis 主题内置前端渲染方案</h2><p>Volantis 6 中在 front-matter 中配置页面插件<a href="https://volantis.js.org/v6/page-settings/?keyword=math">...</a> 即可。</p>
 <figure class="highlight yaml"><figcaption><span>front-matter</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">plugins:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">mathjax</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">katex</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
@@ -3216,6 +3217,118 @@ MathJax 的某些分隔符（如 `$$..$$` ）虽然与 Nunjucks 的 `{{ }}` 不�
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span>                   <span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p>将图标题居中</p>
+</div><div class="story post-story"><h2 id="小问题"><a href="#小问题" class="headerlink" title="小问题"></a>小问题</h2><p>有时候会出现网站页面分成两栏的情况，暂时找到了两种原因，一种是同一个文章有两个大标题，另一种是图</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;img src=&quot;&quot; alt=&quot;&quot; width=&quot;30%&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>没有闭合，也就是缺了&gt;。</p>
+</div><div class="story post-story"><h2 id="美观技巧"><a href="#美观技巧" class="headerlink" title="美观技巧"></a>美观技巧</h2><h3 id="时间线"><a href="#时间线" class="headerlink" title="时间线"></a>时间线</h3><div class="timeline">
+<div class="timenode"><div class="meta"><p></p><p>第 1 步</p>
+<p></p></div><div class="body"><p>这里写一下放在第一步的东西。</p></div></div>
+
+<div class="timenode"><div class="meta"><p></p><p>第二步</p>
+<p></p></div><div class="body"><p>这里写一下放在第二步的东西。</p></div></div>
+</div>
+
+<h3 id="块"><a href="#块" class="headerlink" title="块"></a>块</h3><div class="note idea yellow"><p>小提示<br>如何如何如何idea yellow</p></div>
+
+<div class="note error red"><p>小错误<br>如何如何如何error red</p></div>
+
+<div class="note blue"><p>如何如何如何blue</p></div>
+
+<div class="note quote theme"><p>如何如何如何quote </p></div>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% noteblock quote theme %&#125;</span><br><span class="line"></span><br><span class="line">如何如何如何quote </span><br><span class="line"></span><br><span class="line">&#123;% endnoteblock %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<div class="note"><p>如何如何如何</p></div>
+
+<div class="note info"><p>如何如何如何 info</p></div>
+
+<div class="note error"><p>如何如何如何error</p></div>
+
+<div class="note warning"><p>如何如何如何warning</p></div>
+
+<div class="note success"><p>如何如何如何success</p></div>
+
+<div class="note bug red"><p>如何如何如何bug</p></div>
+
+<div class="note bug"><p>如何如何如何bug</p></div>
+
+<div class="note radiation yellow"><p>如何如何如何radiation</p></div>
+
+<div class="note play"><p>如何如何如何play</p></div>
+
+<div class="note quote"><p>如何如何如何quote</p></div>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% note quote :: 如何如何如何quote%&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="折叠"><a href="#折叠" class="headerlink" title="折叠"></a>折叠</h3><details green><summary> Tips: volantis </summary>
+              <div class="content">
+              <div class="note info"><p>volantis 开发</p></div><div class="note bug danger"><p>volantis 开发</p></div>
+              </div>
+            </details>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% folding green:: Tips: volantis %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note info :: volantis 开发 %&#125;</span><br><span class="line"></span><br><span class="line">&#123;% note bug danger :: volantis 开发%&#125;</span><br><span class="line"></span><br><span class="line">&#123;% endfolding %&#125;</span><br></pre></td></tr></table></figure>
+
+<details><summary>  </summary>
+              <div class="content">
+              <p>1</p><p>2</p><p>3</p><p>4</p><p>5</p><p>6</p><p>7</p>
+              </div>
+            </details>
+
+<h3 id="嵌入MP3-x2F-4"><a href="#嵌入MP3-x2F-4" class="headerlink" title="嵌入MP3&#x2F;4"></a>嵌入MP3&#x2F;4</h3><div class="video"><video controls preload><source src="./assets/demo.mp4," type="video/mp4">Your browser does not support the video tag.</video></div>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% video ./assets/demo.mp4, width=100% %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="audio"><audio controls preload><source src="./assets/demo.mp3，width=100%" type="audio/mp3">Your browser does not support the audio tag.</audio></div>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% audio ./assets/demo.mp3，width=100% %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="卡片链接"><a href="#卡片链接" class="headerlink" title="卡片链接"></a>卡片链接</h3><div class="tag link"><a class="link-card" title="示例博客" href="https://volantis.js.org/v7/getting-started/"><div class="left"><img src="https://unpkg.com/volantis-static@0.0.1649552113628/media/twemoji/assets/svg/1f433.svg" class="lazyload" data-srcset="https://unpkg.com/volantis-static@0.0.1649552113628/media/twemoji/assets/svg/1f433.svg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></div><div class="right"><p class="text">示例博客</p><p class="url">https://volantis.js.org/v7/getting-started/</p></div></a></div>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% link 示例博客::https://volantis.js.org/v7/getting-started/::https://unpkg.com/volantis-static@0.0.1649552113628/media/twemoji/assets/svg/1f433.svg %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><p>
+<span class="p logo center large"><sup>&ensp;</sup>Volantis<sup>7</sup></span>
+<span class="p center small logo">A Wonderful Theme for Hexo</span>
+</p>
+<br>
+
+<p>写作：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;p&gt;</span><br><span class="line">&#123;% span logo center large, &lt;sup&gt;&amp;ensp;&lt;/sup&gt;Volantis&lt;sup&gt;7&lt;/sup&gt; %&#125;</span><br><span class="line">&#123;% span center small logo, A Wonderful Theme for Hexo %&#125;</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;br&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="分栏"><a href="#分栏" class="headerlink" title="分栏"></a>分栏</h3><div class="tabs" id="tab-prepare"><ul class="nav-tabs"><li class="tab active"><a class="#prepare-1">第一个</a></li><li class="tab"><a class="#prepare-2">第二个</a></li></ul><div class="tab-content"><div class="tab-pane active" id="prepare-1"><p>如何如何如何1</p></div><div class="tab-pane" id="prepare-2"><p>如何如何如何2</p></div></div></div>
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs prepare, 1 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 第一个 --&gt;</span><br><span class="line"></span><br><span class="line">如何如何如何1</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 第二个 --&gt;</span><br><span class="line"></span><br><span class="line">如何如何如何2</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h3><span class="btn"><a class="button" href="https://volantis.js.org/v7/getting-started/" title="按钮">按钮</a></span> 
+
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn, 按钮, https://volantis.js.org/v7/getting-started/ %&#125; </span><br></pre></td></tr></table></figure>
+
+<h3 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h3><p><a href="https://volantis.js.org/v7/getting-started/">volantis</a></p>
+<h3 id="文字"><a href="#文字" class="headerlink" title="文字"></a>文字</h3><emp>着重文字</emp> 
+<wavy>波浪线文字</wavy> 
+<del>删除线文字</del>
+<u>下划线文字</u> 
+
+<p><u>这里有下划线</u></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% emp 着重文字 %&#125; </span><br><span class="line">&#123;% wavy 波浪线文字 %&#125; </span><br><span class="line">&#123;% del 删除线文字 %&#125;</span><br><span class="line">&#123;% u 下划线文字 %&#125; </span><br><span class="line"></span><br><span class="line">&lt;u&gt;这里有下划线&lt;/u&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="注音下标"><a href="#注音下标" class="headerlink" title="注音下标"></a>注音下标</h3><p><ruby>基字<rt>注音</rt></ruby></p>
+<p><sup>上标内容</sup><br> <sub>下标内容</sub></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">基字注音&lt;ruby&gt;基字&lt;rt&gt;注音&lt;/rt&gt;&lt;/ruby&gt;</span><br><span class="line">&lt;sup&gt;上标内容&lt;/sup&gt;</span><br><span class="line"> &lt;sub&gt;下标内容&lt;/sub&gt;</span><br></pre></td></tr></table></figure>
+
 
 </div>
   </div>
@@ -3315,9 +3428,9 @@ MathJax 的某些分隔符（如 `$$..$$` ）虽然与 Nunjucks 的 `{{ }}` 不�
   
     <div class="prev-next">
       
-        <a class="prev" href="/blogs/%E5%9B%9E%E6%97%8B%E9%95%96/">
-          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>回旋镖运动轨迹相关参数的研究</p>
-          <p class="content">回旋镖的“飞去来”特性涉及低雷诺数下非定常气动力与刚体姿态动力学的复杂耦合。本文以叶素理论为基础，融合欧拉角姿态描述与牛顿-欧拉运动方程，构建了完整的三翼回旋镖运动模型。借助“z-x-z”欧拉角...</p>
+        <a class="prev" href="/blogs/Volantis%E9%85%8D%E7%BD%AE%E6%8C%87%E5%8D%97/">
+          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Volantis社区模板配置指南</p>
+          <p class="content">Volantis社区模板配置指南1. 获取源码对于像我这样的新手而言，自己查看文档从头搭建自己的网站可能太难了，不如直接获取Volantis社区模板作为自己的网站。在开始之前，要安装Git和No...</p>
         </a>
       
       
@@ -3388,7 +3501,7 @@ MathJax 的某些分隔符（如 `$$..$$` ）虽然与 Nunjucks 的 `{{ }}` 不�
 
 
     <div class="content">
-      <a href="/tags/volantis/" style="font-size: 24px; color: #555">Volantis</a> <a href="/tags/%E5%8F%B6%E7%B4%A0%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">叶素原理</a> <a href="/tags/%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%8A%9B%E5%AD%A6/" style="font-size: 14px; color: #999">空气动力力学</a> <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">网站搭建</a> <a href="/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/" style="font-size: 14px; color: #999">轨道力学</a>
+      <a href="/tags/volantis/" style="font-size: 19px; color: #777">Volantis</a> <a href="/tags/%E4%BA%8C%E4%BD%93%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">二体问题</a> <a href="/tags/%E5%8F%B6%E7%B4%A0%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">叶素原理</a> <a href="/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">控制系统</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">数学模型</a> <a href="/tags/%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%8A%9B%E5%AD%A6/" style="font-size: 14px; color: #999">空气动力力学</a> <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">网站搭建</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">自动控制原理</a> <a href="/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/" style="font-size: 24px; color: #555">轨道力学</a>
     </div>
   </section>
 
@@ -3414,7 +3527,7 @@ MathJax 的某些分隔符（如 `$$..$$` ）虽然与 Nunjucks 的 `{{ }}` 不�
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>5 篇</div>
+          <div>9 篇</div>
         </div>
       
 
@@ -3447,7 +3560,7 @@ MathJax 的某些分隔符（如 `$$..$$` ）虽然与 Nunjucks 的 `{{ }}` 不�
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2025-12-03 日</div>
+          <div id="last-update-show">2025-12-14 日</div>
         </div>
       
     </div>
@@ -3474,7 +3587,7 @@ MathJax 的某些分隔符（如 `$$..$$` ）虽然与 Nunjucks 的 `{{ }}` 不�
 
 
   <div class="content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%BC%95%E6%93%8E%E9%80%89%E6%8B%A9"><span class="toc-number">1.</span> <span class="toc-text">数学公式渲染引擎选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MathJax%E6%96%B9%E6%A1%88%EF%BC%88%E5%85%BC%E5%AE%B9%E6%80%A7%E4%BC%98%E5%85%88%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">MathJax方案（兼容性优先）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KaTeX%E6%96%B9%E6%A1%88%EF%BC%88%E6%80%A7%E8%83%BD%E4%BC%98%E5%85%88%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">KaTeX方案（性能优先）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Volantis-%E4%B8%BB%E9%A2%98%E5%86%85%E7%BD%AE%E5%89%8D%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">Volantis 主题内置前端渲染方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E8%AF%AD%E6%B3%95%E5%86%B2%E7%AA%81"><span class="toc-number">3.</span> <span class="toc-text">数学公式的语法冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathjax-%E4%B8%8E-Markdown-%E7%9A%84%E8%AF%AD%E6%B3%95%E5%86%B2%E7%AA%81"><span class="toc-number">4.</span> <span class="toc-text">Mathjax 与 Markdown 的语法冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathjax-%E4%B8%8E-Nunjucks-%E7%9A%84%E8%AF%AD%E6%B3%95%E5%86%B2%E7%AA%81"><span class="toc-number">5.</span> <span class="toc-text">Mathjax 与 Nunjucks 的语法冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5"><span class="toc-number">6.</span> <span class="toc-text">图片插入</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E6%B8%B2%E6%9F%93%E5%BC%95%E6%93%8E%E9%80%89%E6%8B%A9"><span class="toc-number">1.</span> <span class="toc-text">数学公式渲染引擎选择</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MathJax%E6%96%B9%E6%A1%88%EF%BC%88%E5%85%BC%E5%AE%B9%E6%80%A7%E4%BC%98%E5%85%88%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">MathJax方案（兼容性优先）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KaTeX%E6%96%B9%E6%A1%88%EF%BC%88%E6%80%A7%E8%83%BD%E4%BC%98%E5%85%88%EF%BC%89"><span class="toc-number">1.2.</span> <span class="toc-text">KaTeX方案（性能优先）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Volantis-%E4%B8%BB%E9%A2%98%E5%86%85%E7%BD%AE%E5%89%8D%E7%AB%AF%E6%B8%B2%E6%9F%93%E6%96%B9%E6%A1%88"><span class="toc-number">2.</span> <span class="toc-text">Volantis 主题内置前端渲染方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E8%AF%AD%E6%B3%95%E5%86%B2%E7%AA%81"><span class="toc-number">3.</span> <span class="toc-text">数学公式的语法冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathjax-%E4%B8%8E-Markdown-%E7%9A%84%E8%AF%AD%E6%B3%95%E5%86%B2%E7%AA%81"><span class="toc-number">4.</span> <span class="toc-text">Mathjax 与 Markdown 的语法冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mathjax-%E4%B8%8E-Nunjucks-%E7%9A%84%E8%AF%AD%E6%B3%95%E5%86%B2%E7%AA%81"><span class="toc-number">5.</span> <span class="toc-text">Mathjax 与 Nunjucks 的语法冲突</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E7%89%87%E6%8F%92%E5%85%A5"><span class="toc-number">6.</span> <span class="toc-text">图片插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E9%97%AE%E9%A2%98"><span class="toc-number">7.</span> <span class="toc-text">小问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%8E%E8%A7%82%E6%8A%80%E5%B7%A7"><span class="toc-number">8.</span> <span class="toc-text">美观技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF"><span class="toc-number">8.1.</span> <span class="toc-text">时间线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%97"><span class="toc-number">8.2.</span> <span class="toc-text">块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%8F%A0"><span class="toc-number">8.3.</span> <span class="toc-text">折叠</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B5%8C%E5%85%A5MP3-x2F-4"><span class="toc-number">8.4.</span> <span class="toc-text">嵌入MP3&#x2F;4</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E7%89%87%E9%93%BE%E6%8E%A5"><span class="toc-number">8.5.</span> <span class="toc-text">卡片链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%87%E9%A2%98"><span class="toc-number">8.6.</span> <span class="toc-text">标题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%A0%8F"><span class="toc-number">8.7.</span> <span class="toc-text">分栏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89%E9%92%AE"><span class="toc-number">8.8.</span> <span class="toc-text">按钮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="toc-number">8.9.</span> <span class="toc-text">链接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E5%AD%97"><span class="toc-number">8.10.</span> <span class="toc-text">文字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%9F%B3%E4%B8%8B%E6%A0%87"><span class="toc-number">8.11.</span> <span class="toc-text">注音下标</span></a></li></ol></li></ol>
   </div>
 </section>
 
@@ -4467,7 +4580,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4791,7 +4904,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","sameAs":["https://github.com/volantis-x"],"description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://volantis.js.org/","name":"King haonan"}},{"@type":"ListItem","position":2,"item":{"@id":"https://volantis.js.org/categories/blog/","name":"blog"}},{"@type":"ListItem","position":3,"item":{"@id":"https://volantis.js.org/blogs/Volantis博客书写/","name":"Volantis博客书写问题"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"King haonan","url":"https://volantis.js.org/","keywords":"Volantis,Hexo,Hexo主题,Blog,博客","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。","author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},"publisher":{"@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://volantis.js.org?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Volantis博客书写问题","description":"在Volantis主题上优雅地书写记录。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://volantis.js.org/blogs/Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/"},"author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/"},"publisher":{"@type":"Organization","name":"King haonan","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://volantis.js.org/blogs/Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/","wordCount":0,"datePublished":"2025-10-24T16:00:00.000Z","dateModified":"2025-10-24T16:00:00.000Z","articleSection":"blog","keywords":"Volantis","image":{"@type":"ImageObject","url":"https://youke1.picui.cn/s1/2025/10/25/68fc17128a78b.jpg","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","sameAs":["https://github.com/volantis-x"],"description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://volantis.js.org/","name":"King haonan"}},{"@type":"ListItem","position":2,"item":{"@id":"https://volantis.js.org/categories/blog/","name":"blog"}},{"@type":"ListItem","position":3,"item":{"@id":"https://volantis.js.org/blogs/Volantis博客书写/","name":"Volantis博客书写问题"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"King haonan","url":"https://volantis.js.org/","keywords":"Volantis,Hexo,Hexo主题,Blog,博客","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。","author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},"publisher":{"@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://volantis.js.org?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Volantis博客书写问题","description":"在Volantis主题上优雅地书写记录。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://volantis.js.org/blogs/Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/"},"author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/"},"publisher":{"@type":"Organization","name":"King haonan","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://volantis.js.org/blogs/Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99/","wordCount":0,"datePublished":"2025-10-24T16:00:00.000Z","dateModified":"2025-10-24T16:00:00.000Z","articleSection":"blog","keywords":"Volantis","image":{"@type":"ImageObject","url":"./../../image/博客书写/background.png","width":1024,"height":768}}]</script>
 
 
 

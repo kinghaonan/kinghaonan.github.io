@@ -97,7 +97,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-12-09T07:35:05.000Z">
-<meta property="article:modified_time" content="2025-12-14T07:32:01.332Z">
+<meta property="article:modified_time" content="2026-01-27T08:52:46.452Z">
 <meta property="article:author" content="Volantis Team">
 <meta property="article:tag" content="轨道力学">
 <meta property="article:tag" content="二体问题">
@@ -2319,7 +2319,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1766411992220),
+    lastupdate: new Date(1769562302443),
     cdn: {
       izitoast_css: 'https://unpkg.com/izitoast@1.4.0/dist/css/iziToast.min.css',
       izitoast_js: 'https://unpkg.com/izitoast@1.4.0/dist/js/iziToast.min.js',
@@ -3169,6 +3169,103 @@ document.addEventListener('DOMContentLoaded', function() {
 <p>在近地点处：<br>$$<br>\varepsilon &#x3D;\varepsilon_p&#x3D; \frac{v_{p}^2}{2} - \frac{\mu}{r_p}&#x3D;\frac{h^2}{2r_{p}^2} - \frac{\mu}{r_p}<br>$$</p>
 <p>将轨道方程$r &#x3D; \frac{h^2&#x2F;\mu}{1 + e \cos \theta}$代入，可得：<br>$$<br>\varepsilon &#x3D; \frac{\mu^2}{2h^2} (e^2 - 1)<br>$$<br>轨道的比能量由偏心率，角动量和引力参数决定。</p>
 <p>机械能要乘以质量：<br>$$<br>E&#x3D;m_1\varepsilon<br>$$</p>
+</div><div class="story post-story"><h2 id="2-6-圆轨道（-e-x3D-0-）"><a href="#2-6-圆轨道（-e-x3D-0-）" class="headerlink" title="2.6 圆轨道（$e &#x3D; 0$）"></a>2.6 圆轨道（$e &#x3D; 0$）</h2><p>圆轨道（$e &#x3D; 0$）的特征参数为：<br>$$<br>r &#x3D; \frac{h^2}{\mu} &#x3D; \text{常数}<br>$$</p>
+<p>$$<br>v_\perp &#x3D; \frac{h}{r} &#x3D; \sqrt{\frac{\mu}{r}}, \quad v_r &#x3D; 0<br>$$</p>
+<p>圆轨道的速度：<br>$$<br>v_{\text{cir}} &#x3D; \sqrt{\frac{\mu}{r}}<br>$$</p>
+<p>圆轨道的能量为负值：<br>$$<br>\varepsilon_{\text{cir}} &#x3D; -\frac{\mu}{2r}<br>$$</p>
+<p>当半径变大时，能量增加。换句话说，轨道越高，能量越大。</p>
+<p>圆轨道的周期：<br>$$<br>T_{\text{cir}} &#x3D; \frac{2\pi r}{v_{\text{cir}}} &#x3D; 2\pi \sqrt{\frac{r^3}{\mu}}<br>$$</p>
+<p>地球同步轨道（GEO）：卫星运行周期与地球在惯性空间的自转周期相同，且运行方向与地球自转方向一致的圆形轨道。</p>
+<p>地球静止轨道（GEO）：卫星始终停留在地球赤道上方一点处。</p>
+<p>地球静止卫星的高度$z_{\text{GEO}}$和速度$v_{\text{GEO}}$：<br>$$<br>r_{\text{GEO}} &#x3D; \sqrt[3]{\frac{\mu}{\omega_E^2}}, \quad z_{\text{GEO}} &#x3D; r_{\text{GEO}} - R_E, \quad v_{\text{GEO}} &#x3D; \sqrt{\frac{\mu}{r_{\text{GEO}}}}<br>$$</p>
+<p>其中$\omega_E$为地球自转角速度。</p>
+</div><div class="story post-story"><h2 id="2-7-椭圆轨道（-0-lt-e-lt-1-）"><a href="#2-7-椭圆轨道（-0-lt-e-lt-1-）" class="headerlink" title="2.7 椭圆轨道（$0 &lt; e &lt; 1$）"></a>2.7 椭圆轨道（$0 &lt; e &lt; 1$）</h2><p>若$0 &lt; e &lt; 1$，则轨道为椭圆轨道。</p>
+<p>近地点半径：<br>$$<br>r_p &#x3D; \frac{h^2}{\mu} \frac{1}{1 + e}<br>$$</p>
+<p>远地点半径：<br>$$<br>r_a &#x3D; \frac{h^2}{\mu} \frac{1}{1 - e}<br>$$</p>
+<p>半长轴或长半轴：<br>$$<br>a &#x3D; \frac{r_p + r_a}{2} &#x3D; \frac{h^2}{\mu} \frac{1}{1 - e^2}<br>$$</p>
+<p>半焦距：<br>$$<br>c &#x3D; a - r_p &#x3D; a e<br>$$</p>
+<p>椭圆的短半轴：<br>$$<br>b &#x3D; a \sqrt{1 - e^2}<br>$$</p>
+<p>轨道方程的另一表达：<br>$$<br>r &#x3D; \frac{a(1 - e^2)}{1 + e \cos \theta}<br>$$</p>
+<p>或者：<br>$$<br>\frac{1}{r} &#x3D; \frac{1 + e \cos \theta}{a(1 - e^2)}<br>$$</p>
+<p>用直角坐标表示椭圆轨道的运动方程：<br>$$<br>\frac{x^2}{a^2} + \frac{y^2}{b^2} &#x3D; 1<br>$$</p>
+<p>其中：<br>$$<br>x &#x3D; a \left( \frac{e + \cos \theta}{1 + e \cos \theta} \right), \quad y &#x3D; b \left( \frac{\sqrt{1 - e^2} \sin \theta}{1 + e \cos \theta} \right)<br>$$</p>
+<p>椭圆的比机械能仅与其长半轴有关，而与偏心率无关：<br>$$<br>\varepsilon &#x3D; -\frac{\mu}{2a}<br>$$</p>
+<p>椭圆轨道能量守恒定律：<br>$$<br>\frac{v^2}{2} - \frac{\mu}{r} &#x3D; -\frac{\mu}{2a}<br>$$</p>
+<p>或者：<br>$$<br>v^2 &#x3D; \mu \left( \frac{2}{r} - \frac{1}{a} \right)<br>$$</p>
+<p>椭圆轨道的周期：<br>$$<br>T &#x3D; 2\pi \sqrt{\frac{a^3}{\mu}}<br>$$</p>
+<p>开普勒第三定律：轨道周期的平方与半长轴的立方成正比。</p>
+<p>偏心率的几何意义：两焦点间的距离与主轴长度的比值：<br>$$<br>e &#x3D; \frac{r_a - r_p}{r_a + r_p} &#x3D; \frac{c}{a}<br>$$</p>
+</div><div class="story post-story"><h2 id="2-8-抛物线轨道（-e-x3D-1-）"><a href="#2-8-抛物线轨道（-e-x3D-1-）" class="headerlink" title="2.8 抛物线轨道（$e &#x3D; 1$）"></a>2.8 抛物线轨道（$e &#x3D; 1$）</h2><p>若$e &#x3D; 1$，则轨道为抛物线轨道。</p>
+<p>轨道方程：<br>$$<br>r &#x3D; \frac{h^2 &#x2F; \mu}{1 + \cos \theta}<br>$$</p>
+<p>或者：<br>$$<br>\frac{1}{r} &#x3D; \frac{\mu}{h^2} (1 + \cos \theta)<br>$$</p>
+<p>抛物线轨道的比机械能为零：<br>$$<br>\varepsilon &#x3D; 0<br>$$</p>
+<p>能量守恒：<br>$$<br>\frac{v^2}{2} - \frac{\mu}{r} &#x3D; 0<br>$$</p>
+<p>逃逸速度：<br>$$<br>v_{\text{esc}} &#x3D; \sqrt{\frac{2\mu}{r}}<br>$$</p>
+<p>在轨道半径$r$处以此速度发射，才能逃逸！</p>
+<p>抛物线轨道上的飞行路径角：<br>$$<br>\tan \gamma &#x3D; \frac{\sin \theta}{1 + \cos \theta} &#x3D; \tan \frac{\theta}{2}<br>$$</p>
+<p>因此：<br>$$<br>\gamma &#x3D; \frac{\theta}{2}<br>$$</p>
+<p>抛物线轨道上的飞行路径角为真近点角的一半。</p>
+<p>要从一圆轨道上逃逸，需要比原圆轨道的速度提高41.4%：<br>$$<br>\frac{v_{\text{esc}}}{v_{\text{cir}}} &#x3D; \sqrt{2} \approx 1.414<br>$$</p>
+</div><div class="story post-story"><h2 id="2-9-双曲线轨道（-e-gt-1-）"><a href="#2-9-双曲线轨道（-e-gt-1-）" class="headerlink" title="2.9 双曲线轨道（$e &gt; 1$）"></a>2.9 双曲线轨道（$e &gt; 1$）</h2><p>若$e &gt; 1$，则轨道为双曲线轨道。</p>
+<p>轨道方程：<br>$$<br>r &#x3D; \frac{h^2 &#x2F; \mu}{1 + e \cos \theta}<br>$$</p>
+<p>当$r \to \infty$时，$\cos \theta \to -1&#x2F;e$，解出渐近线真近点角：<br>$$<br>\theta_\infty &#x3D; \arccos \left( -\frac{1}{e} \right)<br>$$</p>
+<p>渐近线与拱线的锐角：<br>$$<br>\beta &#x3D; \pi - \theta_\infty<br>$$</p>
+<p>$$<br>\cos \beta &#x3D; -\cos \theta_\infty &#x3D; \frac{1}{e}<br>$$</p>
+<p>两渐近线之间的夹角：<br>$$<br>\delta &#x3D; 2\beta<br>$$</p>
+<p>转向角：<br>$$<br>\delta &#x3D; 2 \arcsin \left( \frac{1}{e} \right)<br>$$</p>
+<p>双曲线轨道的比机械能为正：<br>$$<br>\varepsilon &#x3D; \frac{\mu}{2a} &gt; 0<br>$$</p>
+<p>其中$a &lt; 0$为双曲线的长半轴（虚半轴）：<br>$$<br>a &#x3D; \frac{h^2}{\mu} \frac{1}{1 - e^2} \quad (\text{当 } e &gt; 1 \text{ 时，} a &lt; 0)<br>$$</p>
+<p>能量守恒：<br>$$<br>\frac{v^2}{2} - \frac{\mu}{r} &#x3D; \frac{\mu}{2a}<br>$$</p>
+<p>或者：<br>$$<br>v^2 &#x3D; \mu \left( \frac{2}{r} + \frac{1}{|a|} \right)<br>$$</p>
+<p>剩余速度（无穷远处的速度）：<br>$$<br>v_\infty &#x3D; \sqrt{\frac{\mu}{|a|}}<br>$$</p>
+<p>特征能量：<br>$$<br>C_3 &#x3D; v_\infty^2 &#x3D; \frac{\mu}{|a|}<br>$$</p>
+<p>近地点半径：<br>$$<br>r_p &#x3D; \frac{h^2}{\mu} \frac{1}{1 + e} &#x3D; |a|(e - 1)<br>$$</p>
+</div><div class="story post-story"><h2 id="2-10-近焦点坐标系"><a href="#2-10-近焦点坐标系" class="headerlink" title="2.10 近焦点坐标系"></a>2.10 近焦点坐标系</h2><p>近焦点坐标系：以轨道焦点为坐标原点；$x$轴从焦点指向近地点；与$x$轴真近点角为$90^\circ$的方向为$y$轴方向；$z$轴垂直于轨道平面，与角动量方向一致；单位矢量为$\hat{\mathbf{p}}$, $\hat{\mathbf{q}}$, $\hat{\mathbf{w}}$。</p>
+<p>在近焦点坐标系中位置矢量可表示为：<br>$$<br>\mathbf{r} &#x3D; x \hat{\mathbf{p}} + y \hat{\mathbf{q}}<br>$$</p>
+<p>其中：<br>$$<br>x &#x3D; r \cos \theta, \quad y &#x3D; r \sin \theta<br>$$</p>
+<p>代入轨道方程$r &#x3D; \frac{h^2&#x2F;\mu}{1 + e \cos \theta}$，得到：<br>$$<br>\mathbf{r} &#x3D; \frac{h^2&#x2F;\mu}{1 + e \cos \theta} (\cos \theta \hat{\mathbf{p}} + \sin \theta \hat{\mathbf{q}})<br>$$</p>
+<p>速度矢量：<br>$$<br>\mathbf{v} &#x3D; \dot{\mathbf{r}} &#x3D; \dot{x} \hat{\mathbf{p}} + \dot{y} \hat{\mathbf{q}}<br>$$</p>
+<p>其中：<br>$$<br>\dot{x} &#x3D; \dot{r} \cos \theta - r \dot{\theta} \sin \theta, \quad \dot{y} &#x3D; \dot{r} \sin \theta + r \dot{\theta} \cos \theta<br>$$</p>
+<p>代入$v_r &#x3D; \dot{r} &#x3D; \frac{h}{r} e \sin \theta$和$v_\perp &#x3D; r \dot{\theta} &#x3D; \frac{h}{r}$，得到：<br>$$<br>\dot{x} &#x3D; -\frac{\mu}{h} \sin \theta, \quad \dot{y} &#x3D; \frac{\mu}{h} (e + \cos \theta)<br>$$</p>
+<p>因此：<br>$$<br>\mathbf{v} &#x3D; \frac{\mu}{h} [-\sin \theta \hat{\mathbf{p}} + (e + \cos \theta) \hat{\mathbf{q}}]<br>$$</p>
+</div><div class="story post-story"><h2 id="2-11-拉格朗日系数"><a href="#2-11-拉格朗日系数" class="headerlink" title="2.11 拉格朗日系数"></a>2.11 拉格朗日系数</h2><p>若运动物体在某一时刻的位置和速度矢量已知，则可以用初始值表示出其在之后任何时刻的位置和速度。</p>
+<p>在近焦点坐标系中：<br>$$<br>\mathbf{r} &#x3D; x \hat{\mathbf{p}} + y \hat{\mathbf{q}}, \quad \mathbf{v} &#x3D; \dot{x} \hat{\mathbf{p}} + \dot{y} \hat{\mathbf{q}}<br>$$</p>
+<p>初始时刻$t &#x3D; t_0$：<br>$$<br>\mathbf{r}_0 &#x3D; x_0 \hat{\mathbf{p}} + y_0 \hat{\mathbf{q}}, \quad \mathbf{v}_0 &#x3D; \dot{x}_0 \hat{\mathbf{p}} + \dot{y}_0 \hat{\mathbf{q}}<br>$$</p>
+<p>角动量为常数，可通过初始条件计算：<br>$$<br>\mathbf{h} &#x3D; \mathbf{r}_0 \times \mathbf{v}_0 &#x3D; (x_0 \dot{y}_0 - y_0 \dot{x}_0) \hat{\mathbf{w}}<br>$$</p>
+<p>$$<br>h &#x3D; x_0 \dot{y}_0 - y_0 \dot{x}_0<br>$$</p>
+<p>单位矢量可表示为：<br>$$<br>\hat{\mathbf{p}} &#x3D; \frac{\dot{y}_0}{h} \mathbf{r}_0 - \frac{y_0}{h} \mathbf{v}_0, \quad \hat{\mathbf{q}} &#x3D; -\frac{\dot{x}_0}{h} \mathbf{r}_0 + \frac{x_0}{h} \mathbf{v}_0<br>$$</p>
+<p>代入位置和速度表达式，得到：<br>$$<br>\mathbf{r} &#x3D; f \mathbf{r}_0 + g \mathbf{v}_0, \quad \mathbf{v} &#x3D; \dot{f} \mathbf{r}_0 + \dot{g} \mathbf{v}_0<br>$$</p>
+<p>其中拉格朗日系数为：<br>$$<br>f &#x3D; \frac{x \dot{y}_0 - y \dot{x}_0}{h}, \quad g &#x3D; \frac{-x y_0 + y x_0}{h}<br>$$</p>
+<p>$$<br>\dot{f} &#x3D; \frac{\dot{x} \dot{y}_0 - \dot{y} \dot{x}_0}{h}, \quad \dot{g} &#x3D; \frac{-\dot{x} y_0 + \dot{y} x_0}{h}<br>$$</p>
+<p>拉格朗日系数与真近点角变化值$\Delta \theta &#x3D; \theta - \theta_0$之间的关系：<br>$$<br>f &#x3D; 1 - \frac{\mu}{h^2} \frac{r}{r_0} (1 - \cos \Delta \theta)<br>$$</p>
+<p>$$<br>g &#x3D; \frac{r r_0}{h} \sin \Delta \theta<br>$$</p>
+<p>$$<br>\dot{f} &#x3D; \frac{\mu}{h} \frac{1 - \cos \Delta \theta}{\sin \Delta \theta} \left( \frac{1}{r_0} - \frac{1}{r} - \frac{1 - \cos \Delta \theta}{r_0} \right)<br>$$</p>
+<p>$$<br>\dot{g} &#x3D; 1 - \frac{\mu}{h^2} \frac{r_0}{r} (1 - \cos \Delta \theta)<br>$$</p>
+<p>约束条件：<br>$$<br>f \dot{g} - \dot{f} g &#x3D; 1<br>$$</p>
+</div><div class="story post-story"><h2 id="2-12-限制性三体问题"><a href="#2-12-限制性三体问题" class="headerlink" title="2.12 限制性三体问题"></a>2.12 限制性三体问题</h2><p>设两物体$m_1$和$m_2$仅在相互间引力的作用下运动，且它们之间相互绕行的轨道是半径为$r_{12}$的圆。设一个非惯性、以二体系统的质心G为坐标原点，与两物体一同转动的运动坐标系$xyz$。</p>
+<p>非惯性坐标系的匀速角速度：<br>$$<br>\boldsymbol{\Omega} &#x3D; \Omega \hat{\mathbf{k}}<br>$$</p>
+<p>轨道周期：<br>$$<br>T &#x3D; \frac{2\pi}{\Omega} &#x3D; 2\pi \sqrt{\frac{r_{12}^3}{\mu}}<br>$$</p>
+<p>其中$\mu &#x3D; G(m_1 + m_2)$。</p>
+<p>质心定义：<br>$$<br>m_1 x_1 + m_2 x_2 &#x3D; 0<br>$$</p>
+<p>几何关系：<br>$$<br>x_2 - x_1 &#x3D; r_{12}<br>$$</p>
+<p>解得：<br>$$<br>x_1 &#x3D; -\pi_2 r_{12}, \quad x_2 &#x3D; \pi_1 r_{12}<br>$$</p>
+<p>其中：<br>$$<br>\pi_1 &#x3D; \frac{m_1}{m_1 + m_2}, \quad \pi_2 &#x3D; \frac{m_2}{m_1 + m_2}<br>$$</p>
+<p>在运动坐标系中，质点$m$相对于$m_1$的位置矢量：<br>$$<br>\mathbf{r}<em>1 &#x3D; (x + \pi_2 r</em>{12}) \hat{\mathbf{i}} + y \hat{\mathbf{j}} + z \hat{\mathbf{k}}<br>$$</p>
+<p>质点$m$相对于$m_2$的位置矢量：<br>$$<br>\mathbf{r}<em>2 &#x3D; (x - \pi_1 r</em>{12}) \hat{\mathbf{i}} + y \hat{\mathbf{j}} + z \hat{\mathbf{k}}<br>$$</p>
+<p>绝对加速度：<br>$$<br>\mathbf{a} &#x3D; \ddot{\mathbf{r}}<em>{\text{rel}} + \dot{\boldsymbol{\Omega}} \times \mathbf{r} + \boldsymbol{\Omega} \times (\boldsymbol{\Omega} \times \mathbf{r}) + 2\boldsymbol{\Omega} \times \dot{\mathbf{r}}</em>{\text{rel}}<br>$$</p>
+<p>对于匀速转动坐标系，$\dot{\boldsymbol{\Omega}} &#x3D; 0$：<br>$$<br>\mathbf{a} &#x3D; \ddot{\mathbf{r}}<em>{\text{rel}} + \boldsymbol{\Omega} \times (\boldsymbol{\Omega} \times \mathbf{r}) + 2\boldsymbol{\Omega} \times \dot{\mathbf{r}}</em>{\text{rel}}<br>$$</p>
+<p>应用牛顿第二运动定律：<br>$$<br>\mathbf{F} &#x3D; m \mathbf{a} &#x3D; -\frac{G m_1 m}{r_1^3} \mathbf{r}_1 - \frac{G m_2 m}{r_2^3} \mathbf{r}_2<br>$$</p>
+<p>得到限制性三体问题的标量方程组：<br>$$<br>\ddot{x} - 2\Omega \dot{y} - \Omega^2 x &#x3D; -\frac{\mu_1}{r_1^3} (x + \pi_2 r_{12}) - \frac{\mu_2}{r_2^3} (x - \pi_1 r_{12})<br>$$</p>
+<p>$$<br>\ddot{y} + 2\Omega \dot{x} - \Omega^2 y &#x3D; -\frac{\mu_1}{r_1^3} y - \frac{\mu_2}{r_2^3} y<br>$$</p>
+<p>$$<br>\ddot{z} &#x3D; -\frac{\mu_1}{r_1^3} z - \frac{\mu_2}{r_2^3} z<br>$$</p>
+<p>其中$\mu_1 &#x3D; G m_1$，$\mu_2 &#x3D; G m_2$。</p>
+<p>拉格朗日点（平动点）：第三个物体$m$在运动坐标系中速度为零且加速度为零的位置，也就是$m$相对于$m_1$和$m_2$永远静止不动的位置。</p>
+<p>平动点约束条件为：<br>$$<br>\dot{x} &#x3D; \dot{y} &#x3D; \dot{z} &#x3D; 0, \quad \ddot{x} &#x3D; \ddot{y} &#x3D; \ddot{z} &#x3D; 0<br>$$</p>
+<p>解得五个拉格朗日点：$L_1$, $L_2$, $L_3$位于拱线上，$L_4$, $L_5$与$m_1$和$m_2$构成等边三角形。</p>
+<p>雅可比常数：限制性三体问题的运动常数。<br>$$<br>C &#x3D; \Omega^2 (x^2 + y^2) + \frac{2\mu_1}{r_1} + \frac{2\mu_2}{r_2} - v^2<br>$$</p>
+<p>其中$v^2 &#x3D; \dot{x}^2 + \dot{y}^2 + \dot{z}^2$。</p>
+<p>零速度曲线：<br>$$<br>\Omega^2 (x^2 + y^2) + \frac{2\mu_1}{r_1} + \frac{2\mu_2}{r_2} &#x3D; C<br>$$</p>
+<p>定义了第三体运动区域的边界。</p>
 
 </div>
   </div>
@@ -3194,10 +3291,10 @@ document.addEventListener('DOMContentLoaded', function() {
     <div class="new-meta-box">
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-12-14T15:32:01+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2026-01-27T16:52:46+08:00">
   <a class="notlink">
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>本页文档最后更新于：2025年12月14日</p>
+    <p>本页文档最后更新于：2026年1月27日</p>
   </a>
 </div>
 
@@ -3268,23 +3365,17 @@ document.addEventListener('DOMContentLoaded', function() {
   
     <div class="prev-next">
       
-        <a class="prev" href="/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%861/">
-          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>自动控制原理-线性定常系统与频域模型</p>
-          <p class="content">控制系统的数学模型本章主要介绍控制系统的数学建模方法，包括线性定常系统的时域模型和线性系统的频域模型。通过数学模型，可以分析系统特性、设计控制器并预测系统行为。
-本章学习目标
-了解系统建模的主要...</p>
+        <a class="prev" href="/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A65/">
+          <p class="title"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>轨道力学-轨道位置的时间函数</p>
+          <p class="content">3.1 引言在二体问题中，轨道方程给出了位置矢量$\mathbf{r}$与真近点角$\theta$之间的关系：$$\mathbf{r} &#x3D; \frac{h^2&#x2F;\mu}{1 ...</p>
         </a>
       
       
-        <a class="next" href="/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A62/">
-          <p class="title">轨道力学-二体问题基础<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class="content">本节介绍的是空间中两个质点只受相互引力作用下的运动。
-惯性系中的运动方程    ​    
+        <a class="next" href="/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A63/">
+          <p class="title">轨道力学-角动量和轨道方程<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class="content">2.4 角动量和轨道方程    
 
-定义二体问题的质心：
-
-$$
-\mathbf{R}_G = \frac{m_1 \mathbf{R}...</p>
+物体$m_2$相对于$m_1$的角动量：$$\mathbf{H_{2&#x2F;1}} &#x3D; m_2 \mathbf{r} \times \mathb...</p>
         </a>
       
     </div>
@@ -3348,7 +3439,7 @@ $$
 
 
     <div class="content">
-      <a href="/tags/volantis/" style="font-size: 19px; color: #777">Volantis</a> <a href="/tags/%E4%BA%8C%E4%BD%93%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">二体问题</a> <a href="/tags/%E5%8F%B6%E7%B4%A0%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">叶素原理</a> <a href="/tags/%E5%9B%BE%E7%A4%BA%E6%B3%95/" style="font-size: 14px; color: #999">图示法</a> <a href="/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 19px; color: #777">控制系统</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">数学模型</a> <a href="/tags/%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%8A%9B%E5%AD%A6/" style="font-size: 14px; color: #999">空气动力力学</a> <a href="/tags/%E7%BB%93%E6%9E%84%E6%A1%86%E5%9B%BE/" style="font-size: 14px; color: #999">结构框图</a> <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">网站搭建</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/" style="font-size: 19px; color: #777">自动控制原理</a> <a href="/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/" style="font-size: 24px; color: #555">轨道力学</a>
+      <a href="/tags/clohessy-wiltshire%E6%96%B9%E7%A8%8B/" style="font-size: 14px; color: #999">Clohessy-Wiltshire方程</a> <a href="/tags/pid%E6%8E%A7%E5%88%B6/" style="font-size: 14px; color: #999">PID控制</a> <a href="/tags/volantis/" style="font-size: 16px; color: #8b8b8b">Volantis</a> <a href="/tags/%E4%B8%80%E9%98%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">一阶系统</a> <a href="/tags/%E4%B8%89%E7%BB%B4%E8%BD%A8%E9%81%93/" style="font-size: 14px; color: #999">三维轨道</a> <a href="/tags/%E4%B8%B2%E8%81%94%E6%A0%A1%E6%AD%A3/" style="font-size: 14px; color: #999">串联校正</a> <a href="/tags/%E4%BA%8C%E4%BD%93%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">二体问题</a> <a href="/tags/%E4%BA%8C%E9%98%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">二阶系统</a> <a href="/tags/%E4%BA%A4%E4%BC%9A%E5%AF%B9%E6%8E%A5/" style="font-size: 14px; color: #999">交会对接</a> <a href="/tags/%E4%BC%AF%E5%BE%B7%E5%9B%BE/" style="font-size: 14px; color: #999">伯德图</a> <a href="/tags/%E4%BF%A1%E5%8F%B7%E6%B5%81%E5%9B%BE/" style="font-size: 14px; color: #999">信号流图</a> <a href="/tags/%E5%80%92%E7%AB%8B%E6%91%86/" style="font-size: 14px; color: #999">倒立摆</a> <a href="/tags/%E5%85%B0%E4%BC%AF%E7%89%B9%E9%97%AE%E9%A2%98/" style="font-size: 14px; color: #999">兰伯特问题</a> <a href="/tags/%E5%88%9D%E5%A7%8B%E8%BD%A8%E9%81%93%E7%A1%AE%E5%AE%9A/" style="font-size: 14px; color: #999">初始轨道确定</a> <a href="/tags/%E5%8A%B3%E6%96%AF%E5%88%A4%E6%8D%AE/" style="font-size: 14px; color: #999">劳斯判据</a> <a href="/tags/%E5%8F%B6%E7%B4%A0%E5%8E%9F%E7%90%86/" style="font-size: 14px; color: #999">叶素原理</a> <a href="/tags/%E5%90%89%E5%B8%83%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">吉布斯法</a> <a href="/tags/%E5%9B%BE%E7%A4%BA%E6%B3%95/" style="font-size: 14px; color: #999">图示法</a> <a href="/tags/%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2/" style="font-size: 14px; color: #999">坐标变换</a> <a href="/tags/%E5%9F%83%E6%96%87%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">埃文斯法</a> <a href="/tags/%E5%A5%88%E5%A5%8E%E6%96%AF%E7%89%B9%E5%88%A4%E6%8D%AE/" style="font-size: 14px; color: #999">奈奎斯特判据</a> <a href="/tags/%E5%A5%88%E5%A5%8E%E6%96%AF%E7%89%B9%E5%9B%BE/" style="font-size: 14px; color: #999">奈奎斯特图</a> <a href="/tags/%E5%AF%B9%E6%95%B0%E9%A2%91%E7%8E%87%E5%88%A4%E6%8D%AE/" style="font-size: 14px; color: #999">对数频率判据</a> <a href="/tags/%E5%B0%BC%E5%85%8B%E5%B0%94%E6%96%AF%E5%9B%BE/" style="font-size: 14px; color: #999">尼克尔斯图</a> <a href="/tags/%E5%BB%BA%E6%A8%A1/" style="font-size: 14px; color: #999">建模</a> <a href="/tags/%E5%BC%80%E6%99%AE%E5%8B%92%E6%96%B9%E7%A8%8B/" style="font-size: 14px; color: #999">开普勒方程</a> <a href="/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/" style="font-size: 14px; color: #999">性能分析</a> <a href="/tags/%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/" style="font-size: 14px; color: #999">性能指标</a> <a href="/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 22px; color: #636363">控制系统</a> <a href="/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E6%A0%A1%E6%AD%A3/" style="font-size: 14px; color: #999">控制系统校正</a> <a href="/tags/%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B/" style="font-size: 14px; color: #999">数学模型</a> <a href="/tags/%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/" style="font-size: 18px; color: #7e7e7e">时域分析</a> <a href="/tags/%E6%97%B6%E5%9F%9F%E6%8C%87%E6%A0%87/" style="font-size: 14px; color: #999">时域指标</a> <a href="/tags/%E6%97%B6%E9%97%B4%E5%87%BD%E6%95%B0/" style="font-size: 14px; color: #999">时间函数</a> <a href="/tags/%E6%98%A0%E5%B0%84%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">映射定理</a> <a href="/tags/%E6%9C%80%E5%B0%8F%E7%9B%B8%E4%BD%8D%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">最小相位系统</a> <a href="/tags/%E6%9C%BA%E6%A2%B0%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">机械系统</a> <a href="/tags/%E6%A0%B9%E8%BD%A8%E8%BF%B9%E6%96%B9%E7%A8%8B/" style="font-size: 14px; color: #999">根轨迹方程</a> <a href="/tags/%E6%A0%B9%E8%BD%A8%E8%BF%B9%E6%B3%95/" style="font-size: 14px; color: #999">根轨迹法</a> <a href="/tags/%E6%A2%85%E6%A3%AE%E5%85%AC%E5%BC%8F/" style="font-size: 14px; color: #999">梅森公式</a> <a href="/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/" style="font-size: 14px; color: #999">欧拉定理</a> <a href="/tags/%E6%BB%9E%E5%90%8E%E6%A0%A1%E6%AD%A3/" style="font-size: 16px; color: #8b8b8b">滞后校正</a> <a href="/tags/%E7%94%B5%E8%B7%AF%E7%B3%BB%E7%BB%9F/" style="font-size: 14px; color: #999">电路系统</a> <a href="/tags/%E7%9B%B8%E5%AF%B9%E8%BF%90%E5%8A%A8/" style="font-size: 14px; color: #999">相对运动</a> <a href="/tags/%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/" style="font-size: 16px; color: #8b8b8b">稳定性分析</a> <a href="/tags/%E7%A8%B3%E5%AE%9A%E8%A3%95%E5%BA%A6/" style="font-size: 14px; color: #999">稳定裕度</a> <a href="/tags/%E7%A8%B3%E6%80%81%E8%AF%AF%E5%B7%AE/" style="font-size: 14px; color: #999">稳态误差</a> <a href="/tags/%E7%A9%BA%E6%B0%94%E5%8A%A8%E5%8A%9B%E5%8A%9B%E5%AD%A6/" style="font-size: 14px; color: #999">空气动力力学</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E5%9E%8B%E5%88%AB/" style="font-size: 14px; color: #999">系统型别</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E6%A0%A1%E6%AD%A3/" style="font-size: 14px; color: #999">系统校正</a> <a href="/tags/%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86/" style="font-size: 14px; color: #999">系统辨识</a> <a href="/tags/%E7%BB%93%E6%9E%84%E6%A1%86%E5%9B%BE/" style="font-size: 14px; color: #999">结构框图</a> <a href="/tags/%E7%BD%91%E7%AB%99%E6%90%AD%E5%BB%BA/" style="font-size: 14px; color: #999">网站搭建</a> <a href="/tags/%E8%84%89%E5%86%B2%E6%9C%BA%E5%8A%A8/" style="font-size: 14px; color: #999">脉冲机动</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/" style="font-size: 24px; color: #555">自动控制原理</a> <a href="/tags/%E8%AF%AF%E5%B7%AE%E5%B8%B8%E6%95%B0/" style="font-size: 14px; color: #999">误差常数</a> <a href="/tags/%E8%B0%83%E7%9B%B8%E6%9C%BA%E5%8A%A8/" style="font-size: 14px; color: #999">调相机动</a> <a href="/tags/%E8%B6%85%E5%89%8D%E6%A0%A1%E6%AD%A3/" style="font-size: 16px; color: #8b8b8b">超前校正</a> <a href="/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/" style="font-size: 20px; color: #707070">轨道力学</a> <a href="/tags/%E8%BD%A8%E9%81%93%E6%9C%BA%E5%8A%A8/" style="font-size: 14px; color: #999">轨道机动</a> <a href="/tags/%E8%BD%A8%E9%81%93%E6%A0%B9%E6%95%B0/" style="font-size: 14px; color: #999">轨道根数</a> <a href="/tags/%E9%98%BB%E5%B0%BC%E6%AF%94/" style="font-size: 14px; color: #999">阻尼比</a> <a href="/tags/%E9%9C%8D%E6%9B%BC%E8%BD%AC%E7%A7%BB/" style="font-size: 14px; color: #999">霍曼转移</a> <a href="/tags/%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/" style="font-size: 18px; color: #7e7e7e">频域分析</a> <a href="/tags/%E9%A2%91%E5%9F%9F%E6%8C%87%E6%A0%87/" style="font-size: 14px; color: #999">频域指标</a> <a href="/tags/%E9%A2%91%E5%9F%9F%E6%A0%A1%E6%AD%A3/" style="font-size: 14px; color: #999">频域校正</a> <a href="/tags/%E9%A2%91%E7%8E%87%E5%93%8D%E5%BA%94/" style="font-size: 16px; color: #8b8b8b">频率响应</a> <a href="/tags/%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7/" style="font-size: 16px; color: #8b8b8b">频率特性</a> <a href="/tags/%E9%AB%98%E6%96%AF%E6%B3%95/" style="font-size: 14px; color: #999">高斯法</a>
     </div>
   </section>
 
@@ -3374,7 +3465,7 @@ $$
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>10 篇</div>
+          <div>25 篇</div>
         </div>
       
 
@@ -3407,7 +3498,7 @@ $$
       
         <div class="webinfo-item">
           <div>最后活动时间：</div>
-          <div id="last-update-show">2025-12-22 日</div>
+          <div id="last-update-show">2026-01-28 日</div>
         </div>
       
     </div>
@@ -3434,7 +3525,7 @@ $$
 
 
   <div class="content">
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%83%BD%E9%87%8F%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">2.5 能量定律</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-5-%E8%83%BD%E9%87%8F%E5%AE%9A%E5%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">2.5 能量定律</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-6-%E5%9C%86%E8%BD%A8%E9%81%93%EF%BC%88-e-x3D-0-%EF%BC%89"><span class="toc-number">2.</span> <span class="toc-text">2.6 圆轨道（$e &#x3D; 0$）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-7-%E6%A4%AD%E5%9C%86%E8%BD%A8%E9%81%93%EF%BC%88-0-lt-e-lt-1-%EF%BC%89"><span class="toc-number">3.</span> <span class="toc-text">2.7 椭圆轨道（$0 &lt; e &lt; 1$）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-8-%E6%8A%9B%E7%89%A9%E7%BA%BF%E8%BD%A8%E9%81%93%EF%BC%88-e-x3D-1-%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">2.8 抛物线轨道（$e &#x3D; 1$）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-9-%E5%8F%8C%E6%9B%B2%E7%BA%BF%E8%BD%A8%E9%81%93%EF%BC%88-e-gt-1-%EF%BC%89"><span class="toc-number">5.</span> <span class="toc-text">2.9 双曲线轨道（$e &gt; 1$）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-10-%E8%BF%91%E7%84%A6%E7%82%B9%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-number">6.</span> <span class="toc-text">2.10 近焦点坐标系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-11-%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E7%B3%BB%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">2.11 拉格朗日系数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-12-%E9%99%90%E5%88%B6%E6%80%A7%E4%B8%89%E4%BD%93%E9%97%AE%E9%A2%98"><span class="toc-number">8.</span> <span class="toc-text">2.12 限制性三体问题</span></a></li></ol>
   </div>
 </section>
 
@@ -4427,7 +4518,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4805,7 +4896,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","sameAs":["https://github.com/volantis-x"],"description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://volantis.js.org/","name":"King haonan"}},{"@type":"ListItem","position":2,"item":{"@id":"https://volantis.js.org/categories/note/","name":"note"}},{"@type":"ListItem","position":3,"item":{"@id":"https://volantis.js.org/notes/轨道力学4/","name":"轨道力学-能量定律"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"King haonan","url":"https://volantis.js.org/","keywords":"Volantis,Hexo,Hexo主题,Blog,博客","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。","author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},"publisher":{"@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://volantis.js.org?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"轨道力学-能量定律","description":"轨道力学，二体问题中的能量定律","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A64/"},"author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/"},"publisher":{"@type":"Organization","name":"King haonan","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A64/","wordCount":0,"datePublished":"2025-12-09T07:35:05.000Z","dateModified":"2025-12-14T07:32:01.332Z","articleSection":"note","keywords":"轨道力学,二体问题","image":{"@type":"ImageObject","url":"./../../image/轨道力学/4/bg.png","width":1024,"height":768}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","sameAs":["https://github.com/volantis-x"],"description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://volantis.js.org/","name":"King haonan"}},{"@type":"ListItem","position":2,"item":{"@id":"https://volantis.js.org/categories/note/","name":"note"}},{"@type":"ListItem","position":3,"item":{"@id":"https://volantis.js.org/notes/轨道力学4/","name":"轨道力学-能量定律"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"King haonan","url":"https://volantis.js.org/","keywords":"Volantis,Hexo,Hexo主题,Blog,博客","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。","author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/","description":"Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。"},"publisher":{"@type":"Organization","name":"King haonan","url":"https://volantis.js.org/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://volantis.js.org?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"轨道力学-能量定律","description":"轨道力学，二体问题中的能量定律","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A64/"},"author":{"@type":"Person","name":"Volantis Team","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"https://volantis.js.org/"},"publisher":{"@type":"Organization","name":"King haonan","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A64/","wordCount":0,"datePublished":"2025-12-09T07:35:05.000Z","dateModified":"2026-01-27T08:52:46.452Z","articleSection":"note","keywords":"轨道力学,二体问题","image":{"@type":"ImageObject","url":"./../../image/轨道力学/4/bg.png","width":1024,"height":768}}]</script>
 
 
 

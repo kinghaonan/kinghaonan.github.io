@@ -1,27 +1,32 @@
 debug: false
 content_visibility: true
 navbar:
-  logo: # choose [img] or [icon + title]
-    img: '' # volantis-static/media/org.volantis/blog/Logo-NavBar@3x.png
-    icon:
-    title: 'Volantis 7 <sup style="color:#ff9800">alpha</sup>'
+  visible: auto
+  logo:
+    img: '/image/logo.jpg'  # 正确的路径写法
   menu:
-    - name: 文档
+    - name: 个人介绍
       icon: fa-duotone fa-book faa-tada
-      url: /v7/getting-started/
-      target: _self
+      url: /about/
 
-    - name: 示例
+    - name: 文档
       icon: fa-duotone fa-play-circle faa-tada
-      url: /examples/
+      url: /
+      rows:
+        - name: 博客
+          url: /categories/blog/
+        - name: 项目
+          url: /categories/project/
+        - name: 笔记
+          url: /categories/note/
 
-    - name: 帮助
+    - name: 归档
+      icon: fa-duotone fa-book-journal-whills faa-tada 
+      url: /archives/
+
+    - name: 联系我
       icon: fa-duotone fa-question-circle faa-tada
       url: /faqs/
-
-    - name: 鸣谢
-      icon: fa-duotone fa-heart
-      url: /contributors/
 
     - name: 更多
       icon: fa-duotone fa-ellipsis-v
@@ -31,56 +36,39 @@ navbar:
           toggle: darkmode
         - name: hr
         - name: 本站源码
-          url: https://github.com/volantis-x/volantis-docs/
+          url: https://github.com/kinghaonan/kinghaonan.github.io
         - name: 主题源码
           url: https://github.com/volantis-x/hexo-theme-volantis/
         - name: hr
-        - name: 更新日志
-          url: https://github.com/volantis-x/hexo-theme-volantis/releases/
+        - name: 作者资料
+          url: https://github.com/kinghaonan
         - name: 博客文章
           url: /archives/
-        - name: hr
-        - name: 文档 v6
-          url: /v6/getting-started/
-        - name: 文档 v5
-          url: /v5/getting-started/
-        # - name: 旧版文档 v4
-        #   url: /v4/getting-started/
-        # - name: 旧版文档 v3
-        #   url: /v3/getting-started/
-        # - name: 旧版文档 v2
-        #   url: /v2/getting-started/
 
-
+favicon: '/image/favicon.ico'
 
 cover:
-  # height_scheme: full # full, half
-  title: 'Volantis'
-  subtitle: '中文创作者社区'
-  background: # https://bing.ioliu.cn/v1/rand?w=1920&h=1200
+  height_scheme: full # full, half
+  title: 'King'
+  background: '/images/bg/bg.jpg/'
+  subtitle: '蓦然回首，那人却在灯火阑珊处'
   features:
-    - name: 博客
-      img: volantis-static/media/twemoji/assets/svg/1f4f0.svg
-      url: /
+    - name: 站主
+      img: volantis-static/media/twemoji/assets/svg/1f60e.svg
+      url: /about/
+
     - name: 文档
       img: volantis-static/media/twemoji/assets/svg/1f516.svg
-      url: /v7/getting-started/
+      url: /
       target: _self
-    - name: 示例
-      img: volantis-static/media/twemoji/assets/svg/1f4af.svg
-      url: /examples/
-    - name: 帮助
-      img: volantis-static/media/twemoji/assets/svg/1f4ac.svg
-      url: /faqs/
-    - name: 鸣谢
-      img: volantis-static/media/twemoji/assets/svg/1f497.svg
-      url: /contributors/
+
     - name: 归档
       img: volantis-static/media/twemoji/assets/svg/1f5c3.svg
       url: /archives/
+
     - name: 源码
-      img: volantis-static/media/twemoji/assets/svg/1f9ec.svg
-      url: https://github.com/volantis-x/hexo-theme-volantis/
+      img: volantis-static/media/twemoji/assets/svg/1f4f0.svg
+      url: https://github.com/kinghaonan/kinghaonan.github.io/tree/main
       target: _self
 
 article:
@@ -99,195 +87,74 @@ article:
     top_meta: [author, category, date]
     meta_library:
       author:
-        avatar: volantis-static/media/org.volantis/blog/favicon/apple-touch-icon.png
-        name: Volantis Team
-        url: https://github.com/volantis-x/
+        avatar: '/image/logo.jpg'
+        name: Ki haonan
+        url: https://github.com/
       updated:
         title: '本页文档最后更新于：'
 
-
-comments:
-  service: giscus
-  giscus:
-    theme:
-      light: "light"
-      dark: "dark"
-    repo: volantis-x/community
-    repo-id: MDEwOlJlcG9zaXRvcnkyNDIzNjY1ODM=
-    mapping: "number"
-    term: "145"
-    reactions-enabled: "1"
-    emit-metadata: "0"
-    lang: "zh-CN"
-    input-position: "top"
-  disqus:
-    shortname: volantis
-    path: /
-  valine:
-    appId: FIKAgh6n0pUM08JXxhJHChVQ-MdYXbMMI
-    appKey: RJGiOYFc1fBvfox4frBPpRzU
-    path: /
-  utterances:
-    repo: volantis-x/community
-    issue-number: 115
-  beaudar:
-    repo: volantis-x/community  
-    issue-number: 115
 sidebar:
-  for_page: [qgroup, post, category, guide]
-  for_post: [toc]
+  position: left
+  for_page: [blogger, quick_links, toc, category, tagcloud, webinfo]
+  for_post: [toc, categories, tagcloud, webinfo]
+  
   widget_library:
+    blogger:
+      class: blogger
+      display: [desktop, mobile]
+      avatar: '/image/logo.jpg'
+
+    quick_links:
+      class: grid
+      display: [desktop, mobile]
+      header:
+        icon: fa-solid fa-rocket
+        title: 快速访问
+      rows:
+        - name: 个人介绍
+          icon: fa-solid fa-user
+          url: /about/
+        - name: 博客文章
+          icon: fa-solid fa-pen-nib
+          url: /categories/blog/
+        - name: 我的项目
+          icon: fa-solid fa-code
+          url: /categories/project/
+        - name: 学习笔记
+          icon: fa-solid fa-book
+          url: /categories/note/
+    
     toc:
       class: toc
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [desktop, mobile]
       header:
         icon: fa-solid fa-list
-        title: 本文目录
+        title: 文章目录
       list_number: true
       min_depth: 2
       max_depth: 5
-    post:
-      class: text
-      display: [desktop, mobile] # [desktop, mobile]
-      sticky: true
-      header:
-        icon: fa-solid fa-plus
-        title: 社区活动
-        url: /contributors/
-      content:
-        - '**如何让自己的文章收录到这里？**<br>官方网站是开源的，只要您的文章与 Hexo 博客搭建相关，就可以自助进行收录，详细的操作步骤请见：「[**发布与分享文章**](/contributors/#发布与分享文章)」。'
-    # 文档导航
-    guide:
-      class: grid
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-solid fa-map-signs
-        title: 分类导航
-      fixed: true # 固定宽度
-      rows:
-        - name: 常见问题
-          icon: fa-solid fa-question-circle
-          url: /faqs/
-        - name: 示例博客
-          icon: fa-solid fa-play-circle
-          url: /examples/
-        - name: 特别感谢
-          icon: fa-solid fa-handshake
-          url: /contributors/
-        - name: 测试博文
-          icon: fa-solid fa-file-alt
-          url: /archives/
-        - name: 主题源码
-          icon: fa-solid fa-file-code
-          url: https://github.com/volantis-x/hexo-theme-volantis/
-          rel: external nofollow noopener noreferrer
-          target: _blank
-        - name: 更新日志
-          icon: fa-solid fa-tags
-          url: https://github.com/volantis-x/hexo-theme-volantis/releases/
-          rel: external nofollow noopener noreferrer
-          target: _blank
-
-    # qrcode widget
-    qrcode:
-      class: qrcode
-      display: [desktop] # [desktop, mobile]
-      header:
-        icon: fa-solid fa-mobile
-        title: 手机观看
-      height: #64px  # Automatic height if not set
-      fancybox: #true
-      images:
-        - volantis-static/media/org.volantis/blog/qrcode/github@volantis.png
-
-    qgroup:
-      class: text
-      display: [desktop, mobile]
-      header:
-        icon: fa-brands fa-qq
-        title: '加入 QQ 群'
-      content:
-        - '如果你在使用中遇到问题，请到 [Github Issues](https://github.com/volantis-x/hexo-theme-volantis/issues) 或者 [留言板](/faqs/#comments) 进行反馈，你也可以加入 [Telegram](https://t.me/volantis_x) 或者 **QQ 群**，验证码：vlts-2021<br>[![](https://bu.dusays.com/2021/09/24/ae832f0aadee8.png)](https://qm.qq.com/cgi-bin/qm/qr?k=FpexWW5GCLWOM3jF3LG-YWfllXuv7cMs&jump_from=webapi)'
-
-    help:
-      class: page
-      display: [desktop, mobile]
-      header:
-        icon: fa-solid fa-headset
-        title: 帮助
-      pid: faq
-      content: excerpt # excerpt, more, content
-
-    news:
+    
+    categories:
       class: list
-      display: [desktop, mobile] # [desktop, mobile]
+      display: [desktop, mobile]
       header:
-        icon: fa-solid fa-exclamation-triangle
-        title: 近期公告
-      rows:
-        - name: 关于主题与文档的更新
-          icon: fa-solid fa-info-circle
-          url: https://github.com/volantis-x/hexo-theme-volantis/issues/215
-        - name: 升级小助手
-          icon: fa-solid fa-angle-double-up
-          url: /v3/getting-started/#升级小助手
+        icon: fa-solid fa-folder
+        title: 文章分类
+    
+    tagcloud:
+      class: tagcloud
+      display: [desktop, mobile]
+      header:
+        icon: fa-solid fa-tags
+        title: 热门标签
+    
+    webinfo:
+      class: webinfo
+      display: [desktop, mobile]
+      header:
+        icon: fa-solid fa-chart-bar
+        title: 站点统计
 
-    docs-v2:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-duotone fa-list-alt
-        title: 文档导航 v2
-
-    docs-v3:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-duotone fa-list-alt
-        title: 文档导航 v3
-
-    docs-v4:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-duotone fa-list-alt
-        title: 文档导航 v4
-
-    docs-v5:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-duotone fa-list-alt
-        title: 文档导航 v5
-
-    docs-v6:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-duotone fa-list-alt
-        title: 文档导航 v6
-
-    docs-v7:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-duotone fa-list-alt
-        title: 文档导航 v7
-
-    docs-latest:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      header:
-        icon: fa-duotone fa-book
-        title: 文档导航 v5.0
-
-    docs-volantis-latest:
-      class: group
-      display: [desktop, mobile] # [desktop, mobile]
-      seo_title: Volantis
-      header:
-        icon: fa fa-book
-        title: 文档导航 v5.0
 
 site_footer:
   layout: [aplayer, social, source, analytics, copyright]
@@ -336,7 +203,7 @@ plugins:
       default: fa-light fa-info-circle light-blue
       quection: fa-light fa-question-circle light-blue
     copyright:  # 是否在复制时弹出版权提示
-      enable: false
+      enable: true
       title: '知识共享许可协议'
       message: '请遵守 CC BY-NC-SA 4.0 协议。'
       icon: 'fa-brands fa-creative-commons light-blue'
@@ -352,27 +219,26 @@ plugins:
   scrollreveal:
     enable: true
 
+
+
 custom_css:
   cursor:
     enable: true
   font_smoothing: true
-  # sidebar:
-  #   effect: [shadow] # [shadow, floatable, blur]
-  # body:
-  #   effect: [shadow] # [shadow, floatable, blur]
   fontfamily:
     logofont:
-      fontfamily: 'Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
-      name: 'Dosis'
-      url: volantis-static/media/fonts/Dosis/Dosis-Medium.ttf
+      fontfamily: 'Playwrite CZ, Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
+      name: 'Playwrite CZ'
+      url: '/fonts/Playwrite_CZ/PlaywriteCZ-VariableFont_wght.ttf'
       weight: normal
       style: normal
-    bodyfont:
-      fontfamily: 'Dosis, "PingFang SC", "Microsoft YaHei", Helvetica, Arial'
-      name: 'Dosis'
-      url: volantis-static/media/fonts/Dosis/Dosis-Medium.ttf
-      weight: normal
-      style: normal
+  
+  cover_font_apply: |
+    .cover-wrapper .title {
+      font-family: 'Playwrite CZ', cursive !important;
+      font-size: 2em !important;
+    }
+
 
 
 rightmenus:

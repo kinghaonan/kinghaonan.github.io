@@ -3,14 +3,14 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Volantis
+title: King haonan
 subtitle: ''
 description: 'Volantis 是一个功能丰富、高度模块化的 Hexo 博客主题。得益于其强大的模块化特性，您可以轻松搭建一个极简风格的博客，也可以仿照官网搭建一个多人协作的、包含文档模块的大体量综合型博客。'
 keywords: 'Volantis,Hexo,Hexo主题,Blog,博客'
 author: 'Volantis Team'
 language: zh-CN
 timezone: ''
-avatar: https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/Logo-NavBar@3x.png
+avatar: /image/favicon.ico
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://volantis.js.org
@@ -20,6 +20,8 @@ permalink_defaults:
 pretty_urls:
   trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: false # Set to false to remove trailing '.html' from permalinks
+
+favicon: /image/favicon.ico
 
 # Directory
 source_dir: source
@@ -109,9 +111,9 @@ theme: volantis
 # npm install hexo-deployer-git --save
 deploy:
   - type: git
-    repo: git@github.com:xaoxuu/volantis.js.org.git
+    repo: https://github.com/kinghaonan/kinghaonan.github.io.git
     # repo: git@xaoxuu.com:xaoxuu/volantis.git
-    branch: master
+    branch: main
     message: "Github CI Auto Builder at {{ now('YYYY-MM-DD HH:mm:ss Z') }}"
 # ssh-keygen -t rsa -b 4096 -C "me@xaoxuu.com" -N "" -f deploy_key
 # 生成一对: deploy_key, deploy_key.pub，其中 deploy_key 填到源码仓库的 Secrets 的 DEPLOY_KEY 中，deploy_key.pub 填到静态文件仓库的 Deploy keys 中。
@@ -121,17 +123,7 @@ import:
   head_begin:
     - <meta name="msapplication-TileColor" content="#ffffff">
     - <meta name="msapplication-config" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/browserconfig.xml">
-    - <meta name="theme-color" content="#ffffff">
-    - <link rel="apple-touch-icon" sizes="180x180" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/apple-touch-icon.png">
-    - <link rel="icon" type="image/png" sizes="32x32" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon-32x32.png">
-    - <link rel="icon" type="image/png" sizes="16x16" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon-16x16.png">
-    - <link rel="manifest" href="/site.webmanifest">
-    - <link rel="mask-icon" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    - <link rel="shortcut icon" href="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon.ico">
-    - <meta name="apple-mobile-web-app-title" content="Volantis">
-    - <meta name="application-name" content="Volantis">
-    - <meta name="msapplication-TileColor" content="#f4f4f4">
-    - <meta name="msapplication-TileImage" content="https://unpkg.com/volantis-static@0.0.1649552113628/media/org.volantis/blog/favicon/favicon-32x32.png">
+    
     - '<meta name="theme-color" content="#f4f4f4" media="(prefers-color-scheme: light)">'
     - '<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">'
   head_end:
@@ -183,21 +175,28 @@ autoprefixer:
 #      options:
 #        origin: cdnjs.cloudflare.com
 
-marked:
-  gfm: true
-  pedantic: false
-  breaks: true
-  smartLists: true
-  smartypants: false
-  modifyAnchors: 0
-  autolink: true
-  sanitizeUrl: false
-  headerIds: true
-  prependRoot: false
-  external_link:
-    enable: true
-    exclude: []
-    nofollow: true
+# Markdown-it 配置（最稳定）
+markdown:
+  render:
+    html: true
+    xhtmlOut: false
+    breaks: true
+    linkify: true
+    typographer: false    # 关键：禁用智能引号
+    quotes: '""''"'
+  anchors:
+    permalink: true
+    permalinkBefore: true
+    permalinkSymbol: '#'
+
+# KaTeX 配置（推荐 - 性能优先）
+katex:
+  enable: true
+  copy_tex: true  # 允许复制TeX源代码
+  css:  # 自定义CSS（可选）
+    # link: https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css
+  js:   # 自定义JS（可选）
+    # link: https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js
 
 jsonContent:
   ignore:

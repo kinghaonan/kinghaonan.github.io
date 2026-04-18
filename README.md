@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Volantis Community
 
 [社区主页](https://volantis.js.org) | [备用域名](https://volantis.vercel.app)
@@ -22,3 +23,6 @@
 ```bash
 git clone --recursive https://github.com/volantis-x/community && cd community && npm i && hexo s
 ```
+=======
+这里是我的**个人网站**哦
+>>>>>>> 23ffdf27a23c4e5f7cc4edb729900bd658195a19

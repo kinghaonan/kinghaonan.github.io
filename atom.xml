@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Volantis</title>
+  
+  
+  <link href="https://volantis.js.org/atom.xml" rel="self"/>
+  
+  <link href="https://volantis.js.org/"/>
+  <updated>2026-04-18T12:54:23.164Z</updated>
+  <id>https://volantis.js.org/</id>
+  
+  <author>
+    <name>Volantis Team</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第2章 解析函数</title>
+    <link href="https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B02-%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0/"/>
+    <id>https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B02-%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0/</id>
+    <published>2026-03-22T16:22:23.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/复变函数/复变函数2-解析函数">]]></content>
+    
+    
+    <summary type="html">第2章 解析函数</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="数学" scheme="https://volantis.js.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="复变函数" scheme="https://volantis.js.org/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第一篇 复变函数</title>
+    <link href="https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B01-%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/"/>
+    <id>https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B01-%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/</id>
+    <published>2026-03-22T15:59:36.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/复变函数/复变函数1-复数与复变函数">]]></content>
+    
+    
+    <summary type="html">第一篇 复变函数 - 数学笔记</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="数学" scheme="https://volantis.js.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="笔记" scheme="https://volantis.js.org/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="复变函数" scheme="https://volantis.js.org/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第3章 复变函数的积分</title>
+    <link href="https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B03-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/"/>
+    <id>https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B03-%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%9A%84%E7%A7%AF%E5%88%86/</id>
+    <published>2026-03-22T15:59:36.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/复变函数/复变函数3-复变函数的积分">]]></content>
+    
+    
+    <summary type="html">第3章 复变函数的积分 - 数学笔记</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="数学" scheme="https://volantis.js.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="笔记" scheme="https://volantis.js.org/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="复变函数" scheme="https://volantis.js.org/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第4章 解析函数的幂级数表示</title>
+    <link href="https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B04-%E5%B9%82%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/"/>
+    <id>https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B04-%E5%B9%82%E7%BA%A7%E6%95%B0%E8%A1%A8%E7%A4%BA/</id>
+    <published>2026-03-22T15:59:36.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/复变函数/复变函数4-幂级数表示">]]></content>
+    
+    
+    <summary type="html">第4章 解析函数的幂级数表示 - 数学笔记</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="数学" scheme="https://volantis.js.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="笔记" scheme="https://volantis.js.org/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第5章 留数定理</title>
+    <link href="https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B05-%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/"/>
+    <id>https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B05-%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/</id>
+    <published>2026-03-22T15:59:36.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/复变函数/复变函数5-留数定理">]]></content>
+    
+    
+    <summary type="html">第5章 留数定理 - 数学笔记</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="数学" scheme="https://volantis.js.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="笔记" scheme="https://volantis.js.org/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>第6章 保角映射</title>
+    <link href="https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B06-%E4%BF%9D%E8%A7%92%E6%98%A0%E5%B0%84/"/>
+    <id>https://volantis.js.org/notes/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B06-%E4%BF%9D%E8%A7%92%E6%98%A0%E5%B0%84/</id>
+    <published>2026-03-22T15:59:36.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/复变函数/复变函数6-保角映射">]]></content>
+    
+    
+    <summary type="html">第6章 保角映射 - 数学笔记</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="数学" scheme="https://volantis.js.org/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+    <category term="笔记" scheme="https://volantis.js.org/tags/%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>轨道力学-相对运动与交会</title>
+    <link href="https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A69/"/>
+    <id>https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A69/</id>
+    <published>2025-12-31T14:20:00.000Z</published>
+    <updated>2026-04-18T12:54:23.165Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/轨道力学/轨道力学9-相对运动与交会">]]></content>
+    
+    
+    <summary type="html">轨道力学第七章相对运动与交会知识点整理</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="轨道力学" scheme="https://volantis.js.org/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/"/>
+    
+    <category term="相对运动" scheme="https://volantis.js.org/tags/%E7%9B%B8%E5%AF%B9%E8%BF%90%E5%8A%A8/"/>
+    
+    <category term="交会对接" scheme="https://volantis.js.org/tags/%E4%BA%A4%E4%BC%9A%E5%AF%B9%E6%8E%A5/"/>
+    
+    <category term="Clohessy-Wiltshire方程" scheme="https://volantis.js.org/tags/clohessy-wiltshire%E6%96%B9%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>轨道力学-轨道机动</title>
+    <link href="https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A68/"/>
+    <id>https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A68/</id>
+    <published>2025-12-28T14:42:00.000Z</published>
+    <updated>2026-04-18T12:54:23.165Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/轨道力学/轨道力学8-轨道机动">]]></content>
+    
+    
+    <summary type="html">轨道力学第六章轨道机动知识点整理</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="轨道力学" scheme="https://volantis.js.org/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/"/>
+    
+    <category term="轨道机动" scheme="https://volantis.js.org/tags/%E8%BD%A8%E9%81%93%E6%9C%BA%E5%8A%A8/"/>
+    
+    <category term="霍曼转移" scheme="https://volantis.js.org/tags/%E9%9C%8D%E6%9B%BC%E8%BD%AC%E7%A7%BB/"/>
+    
+    <category term="脉冲机动" scheme="https://volantis.js.org/tags/%E8%84%89%E5%86%B2%E6%9C%BA%E5%8A%A8/"/>
+    
+    <category term="调相机动" scheme="https://volantis.js.org/tags/%E8%B0%83%E7%9B%B8%E6%9C%BA%E5%8A%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>轨道力学-初始轨道确定</title>
+    <link href="https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A67/"/>
+    <id>https://volantis.js.org/notes/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A67/</id>
+    <published>2025-12-28T14:40:00.000Z</published>
+    <updated>2026-04-18T12:54:23.165Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/轨道力学/轨道力学7-初始轨道确定">]]></content>
+    
+    
+    <summary type="html">轨道力学第五章初始轨道确定知识点整理</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="轨道力学" scheme="https://volantis.js.org/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/"/>
+    
+    <category term="初始轨道确定" scheme="https://volantis.js.org/tags/%E5%88%9D%E5%A7%8B%E8%BD%A8%E9%81%93%E7%A1%AE%E5%AE%9A/"/>
+    
+    <category term="吉布斯法" scheme="https://volantis.js.org/tags/%E5%90%89%E5%B8%83%E6%96%AF%E6%B3%95/"/>
+    
+    <category term="兰伯特问题" scheme="https://volantis.js.org/tags/%E5%85%B0%E4%BC%AF%E7%89%B9%E9%97%AE%E9%A2%98/"/>
+    
+    <category term="高斯法" scheme="https://volantis.js.org/tags/%E9%AB%98%E6%96%AF%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>控制系统校正</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%8612/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%8612/</id>
+    <published>2025-12-28T14:19:02.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理12-控制系统校正">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：控制系统校正，重点讲解频域指标与时域指标的关系、校正环节的分类、串联超前校正和串联滞后校正等控制系统校正方法</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统校正" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F%E6%A0%A1%E6%AD%A3/"/>
+    
+    <category term="频域校正" scheme="https://volantis.js.org/tags/%E9%A2%91%E5%9F%9F%E6%A0%A1%E6%AD%A3/"/>
+    
+    <category term="串联校正" scheme="https://volantis.js.org/tags/%E4%B8%B2%E8%81%94%E6%A0%A1%E6%AD%A3/"/>
+    
+    <category term="超前校正" scheme="https://volantis.js.org/tags/%E8%B6%85%E5%89%8D%E6%A0%A1%E6%AD%A3/"/>
+    
+    <category term="滞后校正" scheme="https://volantis.js.org/tags/%E6%BB%9E%E5%90%8E%E6%A0%A1%E6%AD%A3/"/>
+    
+    <category term="频域指标" scheme="https://volantis.js.org/tags/%E9%A2%91%E5%9F%9F%E6%8C%87%E6%A0%87/"/>
+    
+    <category term="时域指标" scheme="https://volantis.js.org/tags/%E6%97%B6%E5%9F%9F%E6%8C%87%E6%A0%87/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>频域稳定性分析</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%8611/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%8611/</id>
+    <published>2025-12-28T14:13:45.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理11-频域稳定性分析">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：频域稳定性分析，重点讲解奈奎斯特稳定判据、对数频率稳定判据、频域稳定裕度、最小相位系统以及映射定理等频域稳定性分析方法</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="频域分析" scheme="https://volantis.js.org/tags/%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/"/>
+    
+    <category term="稳定性分析" scheme="https://volantis.js.org/tags/%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/"/>
+    
+    <category term="奈奎斯特判据" scheme="https://volantis.js.org/tags/%E5%A5%88%E5%A5%8E%E6%96%AF%E7%89%B9%E5%88%A4%E6%8D%AE/"/>
+    
+    <category term="对数频率判据" scheme="https://volantis.js.org/tags/%E5%AF%B9%E6%95%B0%E9%A2%91%E7%8E%87%E5%88%A4%E6%8D%AE/"/>
+    
+    <category term="稳定裕度" scheme="https://volantis.js.org/tags/%E7%A8%B3%E5%AE%9A%E8%A3%95%E5%BA%A6/"/>
+    
+    <category term="最小相位系统" scheme="https://volantis.js.org/tags/%E6%9C%80%E5%B0%8F%E7%9B%B8%E4%BD%8D%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="映射定理" scheme="https://volantis.js.org/tags/%E6%98%A0%E5%B0%84%E5%AE%9A%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>频率响应特性的图示法</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%8610/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%8610/</id>
+    <published>2025-12-28T14:06:47.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理10-频率响应特性的图示法">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：频率响应特性的图示法，重点讲解奈奎斯特图、伯德图、尼克尔斯图等频率特性图示方法，包括典型环节的频率特性、绘制方法和应用分析</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="频域分析" scheme="https://volantis.js.org/tags/%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/"/>
+    
+    <category term="频率响应" scheme="https://volantis.js.org/tags/%E9%A2%91%E7%8E%87%E5%93%8D%E5%BA%94/"/>
+    
+    <category term="奈奎斯特图" scheme="https://volantis.js.org/tags/%E5%A5%88%E5%A5%8E%E6%96%AF%E7%89%B9%E5%9B%BE/"/>
+    
+    <category term="伯德图" scheme="https://volantis.js.org/tags/%E4%BC%AF%E5%BE%B7%E5%9B%BE/"/>
+    
+    <category term="尼克尔斯图" scheme="https://volantis.js.org/tags/%E5%B0%BC%E5%85%8B%E5%B0%94%E6%96%AF%E5%9B%BE/"/>
+    
+    <category term="频率特性" scheme="https://volantis.js.org/tags/%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性系统的频域分析法 - 概念与内涵</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%869/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%869/</id>
+    <published>2025-12-28T13:40:10.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理9-线性系统的频域分析法">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：线性系统的频域分析法，重点讲解频率特性的概念与内涵、频率响应特性、欧拉定理以及频率特性与传递函数之间的联系</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="频域分析" scheme="https://volantis.js.org/tags/%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/"/>
+    
+    <category term="频率响应" scheme="https://volantis.js.org/tags/%E9%A2%91%E7%8E%87%E5%93%8D%E5%BA%94/"/>
+    
+    <category term="频率特性" scheme="https://volantis.js.org/tags/%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="欧拉定理" scheme="https://volantis.js.org/tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/"/>
+    
+    <category term="系统辨识" scheme="https://volantis.js.org/tags/%E7%B3%BB%E7%BB%9F%E8%BE%A8%E8%AF%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性系统的根轨迹法 - 控制性能分析的图示法</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%868/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%868/</id>
+    <published>2025-12-24T19:04:17.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理8-线性系统的根轨迹法">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：线性系统的根轨迹法，重点讲解根轨迹的概念与内涵、根轨迹的性质、广义根轨迹以及基于根轨迹的系统校正方法</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="超前校正" scheme="https://volantis.js.org/tags/%E8%B6%85%E5%89%8D%E6%A0%A1%E6%AD%A3/"/>
+    
+    <category term="滞后校正" scheme="https://volantis.js.org/tags/%E6%BB%9E%E5%90%8E%E6%A0%A1%E6%AD%A3/"/>
+    
+    <category term="根轨迹法" scheme="https://volantis.js.org/tags/%E6%A0%B9%E8%BD%A8%E8%BF%B9%E6%B3%95/"/>
+    
+    <category term="埃文斯法" scheme="https://volantis.js.org/tags/%E5%9F%83%E6%96%87%E6%96%AF%E6%B3%95/"/>
+    
+    <category term="根轨迹方程" scheme="https://volantis.js.org/tags/%E6%A0%B9%E8%BD%A8%E8%BF%B9%E6%96%B9%E7%A8%8B/"/>
+    
+    <category term="系统校正" scheme="https://volantis.js.org/tags/%E7%B3%BB%E7%BB%9F%E6%A0%A1%E6%AD%A3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性系统的时域分析法 - 典型低阶系统的时域分析</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%867/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%867/</id>
+    <published>2025-12-24T18:17:03.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理7-典型低阶系统的时域分析">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：线性系统的时域分析法，重点讲解典型低阶系统（一阶、二阶）的时域性能分析、阻尼比概念、额外极点零点影响以及PID控制原理</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="时域分析" scheme="https://volantis.js.org/tags/%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/"/>
+    
+    <category term="一阶系统" scheme="https://volantis.js.org/tags/%E4%B8%80%E9%98%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="二阶系统" scheme="https://volantis.js.org/tags/%E4%BA%8C%E9%98%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="阻尼比" scheme="https://volantis.js.org/tags/%E9%98%BB%E5%B0%BC%E6%AF%94/"/>
+    
+    <category term="PID控制" scheme="https://volantis.js.org/tags/pid%E6%8E%A7%E5%88%B6/"/>
+    
+    <category term="性能分析" scheme="https://volantis.js.org/tags/%E6%80%A7%E8%83%BD%E5%88%86%E6%9E%90/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性系统的时域分析法 - 稳态误差与时域性能指标</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%866/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%866/</id>
+    <published>2025-12-24T18:07:28.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理6-稳态误差与时域性能指标">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：线性系统的时域分析法，重点讲解稳态误差分析、误差常数、系统型别以及时域性能指标</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="时域分析" scheme="https://volantis.js.org/tags/%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/"/>
+    
+    <category term="稳态误差" scheme="https://volantis.js.org/tags/%E7%A8%B3%E6%80%81%E8%AF%AF%E5%B7%AE/"/>
+    
+    <category term="性能指标" scheme="https://volantis.js.org/tags/%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/"/>
+    
+    <category term="误差常数" scheme="https://volantis.js.org/tags/%E8%AF%AF%E5%B7%AE%E5%B8%B8%E6%95%B0/"/>
+    
+    <category term="系统型别" scheme="https://volantis.js.org/tags/%E7%B3%BB%E7%BB%9F%E5%9E%8B%E5%88%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>线性系统的时域分析法</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%865/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%865/</id>
+    <published>2025-12-24T17:14:44.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理5-线性系统的时域分析法">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：线性系统的时域分析法，重点讲解稳定性分析、劳斯判据及其应用</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="稳定性分析" scheme="https://volantis.js.org/tags/%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/"/>
+    
+    <category term="时域分析" scheme="https://volantis.js.org/tags/%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/"/>
+    
+    <category term="劳斯判据" scheme="https://volantis.js.org/tags/%E5%8A%B3%E6%96%AF%E5%88%A4%E6%8D%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>控制系统的数学模型-典型系统数学模型</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%864/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%864/</id>
+    <published>2025-12-11T14:18:11.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理4-典型系统数学模型">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：典型系统数学建模方法，包含电路系统、机械系统和一阶倒立摆动力学建模</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="电路系统" scheme="https://volantis.js.org/tags/%E7%94%B5%E8%B7%AF%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="机械系统" scheme="https://volantis.js.org/tags/%E6%9C%BA%E6%A2%B0%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="倒立摆" scheme="https://volantis.js.org/tags/%E5%80%92%E7%AB%8B%E6%91%86/"/>
+    
+    <category term="建模" scheme="https://volantis.js.org/tags/%E5%BB%BA%E6%A8%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>控制系统的数学模型-信号流图与梅森公式</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%863/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%863/</id>
+    <published>2025-12-11T13:49:07.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理3-信号流图与梅森公式">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：信号流图表示法与梅森公式</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="信号流图" scheme="https://volantis.js.org/tags/%E4%BF%A1%E5%8F%B7%E6%B5%81%E5%9B%BE/"/>
+    
+    <category term="梅森公式" scheme="https://volantis.js.org/tags/%E6%A2%85%E6%A3%AE%E5%85%AC%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>控制系统的数学模型-结构框图</title>
+    <link href="https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%862/"/>
+    <id>https://volantis.js.org/notes/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%862/</id>
+    <published>2025-12-11T13:27:58.000Z</published>
+    <updated>2026-04-18T12:54:23.164Z</updated>
+    
+    <content type="html"><![CDATA[<meta http-equiv="refresh" content="0; url=https://kinghaonan.github.io/my-quartz-site/自动控制原理/自动控制原理2-结构框图">]]></content>
+    
+    
+    <summary type="html">自动控制原理课程笔记：控制系统的结构框图表示法与简化</summary>
+    
+    
+    
+    <category term="note" scheme="https://volantis.js.org/categories/note/"/>
+    
+    
+    <category term="自动控制原理" scheme="https://volantis.js.org/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="控制系统" scheme="https://volantis.js.org/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/"/>
+    
+    <category term="结构框图" scheme="https://volantis.js.org/tags/%E7%BB%93%E6%9E%84%E6%A1%86%E5%9B%BE/"/>
+    
+    <category term="图示法" scheme="https://volantis.js.org/tags/%E5%9B%BE%E7%A4%BA%E6%B3%95/"/>
+    
+  </entry>
+  
+</feed>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Sidebar from '../components/Sidebar.astro';
+import Icon from '../components/Icon.astro';
 import { PER_PAGE } from '../consts';
 
 const allPosts = (await getCollection('posts')).sort(
@@ -17,10 +18,10 @@ const totalPages = Math.ceil(allPosts.length / PER_PAGE);
       <p class="subtitle">蓦然回首，那人却在灯火阑珊处</p>
     </div>
     <div class="cover-dock">
-      <a href="/about/"><span class="ico">👤</span>关于</a>
-      <a href="/categories/note/"><span class="ico">📒</span>笔记</a>
-      <a href="/archives/"><span class="ico">🗂</span>归档</a>
-      <a href="https://github.com/kinghaonan/kinghaonan.github.io" target="_blank" rel="noopener"><span class="ico">🏠</span>源码</a>
+      <a href="/about/"><Icon name="user" size={22} class="ico" />关于</a>
+      <a href="/categories/note/"><Icon name="book-open" size={22} class="ico" />笔记</a>
+      <a href="/archives/"><Icon name="archive" size={22} class="ico" />归档</a>
+      <a href="https://github.com/kinghaonan/kinghaonan.github.io" target="_blank" rel="noopener"><Icon name="code" size={22} class="ico" />源码</a>
     </div>
   </section>
 

@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import { tagUrl } from '../consts';
+import Icon from './Icon.astro';
 
 interface Props {
   headings?: { depth: number; slug: string; text: string }[];
@@ -50,10 +51,10 @@ const has = (w: string) => widgets.includes(w);
     <div class="widget card glass">
       <h3 class="widget-title">快速访问</h3>
       <div class="quick-links">
-        <a href="/about/"><span class="ico">👤</span>个人介绍</a>
-        <a href="/categories/blog/"><span class="ico">✒️</span>博客文章</a>
-        <a href="/categories/project/"><span class="ico">&lt;/&gt;</span>我的项目</a>
-        <a href="/categories/note/"><span class="ico">📒</span>学习笔记</a>
+        <a href="/about/"><Icon name="user" size={20} class="ico" />个人介绍</a>
+        <a href="/categories/blog/"><Icon name="pen" size={20} class="ico" />博客文章</a>
+        <a href="/categories/project/"><Icon name="code" size={20} class="ico" />我的项目</a>
+        <a href="/categories/note/"><Icon name="file-text" size={20} class="ico" />学习笔记</a>
       </div>
     </div>
   )}

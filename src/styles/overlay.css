@@ -65,9 +65,6 @@
 }
 .toast.is-show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-/* APlayer 容器（MetingJS 注入） */
-#aplayer-float { position: fixed; left: var(--sp-4); bottom: var(--sp-4); z-index: 90; max-width: 320px; }
-@media (max-width: 640px) { #aplayer-float { max-width: calc(100vw - 32px); } }
 
 /* 阅读模式：暗化周边、聚焦正文 */
 html.reading .sidebar, html.reading .site-footer, html.reading .navbar-actions { opacity: 0.25; transition: opacity var(--dur-med) var(--ease-soft); }
@@ -104,11 +101,5 @@ html.reading .sidebar { display: none; }
   .navbar-menu .item:hover .dropdown { display: block; }
 }
 
-/* APlayer 通知条隐藏：本地/网络异常时的错误框会与返回顶部重叠 */
-.aplayer .aplayer-notice { display: none !important; }
 
-/* APlayer 歌词栏：fixed 全宽渲染会横跨底部压住内容与返回顶部，且本站不展示歌词 */
-.aplayer-lrc { display: none !important; }
 
-/* 播放器离屏边距：不再顶着屏幕左下角、不压卡片 */
-.aplayer.aplayer-fixed { margin: 0 0 12px 12px; }

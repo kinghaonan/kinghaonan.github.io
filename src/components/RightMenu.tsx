@@ -78,10 +78,6 @@ export default function RightMenu() {
   const goPrev = () => (document.querySelector('.prev-next a.prev') as HTMLAnchorElement | null)?.click();
   const goNext = () => (document.querySelector('.prev-next a.next') as HTMLAnchorElement | null)?.click();
   const copyText = (t: string) => navigator.clipboard.writeText(t);
-  const toggleMusic = () => {
-    const ap = document.querySelector('meting-js') as any;
-    if (ap?.aplayer) { (ap.aplayer as any).toggle(); }
-  };
   const readMode = () => document.documentElement.classList.toggle('reading');
 
   const items: Item[] = [
@@ -122,7 +118,6 @@ export default function RightMenu() {
     { kind: 'item', ico: '📖', label: '阅读模式', act: readMode },
     { kind: 'item', ico: scheme === 'dark' ? '☀️' : '🌙', label: scheme === 'dark' ? '亮色模式' : '暗色模式', act: toggleScheme },
     { kind: 'sep' },
-    { kind: 'item', ico: '🎵', label: '音乐 播放/暂停', act: toggleMusic },
     { kind: 'item', ico: '📮', label: '联系我', act: () => (location.href = '/faqs/') },
     { kind: 'item', ico: '👤', label: '关于站主', act: () => (location.href = '/about/') },
     { kind: 'item', ico: '🏠', label: '本站源码', act: () => window.open('https://github.com/kinghaonan/kinghaonan.github.io', '_blank') },

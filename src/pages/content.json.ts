@@ -15,7 +15,7 @@ export const GET: APIRoute = async () => {
       .slice(0, 3000);
 
   const payload = {
-    meta: { generated: new Date().toISOString(), site: 'https://kinghaonan.github.io' },
+    meta: { generated: 'static', site: 'https://kinghaonan.github.io' },
     pages: [
       { title: '关于我', url: '/about/', text: 'Ki Haonan 航空航天工程 技术笔记 NUAA 轨道力学 最优化方法' },
       { title: '联系我', url: '/faqs/', text: 'kihaonan@126.com GitHub 微信 kihaonan 联系方式' },

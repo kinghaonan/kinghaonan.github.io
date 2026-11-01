@@ -1,4 +1,4 @@
-name: Build & Deploy (Astro)
+name: Build & Deploy (Astro -> gh-pages)
 
 on:
   push:
@@ -24,13 +24,10 @@ jobs:
       # prebuild 生成 src/content/posts（适配层变换），build 产出 dist/
       - run: npm run build
 
-      - name: Deploy build output to repo root (GitHub Pages user site)
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          rm -rf blogs notes projects categories tags archives page about faqs blog css js
-          rm -f index.html 404.html atom.xml content.json sitemap*.xml volantis-sw.js
-          cp -r dist/* .
-          git add -A
-          git commit -m "Github CI Auto Builder at $(date '+%Y-%m-%d %H:%M:%S %z')" || echo "No changes to commit"
-          git push
+      # Pages 源为 gh-pages 分支：构建产物直接推送该分支
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          force_orphan: true
+          exclude_assets: ''

@@ -1,0 +1,87 @@
+---
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/post.css';
+import '../styles/overlay.css';
+import 'katex/dist/katex.min.css';
+import SearchPopup from '../components/SearchPopup.tsx';
+import RightMenu from '../components/RightMenu.tsx';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+  coverMode?: boolean;
+}
+
+const { title, description = 'King Haonan 的个人庄园——航空航天·轨道力学·技术笔记', noindex = false } = Astro.props;
+const SITE = 'https://kinghaonan.github.io';
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex,nofollow" />}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="King Haonan" />
+    <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#F4EEE4" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1C1814" media="(prefers-color-scheme: dark)" />
+    <script is:inline>
+      /* 首帧前定暗色，防闪烁 */
+      (function () {
+        var s = localStorage.getItem('color-scheme');
+        var d = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-scheme', s || (d ? 'dark' : 'light'));
+      })();
+    </script>
+    <style is:global>
+      @font-face {
+        font-family: 'Playwrite CZ';
+        src: url('/fonts/Playwrite_CZ/PlaywriteCZ-VariableFont_wght.ttf') format('truetype');
+        font-weight: 300 800;
+        font-display: swap;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="water-bg" aria-hidden="true"></div>
+    <Navbar />
+    <slot />
+    <Footer />
+    <button class="backtop" aria-label="返回顶部">↑</button>
+    <div class="toast" role="status"></div>
+    <SearchPopup client:load />
+    <RightMenu client:load />
+    <!-- 水效背景引擎（Paper Design Water, Apache-2.0）+ 主题脚本 -->
+    <script is:inline defer src="/js/paper-shaders.js"></script>
+    <script is:inline defer src="/js/water-bg.js"></script>
+    <script>
+      import '../scripts/theme.js';
+    </script>
+    <!-- APlayer + MetingJS（网易云歌单） -->
+    <link rel="stylesheet" href="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.css" />
+    <script is:inline src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+    <script is:inline src="https://unpkg.com/meting@2.0.1/dist/Meting.min.js"></script>
+    <meting-js
+      server="netease"
+      type="playlist"
+      id="5062959861"
+      fixed="true"
+      mini="true"
+      autoplay="false"
+      volume="0.4"
+      order="random">
+    </meting-js>
+  </body>
+</html>

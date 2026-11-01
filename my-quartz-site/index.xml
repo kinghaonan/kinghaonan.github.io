@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Ki Haonan 的学习笔记</title>
+      <link>https://kinghaonan.github.io/my-quartz-site</link>
+      <description>Last 10 notes on Ki Haonan 的学习笔记</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>复变函数</title>
+    <link>https://kinghaonan.github.io/my-quartz-site/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/</link>
+    <guid>https://kinghaonan.github.io/my-quartz-site/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sun, 01 Nov 2026 05:08:10 GMT</pubDate>
+  </item><item>
+    <title>轨道力学</title>
+    <link>https://kinghaonan.github.io/my-quartz-site/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/</link>
+    <guid>https://kinghaonan.github.io/my-quartz-site/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sun, 01 Nov 2026 05:08:10 GMT</pubDate>
+  </item><item>
+    <title>标签索引</title>
+    <link>https://kinghaonan.github.io/my-quartz-site/tags/</link>
+    <guid>https://kinghaonan.github.io/my-quartz-site/tags/</guid>
+    <description><![CDATA[  ]]></description>
+    <pubDate>Sun, 01 Nov 2026 05:08:10 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://kinghaonan.github.io/my-quartz-site/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A62-%E8%BD%A8%E9%81%93%E6%9C%BA%E5%8A%A8</link>
+    <guid>https://kinghaonan.github.io/my-quartz-site/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A62-%E8%BD%A8%E9%81%93%E6%9C%BA%E5%8A%A8</guid>
+    <description><![CDATA[  title: 轨道力学2-轨道机动 date: 2025-11-24 tags: [轨道力学] 占位页 占位示例：笔记标题需要与主站重定向指向的路径一致。 轨道力学1-运动学和符号表示 的后续。. ]]></description>
+    <pubDate>Sun, 01 Nov 2026 05:05:12 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://kinghaonan.github.io/my-quartz-site/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61-%E8%BF%90%E5%8A%A8%E5%AD%A6%E5%92%8C%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%A4%BA</link>
+    <guid>https://kinghaonan.github.io/my-quartz-site/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A61-%E8%BF%90%E5%8A%A8%E5%AD%A6%E5%92%8C%E7%AC%A6%E5%8F%B7%E8%A1%A8%E7%A4%BA</guid>
+    <description><![CDATA[  title: 轨道力学1-运动学和符号表示 date: 2025-11-24 tags: [轨道力学] 占位页 这一篇请在 Obsidian 里写好后，把 .md 文件放进 content/轨道力学/ 覆盖本文件。 轨道力学1-运动学和符号表示 轨道六根数：a,\ e,\ i,\ \Omega,\ \omega,\ f。. ]]></description>
+    <pubDate>Sun, 01 Nov 2026 05:05:12 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://kinghaonan.github.io/my-quartz-site/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B01-%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0</link>
+    <guid>https://kinghaonan.github.io/my-quartz-site/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B01-%E5%A4%8D%E6%95%B0%E4%B8%8E%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0</guid>
+    <description><![CDATA[  title: 复变函数1-复数与复变函数 date: 2026-03-22 tags: [复变函数, 数学] 占位页 这一篇请在 Obsidian 里写好后，把 .md 文件放进 content/复变函数/ 覆盖本文件。 复变函数1-复数与复变函数 复数 z = a + b\mathrm{i}，模长 |z| = \sqrt{a^2+b^2}。 相关笔记：复变函数2-解析函数 . ]]></description>
+    <pubDate>Sun, 01 Nov 2026 05:05:12 GMT</pubDate>
+  </item><item>
+    <title></title>
+    <link>https://kinghaonan.github.io/my-quartz-site/</link>
+    <guid>https://kinghaonan.github.io/my-quartz-site/</guid>
+    <description><![CDATA[  title: 学习笔记 欢迎来到我的数字花园。这里的内容来自 Obsidian 笔记库，使用 Quartz 发布。 目录 复变函数 轨道力学 用法 把 Obsidian 库里的笔记（支持 [[双链]]、&gt; [!note] 标注、$$公式$$、任务列表）放进 对应文件夹即可，Quartz 会自动处理链接、目录、搜索与关系图。. ]]></description>
+    <pubDate>Sun, 01 Nov 2026 05:05:12 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

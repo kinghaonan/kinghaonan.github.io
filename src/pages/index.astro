@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { PER_PAGE } from '../consts';
+
+const allPosts = (await getCollection('posts')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const posts = allPosts.slice(0, PER_PAGE);
+const totalPages = Math.ceil(allPosts.length / PER_PAGE);
+---
+<Base title="King Haonan - 蓦然回首，那人却在灯火阑珊处">
+  <section class="cover">
+    <div class="cover-body">
+      <h1 class="title">King</h1>
+      <p class="subtitle">蓦然回首，那人却在灯火阑珊处</p>
+    </div>
+    <div class="cover-dock">
+      <a href="/about/"><span class="ico">👤</span>关于</a>
+      <a href="/categories/note/"><span class="ico">📒</span>笔记</a>
+      <a href="/archives/"><span class="ico">🗂</span>归档</a>
+      <a href="https://github.com/kinghaonan/kinghaonan.github.io" target="_blank" rel="noopener"><span class="ico">🏠</span>源码</a>
+    </div>
+  </section>
+
+  <div class="page-shell" style="margin-top: -8vh;">
+    <div class="layout-grid">
+      <div class="post-list">
+        {posts.map((p) => (
+          <article class="card glass post-card">
+            <div class="card-body">
+              <h2><a href={`/${p.id}/`}>{p.data.title}</a></h2>
+              {p.data.description && (
+                <div class="desc-wrap"><div class="desc-inner"><p class="desc">{p.data.description}</p></div></div>
+              )}
+              <div class="post-meta">
+                <span class="author"><img src="/logo.jpg" alt="" width="22" height="22" />Ki haonan</span>
+                {(p.data.categories || [])[0] && <a class="cat" href={`/categories/${p.data.categories[0]}/`}>{p.data.categories[0]}</a>}
+                <time datetime={p.data.date.toISOString()}>{p.data.date.toISOString().slice(0, 10)}</time>
+                <span class="spacer"></span>
+                <a class="readmore" href={`/${p.id}/`}>阅读全文 →</a>
+              </div>
+            </div>
+          </article>
+        ))}
+        <nav class="pagination" aria-label="分页">
+          {totalPages > 1 && Array.from({ length: totalPages }, (_, i) => i + 1).map((n) =>
+            n === 1 ? <span class="cur">1</span> : <a href={`/page/${n}/`}>{n}</a>
+          )}
+        </nav>
+      </div>
+      <Sidebar widgets={['blogger', 'quick_links', 'categories', 'tagcloud', 'webinfo']} />
+    </div>
+  </div>
+</Base>

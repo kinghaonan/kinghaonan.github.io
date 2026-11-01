@@ -1,0 +1,61 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { PER_PAGE } from '../../consts';
+
+export async function getStaticPaths() {
+  const posts = (await getCollection('posts')).sort(
+    (a, b) => b.data.date.getTime() - a.data.date.getTime()
+  );
+  const lastPage = Math.ceil(posts.length / PER_PAGE);
+  const paths = [];
+  for (let n = 2; n <= lastPage; n++) {
+    paths.push({
+      params: { page: String(n) },
+      props: {
+        items: posts.slice((n - 1) * PER_PAGE, n * PER_PAGE),
+        currentPage: n,
+        lastPage,
+      },
+    });
+  }
+  return paths;
+}
+
+const { items, currentPage, lastPage } = Astro.props;
+---
+<Base title={`文章列表 第 ${currentPage} 页 - King Haonan`}>
+  <div class="page-shell">
+    <h1 style="font-family: var(--font-display); color: var(--accent-ink); margin: 0 0 var(--sp-8);">全部文章 · 第 {currentPage} 页</h1>
+    <div class="layout-grid">
+      <div class="post-list">
+        {items.map((p: any) => (
+          <article class="card glass post-card">
+            <div class="card-body">
+              <h2><a href={`/${p.id}/`}>{p.data.title}</a></h2>
+              {p.data.description && (
+                <div class="desc-wrap"><div class="desc-inner"><p class="desc">{p.data.description}</p></div></div>
+              )}
+              <div class="post-meta">
+                <span class="author"><img src="/logo.jpg" alt="" width="22" height="22" />Ki haonan</span>
+                {(p.data.categories || [])[0] && <a class="cat" href={`/categories/${p.data.categories[0]}/`}>{p.data.categories[0]}</a>}
+                <time datetime={p.data.date.toISOString()}>{p.data.date.toISOString().slice(0, 10)}</time>
+                <span class="spacer"></span>
+                <a class="readmore" href={`/${p.id}/`}>阅读全文 →</a>
+              </div>
+            </div>
+          </article>
+        ))}
+        <nav class="pagination" aria-label="分页">
+          <a href={currentPage === 2 ? '/' : `/page/${currentPage - 1}/`}>← 上一页</a>
+          {Array.from({ length: lastPage }, (_, i) => i + 1).map((n) =>
+            n === currentPage ? <span class="cur">{n}</span> : <a href={n === 1 ? '/' : `/page/${n}/`}>{n}</a>
+          )}
+          {currentPage < lastPage && <a href={`/page/${currentPage + 1}/`}>下一页 →</a>}
+        </nav>
+      </div>
+      <Sidebar widgets={['blogger', 'quick_links', 'categories', 'tagcloud', 'webinfo']} />
+    </div>
+  </div>
+</Base>

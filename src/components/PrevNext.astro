@@ -1,0 +1,18 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('posts')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+const index = posts.findIndex((p) => p.id === Astro.props.id);
+const newer = index > 0 ? posts[index - 1] : null;
+const older = index >= 0 && index < posts.length - 1 ? posts[index + 1] : null;
+---
+<div class="prev-next">
+  {older ? (
+    <a class="prev" href={`/${older.id}/`}><span class="dir">← 上一篇</span><span class="t">{older.data.title}</span></a>
+  ) : <span />}
+  {newer ? (
+    <a class="next" href={`/${newer.id}/`}><span class="dir">下一篇 →</span><span class="t">{newer.data.title}</span></a>
+  ) : <span />}
+</div>

@@ -1,7 +1,15 @@
 .DS_Store
-node_modules
-db.json
-.deploy_git
-public
-package-lock.json
+node_modules/
 .vscode/
+
+# Astro 构建产物（CI 会把 dist 同步到仓库根）
+dist/
+
+# gen-content 生成的变换产物（源在 content-md/）
+src/content/posts/
+
+# Hexo 时代遗留
+db.json
+.deploy_git/
+.astro/
+.zcode/

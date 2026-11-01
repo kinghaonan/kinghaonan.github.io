@@ -1,0 +1,44 @@
+---
+import Base from '../../layouts/Base.astro';
+import Sidebar from '../../components/Sidebar.astro';
+import { getArchivePaths } from '../../lib/archives';
+
+export async function getStaticPaths() {
+  return getArchivePaths();
+}
+
+const { items, currentPage, lastPage, basePath, label, total } = Astro.props;
+const fmt = (d: Date) => d.toISOString().slice(0, 10);
+const pageUrl = (n: number) => (n === 1 ? basePath : `${basePath}page/${n}/`);
+---
+<Base title={`归档：${label}${currentPage > 1 ? ` 第 ${currentPage} 页` : ''} - King Haonan`}>
+  <div class="page-shell">
+    <div class="layout-grid">
+      <main>
+        <div class="card glass" style="padding: var(--sp-6) var(--sp-8);">
+          <h1 style="font-family: var(--font-display); color: var(--accent-ink); margin: 0 0 var(--sp-4);">归档 · {label}</h1>
+          <p style="color: var(--text-2); margin: 0 0 var(--sp-6);">共 {total} 篇 · 按时间倒序 · <a href="/archives/">全部</a></p>
+          <ul class="arch-list">
+            {items.map((p: any) => (
+              <li class="item">
+                <span class="date">{fmt(p.data.date)}</span>
+                <a href={`/${p.id}/`}>{p.data.title}</a>
+                <span style="color: var(--text-3); font-size: 0.8rem;">{(p.data.categories || []).join(' / ')}</span>
+              </li>
+            ))}
+          </ul>
+          {lastPage > 1 && (
+            <nav class="pagination">
+              {currentPage > 1 && <a href={pageUrl(currentPage - 1)}>← 上一页</a>}
+              {Array.from({ length: lastPage }, (_, i) => i + 1).map((n) =>
+                n === currentPage ? <span class="cur">{n}</span> : <a href={pageUrl(n)}>{n}</a>
+              )}
+              {currentPage < lastPage && <a href={pageUrl(currentPage + 1)}>下一页 →</a>}
+            </nav>
+          )}
+        </div>
+      </main>
+      <Sidebar widgets={['blogger', 'quick_links', 'categories', 'tagcloud', 'webinfo']} />
+    </div>
+  </div>
+</Base>

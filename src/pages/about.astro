@@ -1,0 +1,69 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="关于我 - King Haonan" description="Ki Haonan——航空航天工程 · 技术笔记">
+  <div class="page-shell">
+    <div class="layout-grid no-side">
+      <main>
+        <div class="card glass" style="padding: var(--sp-8);">
+          <div class="about-hero">
+            <img class="about-hero__avatar" src="/image/logo.jpg" alt="Ki Haonan 头像" width="132" height="132" />
+            <h2 style="font-family: var(--font-display);">Ki Haonan</h2>
+            <p style="color: var(--text-2);">航空航天工程 · 技术笔记</p>
+            <div class="about-chips" style="display:flex; justify-content:center; gap:10px; flex-wrap:wrap;">
+              <span class="about-chip">NUAA</span>
+              <span class="about-chip">航空航天</span>
+              <span class="about-chip">轨道力学</span>
+              <span class="about-chip">AI</span>
+            </div>
+          </div>
+          <style is:global>
+            .about-chip { background: rgba(201, 164, 92, 0.14); color: var(--accent-ink); padding: 6px 16px; border-radius: 999px; font-size: 0.875rem; }
+            .about-hero { text-align: center; padding: 0.5rem 0 1.5rem; }
+            .about-hero__avatar { width: 132px; height: 132px; border-radius: 50%; object-fit: cover; border: 4px solid rgba(201, 164, 92, 0.55); box-shadow: 0 10px 28px rgba(90, 60, 20, 0.18); }
+            .contact-card { margin-top: 2rem; padding: 1.75rem 1.5rem; text-align: center; color: #F7F1E8; background: linear-gradient(160deg, #2A221C 0%, #1A1612 100%); border: 1px solid rgba(201, 164, 92, 0.28); border-radius: 16px; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2); }
+            .contact-card h3 { color: #F7F1E8 !important; margin-top: 0; }
+            .contact-card p { color: #E4D8C6 !important; }
+          </style>
+
+          <div class="md">
+            <p>热爱技术，也享受把问题算清楚、把模型搭起来。</p>
+            <h2>技能专长</h2>
+            <ul>
+              <li><strong>前端</strong>：HTML5 / CSS3, JavaScript, Vue.js</li>
+              <li><strong>后端</strong>：Node.js, Python, Java</li>
+              <li><strong>工具</strong>：Git, Markdown, 静态站点</li>
+              <li><strong>专业</strong>：航空航天工程、最优化方法、轨道力学</li>
+            </ul>
+            <h2>学习历程</h2>
+            <table>
+              <thead><tr><th>学校</th><th>专业</th><th>时间</th></tr></thead>
+              <tbody><tr><td>南京航空航天大学</td><td>航空航天工程（学士）</td><td>2023-2025</td></tr></tbody>
+            </table>
+            <h2>荣誉奖项</h2>
+            <ul>
+              <li>中国大学生物理学术竞赛一等奖（2025）</li>
+              <li>挑战杯「揭榜挂帅」二等奖（2025）</li>
+              <li>国家奖学金（2025）</li>
+            </ul>
+            <h2>研究方向</h2>
+            <ul>
+              <li><strong>最优化方法</strong>：工程优化算法及其应用</li>
+              <li><strong>轨道力学</strong>：航天器轨道设计与分析</li>
+              <li><strong>深空探测</strong>：行星际航行技术</li>
+            </ul>
+            <h2>兴趣爱好</h2>
+            <ul>
+              <li>阅读：科技类书籍、科幻小说</li>
+              <li>音乐：古典音乐、电子音乐</li>
+              <li>游戏：策略类、模拟类</li>
+              <li>摄影：自然风光、城市建筑</li>
+            </ul>
+            <h2>未来规划</h2>
+            <p><strong>短期</strong>：在航空航天方向继续深入，参与实际项目。<br /><strong>长期</strong>：把做过的每一步都沉淀成能被别人复用的笔记与工具。</p>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</Base>

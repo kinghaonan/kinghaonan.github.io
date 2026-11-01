@@ -1,19 +1,27 @@
 {
-  "name": "hexo-site",
+  "name": "kinghaonan-github-io",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "hexo clean && hexo g && gulp",
-    "hash": "cache-hash --target public --output public",
-    "g": "hexo clean && hexo generate",
-    "c": "hexo clean",
-    "d": "hexo deploy",
-    "s": "hexo clean && hexo server"
+    "predev": "node build/gen-content.mjs",
+    "dev": "astro dev",
+    "start": "npm run dev",
+    "prebuild": "node build/gen-content.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "gen:content": "node build/gen-content.mjs",
+    "audit:md": "node build/audit-md.js"
   },
   "hexo": {
     "version": "7.3.0"
   },
   "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.5",
+    "@astrojs/react": "^7.1.2",
+    "@astrojs/rss": "^4.0.19",
+    "@astrojs/sitemap": "^3.7.4",
+    "@paper-design/shaders": "0.0.82",
+    "astro": "^7.4.4",
     "hexo": "^7.0.0",
     "hexo-autonofollow": "^1.0.1",
     "hexo-autoprefixer": "^2.0.0",
@@ -29,7 +37,14 @@
     "hexo-renderer-ejs": "^2.0.0",
     "hexo-renderer-markdown-it": "^7.1.1",
     "hexo-renderer-stylus": "^2.1.0",
-    "hexo-server": "^3.0.0"
+    "hexo-server": "^3.0.0",
+    "katex": "^0.19.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "rehype-katex": "^7.0.1",
+    "rehype-raw": "^7.0.0",
+    "remark-breaks": "^4.0.0",
+    "remark-math": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.18.13",

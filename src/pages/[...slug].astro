@@ -1,0 +1,59 @@
+---
+import { getCollection, render } from 'astro:content';
+import { tagUrl } from '../consts';
+import Base from '../layouts/Base.astro';
+import Sidebar from '../components/Sidebar.astro';
+import PrevNext from '../components/PrevNext.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((p) => ({ params: { slug: p.id }, props: { post: p } }));
+}
+
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+const fm = post.data;
+const SITE = 'https://kinghaonan.github.io';
+const pageUrl = `${SITE}/${post.id}/`;
+const excerpt = fm.description || '';
+---
+<Base title={`${fm.title} - King Haonan`} description={excerpt}>
+  <div class="page-shell">
+    <div class="layout-grid">
+      <main>
+        <div class="card glass post-wrap">
+          {fm.headimg && (
+            <div class="post-hero"><img src={fm.headimg} alt={fm.title} /></div>
+          )}
+          <div class="post-page">
+            <h1 class="post-title">{fm.title}</h1>
+            <div class="post-submeta">
+              <span class="author"><img src="/logo.jpg" alt="" width="22" height="22" />Ki haonan</span>
+              {(fm.categories || []).map((c: string) => <a class="cat" href={`/categories/${c}/`}>{c}</a>)}
+              <time datetime={fm.date.toISOString()}>{fm.date.toISOString().slice(0, 10)}</time>
+              {(fm.tags || []).map((t: string) => <a class="tag" href={tagUrl(t)}>{t}</a>)}
+            </div>
+            <article class="md">
+              <Content />
+            </article>
+            <div class="share">
+              <span>分享：</span>
+              <a href={`https://service.weibo.com/share/share.php?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(fm.title)}`} target="_blank" rel="noopener">微博</a>
+              <a href={`https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(fm.title)}`} target="_blank" rel="noopener">QQ 空间</a>
+              <a href={`https://connect.qq.com/widget/shareqq/index.html?url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(fm.title)}`} target="_blank" rel="noopener">QQ 好友</a>
+            </div>
+            <div class="copyright-block">
+              <b>版权声明</b>：本文章为博主原创，采用 <b>CC BY-NC-SA 4.0</b> 许可——转载请附原文链接与作者信息。<br />
+              <b>本文链接</b>：<a href={pageUrl}>{pageUrl}</a>
+            </div>
+          </div>
+        </div>
+        <PrevNext id={post.id} />
+      </main>
+      <Sidebar
+        headings={headings}
+        widgets={['toc', 'categories', 'tagcloud', 'webinfo']}
+      />
+    </div>
+  </div>
+</Base>

@@ -1,0 +1,61 @@
+/* 金色庄园设计 token — unslop 精修版（色彩/字排/动效/栅格全站唯一来源） */
+:root {
+  /* 色板：一个 tinted neutral ramp + 一个 accent */
+  --gold: #C9A45C;
+  --gold-strong: #E8C97A;
+  --copper: #A56B3C;
+  --ink: #3A3228;
+  --ink-2: #6A6056;
+  --ink-3: #8B8177;
+  --paper: #FFFBF4;
+  --paper-2: #F4EEE4;
+  --night: #1C1814;
+  --night-2: #26211B;
+  --night-3: #2F2822;
+  --hairline-l: rgba(201, 164, 92, 0.16);
+  --hairline-d: rgba(232, 201, 122, 0.16);
+  --accent: var(--gold);
+  --accent-ink: var(--copper);
+
+  /* 文字三角色 */
+  --text-1: #3A3228;
+  --text-2: #6A6056;
+  --text-3: #98908A;
+  --bg-1: rgba(255, 251, 244, 0.86);
+  --bg-2: rgba(255, 251, 244, 0.62);
+  --bg-code: rgba(58, 50, 40, 0.06);
+  --shadow-soft: 0 10px 32px rgba(60, 40, 16, 0.10);
+  --shadow-lift: 0 14px 36px rgba(90, 60, 20, 0.12);
+
+  /* 动效：一条缓动曲线 + 三档时长 */
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 150ms;
+  --dur-med: 300ms;
+  --dur-slow: 600ms;
+
+  /* 栅格：4px 系 */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --sp-12: 48px; --sp-16: 64px;
+
+  /* 圆角：控件 10 / 卡 16 / 大面板 20 */
+  --r-btn: 10px; --r-card: 16px; --r-panel: 20px;
+
+  --font-display: "Playwrite CZ", cursive;
+  --font-body: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", Consolas, "Courier New", monospace;
+  --maxw: 1180px;
+  --sidebar-w: 300px;
+}
+
+[data-scheme='dark'] {
+  --text-1: #F0E8DC;
+  --text-2: #C9BFB2;
+  --text-3: #8B8177;
+  --bg-1: rgba(28, 24, 20, 0.82);
+  --bg-2: rgba(28, 24, 20, 0.58);
+  --bg-code: rgba(255, 255, 255, 0.06);
+  --hairline-l: var(--hairline-d);
+  --shadow-soft: 0 10px 32px rgba(0, 0, 0, 0.32);
+  --shadow-lift: 0 14px 36px rgba(0, 0, 0, 0.38);
+}

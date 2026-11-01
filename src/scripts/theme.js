@@ -119,9 +119,14 @@ import './liquid-glass.js';
             if (!audios.length) metingEl.style.display = 'none';
           };
           hideIfBroken();
-          if (typeof ap.on === 'function') ap.on('error', function () {
-            metingEl.style.display = 'none';
-          });
+          if (typeof ap.on === 'function') {
+            ap.on('error', function () { metingEl.style.display = 'none'; });
+          }
+          // 音频流加载失败（VIP/区域限制等）也隐藏空壳播放器
+          var audioEl = ap.audio;
+          if (audioEl && typeof audioEl.addEventListener === 'function') {
+            audioEl.addEventListener('error', function () { metingEl.style.display = 'none'; });
+          }
           return;
         }
         // 超时仍未初始化（API 完全不可达）

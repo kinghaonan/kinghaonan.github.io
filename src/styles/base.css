@@ -40,60 +40,46 @@ html {
 #water-bg.is-ready { opacity: 1; }
 #water-bg canvas { display: block; width: 100% !important; height: 100% !important; }
 
-/* 玻璃面（原生降级样式；React 库在 Chrome 里叠加位移折射） */
-.glass {
-  background: var(--bg-1);
-  border: 1px solid rgba(255, 255, 255, 0.38);
-  backdrop-filter: blur(14px) saturate(160%);
-  -webkit-backdrop-filter: blur(14px) saturate(160%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), var(--shadow-soft);
+/* ---- 玻璃体系：所有框统一白霜玻璃（亮暗两套一致，玻璃霜化背后内容） ----
+   文字变量在玻璃作用域内翻转为浅色，卡片内所有组件自动适配 */
+.card, .glass, .navbar, .cover-dock, .search-popup, .toast, .site-footer {
+  --text-1: #FFFFFF;
+  --text-2: rgba(255, 255, 255, 0.82);
+  --text-3: rgba(255, 255, 255, 0.6);
+  --accent-ink: #FFE7AE;
+  --bg-1: rgba(255, 255, 255, 0.12);
+  --bg-2: rgba(255, 255, 255, 0.08);
+  --bg-code: rgba(255, 255, 255, 0.12);
+  --hairline-l: rgba(255, 255, 255, 0.22);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+}
+.glass, .card {
+  background: rgba(72, 66, 60, 0.34);
+  backdrop-filter: saturate(180%) blur(18px);
+  -webkit-backdrop-filter: saturate(180%) blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: var(--r-card);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), inset 0 -1px 0 rgba(255, 255, 255, 0.12), var(--shadow-soft);
 }
-[data-scheme='dark'] .glass {
-  background: var(--bg-1);
-  border-color: rgba(232, 201, 122, 0.16);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07), var(--shadow-soft);
+/* 原生位移折射增强（liquid-glass.js 挂载，仅 Chrome）：在霜化之上叠加水波折射 */
+.has-liquid-glass {
+  backdrop-filter: url(#liquid-glass-distortion) saturate(180%) blur(18px) !important;
 }
-/* liquid-glass-react 挂载成功时由 JS 加此标记：改用库容器自带观感，去重背景 */
-html.lg-native .glass { background: transparent; border-color: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+/* 降级（Safari/Firefox/低端）：无折射，但上面的霜化玻璃基础样式始终生效 */
 
 /* 按钮 */
 .btn {
   display: inline-flex; align-items: center; justify-content: center; gap: var(--sp-2);
   min-height: 44px; padding: var(--sp-2) var(--sp-5);
   border-radius: var(--r-btn); border: none; cursor: pointer;
-  font-size: 0.9rem; color: var(--text-1);
+  font-size: 0.9rem; color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   transition: transform var(--dur-fast) var(--ease-soft), box-shadow var(--dur-fast) var(--ease-soft), background var(--dur-fast) var(--ease-soft);
 }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { background: var(--gold); color: #fff; box-shadow: 0 6px 16px rgba(201, 164, 92, 0.35); }
-.btn-ghost { background: rgba(201, 164, 92, 0.12); color: var(--accent-ink); }
-
-/* 卡片通用 */
-.card {
-  background: var(--bg-1);
-  border: 1px solid var(--hairline-l);
-  border-radius: var(--r-card);
-  box-shadow: var(--shadow-soft);
-}
+.btn-ghost { background: rgba(255, 255, 255, 0.16); color: #fff; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
-
-/* 原生液态玻璃（liquid-glass.js 挂载，仅 Chrome 全效果）：
-   参考图配方——白霜底 + 重模糊 + SVG 位移折射 + 白字柔影（亮暗两套统一，玻璃只霜化背后内容） */
-.has-liquid-glass {
-  backdrop-filter: url(#liquid-glass-distortion) saturate(180%) blur(18px) brightness(1.02) !important;
-  background: rgba(255, 255, 255, 0.07) !important;
-  border-color: rgba(255, 255, 255, 0.38) !important;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), inset 0 -1px 0 rgba(255, 255, 255, 0.12), var(--shadow-soft) !important;
-  --text-1: #FFFFFF;
-  --text-2: rgba(255, 255, 255, 0.82);
-  --text-3: rgba(255, 255, 255, 0.6);
-  --accent-ink: #FFE7AE;
-  --bg-code: rgba(255, 255, 255, 0.12);
-  --hairline-l: rgba(255, 255, 255, 0.22);
-  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
-}
-/* 降级（Safari/Firefox/低端）：不加类，保持 .card/.glass 原磨砂外观 */

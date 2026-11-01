@@ -186,3 +186,23 @@
 @media (max-width: 900px) {
   .post-list { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* 文章正文层为实心纸底：文字变量回退为深色（不参与玻璃白字翻转） */
+.post-wrap {
+  --text-1: #3A3228;
+  --text-2: #6A6056;
+  --text-3: #98908A;
+  --accent-ink: #A56B3C;
+  --bg-code: rgba(58, 50, 40, 0.06);
+  --hairline-l: rgba(201, 164, 92, 0.16);
+  text-shadow: none;
+}
+.post-wrap .post-submeta .tag { text-shadow: none; }
+[data-scheme='dark'] .post-wrap {
+  --text-1: #F0E8DC;
+  --text-2: #C9BFB2;
+  --text-3: #8B8177;
+  --accent-ink: #E8C97A;
+  --bg-code: rgba(255, 255, 255, 0.06);
+  --hairline-l: rgba(232, 201, 122, 0.16);
+}

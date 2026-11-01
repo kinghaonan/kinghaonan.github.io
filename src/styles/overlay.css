@@ -109,3 +109,6 @@ html.reading .sidebar { display: none; }
 
 /* APlayer 歌词栏：fixed 全宽渲染会横跨底部压住内容与返回顶部，且本站不展示歌词 */
 .aplayer-lrc { display: none !important; }
+
+/* 播放器离屏边距：不再顶着屏幕左下角、不压卡片 */
+.aplayer.aplayer-fixed { margin: 0 0 12px 12px; }

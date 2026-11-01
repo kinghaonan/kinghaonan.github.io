@@ -26,9 +26,7 @@ export default defineConfig({
     },
   },
   vite: {
-    ssr: {
-      // liquid-glass-react 的 CJS 产物缺 __esModule 标记，SSR 下走 ESM 产物
-      noExternal: ['liquid-glass-react'],
-    },
+    // lightningcss 会把标准 backdrop-filter 转 -webkit- 并丢弃（Chromium 不认 webkit 前缀）
+    build: { cssMinify: 'esbuild' },
   },
 });

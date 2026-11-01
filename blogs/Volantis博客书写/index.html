@@ -1,0 +1,244 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="generator" content="Astro v7.4.4"><title>Volantis博客书写问题 - King Haonan</title><meta name="description" content="在Volantis主题上优雅地书写记录。"><meta property="og:type" content="website"><meta property="og:title" content="Volantis博客书写问题 - King Haonan"><meta property="og:description" content="在Volantis主题上优雅地书写记录。"><meta property="og:site_name" content="King Haonan"><link rel="icon" href="/favicon.ico"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#F4EEE4" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#1C1814" media="(prefers-color-scheme: dark)"><script>
+      /* 首帧前定暗色，防闪烁 */
+      (function () {
+        var s = localStorage.getItem('color-scheme');
+        var d = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.setAttribute('data-scheme', s || (d ? 'dark' : 'light'));
+      })();
+    </script><link rel="stylesheet" href="/_astro/Base.BAN-0FNZ.css"></head><body><div id="water-bg" aria-hidden="true"></div><header class="navbar"><div class="navbar-inner"><a class="navbar-logo" href="/"><img src="/logo.jpg" alt="Ki Haonan" width="36" height="36"><span class="site-name">King Haonan</span></a><button class="icon-btn navbar-toggle" aria-label="展开菜单" onclick="document.querySelector('.navbar-menu').classList.toggle('is-open')"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button><nav class="navbar-menu"><div class="item"><a href="/about/">个人介绍</a></div><div class="item"><button type="button">文档 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></button><div class="dropdown"><a href="/categories/blog/">博客</a><a href="/categories/project/">项目</a><a href="/categories/note/">笔记</a></div></div><div class="item"><a href="/archives/">归档</a></div><div class="item"><a href="/faqs/">联系我</a></div><div class="item"><button type="button">更多 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"></path></svg></button><div class="dropdown"><a href="/tags/">标签云</a><a href="https://github.com/kinghaonan/kinghaonan.github.io" target="_blank" rel="noopener">本站源码</a></div></div></nav><div class="navbar-actions"><button class="search-input-mini" onclick="window.dispatchEvent(new CustomEvent('open-search'))" aria-label="搜索">搜索…</button><button class="icon-btn" onclick="window.dispatchEvent(new CustomEvent('open-search'))" aria-label="搜索"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg></button><style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).load=e,window.dispatchEvent(new Event(`astro:load`))})();</script><script>(function(){function e(t){"@babel/helpers - typeof";return e=typeof Symbol==`function`&&typeof Symbol.iterator==`symbol`?function(e){return typeof e}:function(e){return e&&typeof Symbol==`function`&&e.constructor===Symbol&&e!==Symbol.prototype?`symbol`:typeof e},e(t)}function t(t,n){if(e(t)!=`object`||!t)return t;var r=t[Symbol.toPrimitive];if(r!==void 0){var i=r.call(t,n||`default`);if(e(i)!=`object`)return i;throw TypeError(`@@toPrimitive must return a primitive value.`)}return(n===`string`?String:Number)(t)}function n(n){var r=t(n,`string`);return e(r)==`symbol`?r:r+``}function r(e,t,r){return(t=n(t))in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}let i=/* @__PURE__ */ new Set([`__proto__`,`constructor`,`prototype`]);{let e={0:e=>a(e),1:e=>n(e),2:e=>new RegExp(e),3:e=>new Date(e),4:e=>new Map(n(e)),5:e=>new Set(n(e)),6:e=>BigInt(e),7:e=>new URL(e),8:e=>new Uint8Array(e),9:e=>new Uint16Array(e),10:e=>new Uint32Array(e),11:e=>1/0*e},t=t=>{let[n,r]=t;return n in e?e[n](r):void 0},n=e=>e.map(t),a=e=>typeof e!=`object`||!e?e:Object.fromEntries(Object.entries(e).map(([e,n])=>[e,t(n)]));class o extends HTMLElement{constructor(...e){super(...e),r(this,`Component`,void 0),r(this,`hydrator`,void 0),r(this,`hydrate`,async()=>{var e;if(!this.hydrator||!this.isConnected)return;let t=(e=this.parentElement)==null?void 0:e.closest(`astro-island[ssr]`);if(t){t.addEventListener(`astro:hydrate`,this.hydrate,{once:!0});return}let n=this.querySelectorAll(`astro-slot`),r={},i=this.querySelectorAll(`template[data-astro-template]`);for(let e of i){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`data-astro-template`)||`default`]=e.innerHTML,e.remove())}for(let e of n){let t=e.closest(this.tagName);t!=null&&t.isSameNode(this)&&(r[e.getAttribute(`name`)||`default`]=e.innerHTML)}let o;try{o=this.hasAttribute(`props`)?a(JSON.parse(this.getAttribute(`props`))):{}}catch(e){let t=this.getAttribute(`component-url`)||`<unknown>`,n=this.getAttribute(`component-export`);throw n&&(t+=` (export ${n})`),console.error(`[hydrate] Error parsing props for component ${t}`,this.getAttribute(`props`),e),e}await this.hydrator(this)(this.Component,o,r,{client:this.getAttribute(`client`)}),this.removeAttribute(`ssr`),this.dispatchEvent(new CustomEvent(`astro:hydrate`))}),r(this,`unmount`,()=>{this.isConnected||this.dispatchEvent(new CustomEvent(`astro:unmount`))})}disconnectedCallback(){document.removeEventListener(`astro:after-swap`,this.unmount),document.addEventListener(`astro:after-swap`,this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute(`await-children`)||document.readyState===`interactive`||document.readyState===`complete`)this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener(`DOMContentLoaded`,e),t.disconnect(),this.childrenConnectedCallback()},t=new MutationObserver(()=>{var t;((t=this.lastChild)==null?void 0:t.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue===`astro:end`&&(this.lastChild.remove(),e())});t.observe(this,{childList:!0}),document.addEventListener(`DOMContentLoaded`,e)}}async childrenConnectedCallback(){let e=this.getAttribute(`before-hydration-url`);e&&await import(e),this.start()}getRetryImportUrl(e){let t=new URL(e,document.baseURI);return t.searchParams.set(`astro-retry`,Date.now().toString()),t.toString()}async importWithRetry(e){try{return await import(e)}catch(t){return await new Promise(e=>setTimeout(e,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let t=this.getAttribute(`component-url`),n=new CustomEvent(`astro:hydration-error`,{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:t}});this.dispatchEvent(n)&&console.error(`[astro-island] Error hydrating ${t}`,e)}async start(){let e=JSON.parse(this.getAttribute(`opts`)),t=this.getAttribute(`client`);if(Astro[t]===void 0)window.addEventListener(`astro:${t}`,()=>this.start(),{once:!0});else try{await Astro[t](async()=>{let e=this.getAttribute(`renderer-url`);try{let[t,{default:n}]=await Promise.all([this.importWithRetry(this.getAttribute(`component-url`)),e?this.importWithRetry(e):Promise.resolve({default:()=>()=>{}})]),r=this.getAttribute(`component-export`)||`default`;if(r.includes(`.`)){this.Component=t;for(let e of r.split(`.`)){if(i.has(e)||!this.Component||typeof this.Component!=`object`&&typeof this.Component!=`function`||!Object.hasOwn(this.Component,e))throw Error(`Invalid component export path: ${r}`);this.Component=this.Component[e]}}else{if(i.has(r))throw Error(`Invalid component export path: ${r}`);this.Component=t[r]}return this.hydrator=n,this.hydrate}catch(e){return this.handleHydrationError(e),()=>{}}},e,this)}catch(e){this.handleHydrationError(e)}}attributeChangedCallback(){this.hydrate()}}r(o,`observedAttributes`,[`props`]),customElements.get(`astro-island`)||customElements.define(`astro-island`,o)}})();</script><astro-island uid="Z1qFhz6" prefix="r5" component-url="/_astro/DarkToggle.DgyCJ0m3.js" component-export="default" renderer-url="/_astro/client.CzWaolnw.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;DarkToggle&quot;,&quot;value&quot;:true}" await-children><button class="icon-btn" title="切换暗色模式" aria-label="切换暗色模式"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></button><!--astro:end--></astro-island></div></div></header><div class="page-shell"><div class="layout-grid"><main><div class="card glass post-wrap"><div class="post-hero"><img src="/image/博客书写/background.png" alt="Volantis博客书写问题"></div><div class="post-page"><h1 class="post-title">Volantis博客书写问题</h1><div class="post-submeta"><span class="author"><img src="/logo.jpg" alt="" width="22" height="22">Ki haonan</span><a class="cat" href="/categories/blog/">blog</a><time datetime="2025-10-25T00:00:00.000Z">2025-10-25</time></div><article class="md"><p><img src="" alt=""></p>
+<h2 id="数学公式渲染引擎选择">数学公式渲染引擎选择</h2>
+<h3 id="mathjax方案兼容性优先">MathJax方案（兼容性优先）</h3>
+<p>适合需要完整LaTeX支持的场景，尤其推荐用于学术类内容。</p>
+<h3 id="katex方案性能优先">KaTeX方案（性能优先）</h3>
+<p>适合追求加载速度的场景，KaTeX渲染速度比MathJax快约60%，但对部分复杂公式支持有限。</p>
+<h2 id="volantis-主题内置前端渲染方案">Volantis 主题内置前端渲染方案</h2>
+<p>Volantis 6 中在 front-matter 中配置页面插件<a href="https://volantis.js.org/v6/page-settings/?keyword=math">…</a> 即可。</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#ABB2BF">---</span></span>
+<span class="line"><span style="color:#E06C75">plugins</span><span style="color:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#ABB2BF">  - </span><span style="color:#98C379">mathjax</span></span>
+<span class="line"><span style="color:#ABB2BF">  - </span><span style="color:#98C379">katex</span></span>
+<span class="line"><span style="color:#ABB2BF">---</span></span></code></pre>
+<p>例如：</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#ABB2BF">---</span></span>
+<span class="line"><span style="color:#E06C75">title</span><span style="color:#ABB2BF">: </span><span style="color:#98C379">渲染公式（MathJax）</span></span>
+<span class="line"><span style="color:#E06C75">date</span><span style="color:#ABB2BF">: </span><span style="color:#D19A66">2025-10-25</span></span>
+<span class="line"><span style="color:#E06C75">plugins</span><span style="color:#ABB2BF">:</span></span>
+<span class="line"><span style="color:#ABB2BF">  - </span><span style="color:#98C379">mathjax</span></span>
+<span class="line"><span style="color:#ABB2BF">---</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#98C379">添加一段描述性文字</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#98C379">&#x3C;!-- more --></span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#98C379">$$</span></span>
+<span class="line"><span style="color:#98C379">\eta(s) = (1-2^{1-s})\zeta(s)</span></span>
+<span class="line"><span style="color:#98C379">$$</span></span>
+<span class="line"></span></code></pre>
+<h2 id="数学公式的语法冲突">数学公式的语法冲突</h2>
+<p>这里以 Mathjax 为例：</p>
+<h2 id="mathjax-与-markdown-的语法冲突">Mathjax 与 Markdown 的语法冲突</h2>
+<p>MathJax 与 Markdown 的语法冲突源于两者部分符号的语义重叠，如 <code>_</code>（Markdown 斜体 vs LaTeX 下标）、<code>*</code>（Markdown 粗体 vs LaTeX 星号）和 <code>\</code>（Markdown 转义符 vs LaTeX 命令前缀）。例如，公式 <code>x_i</code> 可能被 Markdown 引擎误解析为 <code>&#x3C;em>i&#x3C;/em></code> 标签，导致 MathJax 无法识别。</p>
+<p>一种方法是使用 <code>\</code> 转义这些冲突的部分符号。例如：对于多行公式中的换行 <code>\\</code> ，需要转义成 <code>\\\\</code> 。</p>
+<p>另一种方法是逆向渲染流程，先让 MathJax 解析公式，再用 Markdown 引擎处理文本。由于理论上 MathJax 生成的 HTML 不含 Markdown 语法，可从根本上避免冲突。</p>
+<p>还有一种方案是修改 Markdown 引擎规则，移除语义重叠的部分。</p>
+<p>极端的方案是直接使用图片。</p>
+<h2 id="mathjax-与-nunjucks-的语法冲突">Mathjax 与 Nunjucks 的语法冲突</h2>
+<p>Nunjucks 是 Hexo 内置的模板语法。</p>
+<p>Nunjucks 模板引擎与 MathJax 的语法冲突主要源于两者对特殊字符的解析规则重叠。</p>
+<p><img src="https://volantis.js.org/v6/faq/images/12.png" alt="Nunjucks"></p>
+<p>符号优先级冲突：</p>
+<p>MathJax 的 <code>_</code>（下标）和 <code>^</code>（上标）会被 Nunjucks 误认为模板语法的一部分。例如 <code>x_i</code> 可能被解析为变量 <code>i</code> 的属性，而非数学符号 <code>x_i</code> 。类似地， <code>\frac{1}{2}</code> 中的反斜杠可能被 Nunjucks 转义为普通字符，导致 MathJax 无法识别分式结构。</p>
+<p>模板变量标识符冲突：</p>
+<p>MathJax 的某些分隔符（如 <code>$$..$$</code> ）虽然与 Nunjucks 的 <code>{{ }}</code> 不直接重叠，但复杂公式中嵌套的大括号 <code>{ }</code> 可能触发模板引擎的语法检查错误，尤其在未正确转义时。</p>
+<p>一种解决方法是加空格，例如在两个连续的大括号之间加入空格。</p>
+<p>另一种解决方法是在公式前后添加 Nunjucks 的 raw 标签，使模板引擎跳过对中间内容的解析：</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="yaml"><code><span class="line"><span style="color:#ABB2BF">{% </span><span style="color:#98C379">raw %</span><span style="color:#ABB2BF">}</span></span>
+<span class="line"><span style="color:#98C379">$$ E=mc^2 $$  &#x3C;!-- 不受 Nunjucks 影响的公式 --></span></span>
+<span class="line"></span></code></pre>
+<p>{% endraw %}</p>
+<p>经实验mathjax不能识别下标和时间导数的符号，也就是：</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>\dot{\omega}_{x}</span></span></code></pre>
+<p>无法识别，需要使用 raw 标签处理。</p>
+<p>这种解决方法适用于单页少量公式，无需修改全局配置。缺点是侵入式语法，降低文档可移植性。</p>
+<h2 id="图片插入">图片插入</h2>
+<p>使用</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>![]()</span></span></code></pre>
+<p>插入无法调整图片大小和图片居中，使用</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;div align="center"></span></span>
+<span class="line"><span>   &#x3C;img src="" alt="" width="30%"></span></span>
+<span class="line"><span>&#x3C;/div></span></span></code></pre>
+<p>可以调整图片大小，也可以居中。</p>
+<p>另外， gallery 插件可以获得更好的效果，使图片可以放大和下载。</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-gallery"></span></span>
+<span class="line"><span>&#x3C;div align="center"></span></span>
+<span class="line"><span>   &#x3C;img src="" alt="" width="30%"></span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>这时如果有多张并列的图片的话，使用</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;div align="center" style="display: flex; justify-content: center; gap: 20px;"></span></span>
+<span class="line"><span>  &#x3C;img src="图片1路径" alt="描述1" width="45%"></span></span>
+<span class="line"><span>  &#x3C;img src="图片2路径" alt="描述2" width="45%"></span></span>
+<span class="line"><span>&#x3C;/div></span></span></code></pre>
+<p>无法调整图片大小，反而使用：</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-gallery v-gallery--stretch" style="--v-cols:2"></span></span>
+<span class="line"><span>![]()</span></span>
+<span class="line"><span>![]()</span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>更好，这样可以显示: : x : :列的图片。</p>
+<p>总结，对于单张图片：</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-gallery"></span></span>
+<span class="line"><span>&#x3C;div align="center"></span></span>
+<span class="line"><span>   &#x3C;img src="" alt="" width="30%"></span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>对于多张图片：</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-gallery v-gallery--stretch" style="--v-cols:2"></span></span>
+<span class="line"><span>![]()</span></span>
+<span class="line"><span>![]()</span></span>
+<span class="line"><span>...</span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>gallery 插件内不能有文字。</p>
+<p>使用</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="html"><code><span class="line"><span style="color:#ABB2BF">&#x3C;</span><span style="color:#FFFFFF">center</span><span style="color:#ABB2BF">>                   &#x3C;/</span><span style="color:#FFFFFF">center</span><span style="color:#ABB2BF">></span></span></code></pre>
+<p>将图标题居中</p>
+<h2 id="小问题">小问题</h2>
+<p>有时候会出现网站页面分成两栏的情况，暂时找到了两种原因，一种是同一个文章有两个大标题，另一种是图</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;img src="" alt="" width="30%"></span></span></code></pre>
+<p>没有闭合，也就是缺了>。</p>
+<h2 id="美观技巧">美观技巧</h2>
+<h3 id="时间线">时间线</h3>
+<div class="v-timeline">
+<div class="v-timenode"><div class="v-timenode-title">第 1 步</div><div class="v-timenode-body">
+<p>这里写一下放在第一步的东西。</p>
+</div></div>
+<div class="v-timenode"><div class="v-timenode-title">第二步</div><div class="v-timenode-body">
+<p>这里写一下放在第二步的东西。</p>
+</div></div>
+</div>
+<h3 id="块">块</h3>
+<div class="v-noteblock t-idea is-yellow">
+<p>小提示<br>
+如何如何如何idea yellow</p>
+</div>
+<div class="v-noteblock t-error is-red">
+<p>小错误<br>
+如何如何如何error red</p>
+</div>
+<div class="v-noteblock is-blue">
+<p>如何如何如何blue</p>
+</div>
+<div class="v-noteblock t-quote is-gold">
+<p>如何如何如何quote</p>
+</div>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-noteblock t-quote is-gold"></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>如何如何如何quote</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>{% note  如何如何如何 %}</p>
+<div class="v-note t-info">如何如何如何 info</div>
+<div class="v-note t-error">如何如何如何error</div>
+<div class="v-note t-warning">如何如何如何warning</div>
+<div class="v-note t-success">如何如何如何success</div>
+<div class="v-note t-bug is-red">如何如何如何bug</div>
+<div class="v-note t-bug">如何如何如何bug</div>
+<div class="v-note is-yellow">如何如何如何radiation</div>
+<div class="v-note">如何如何如何play</div>
+<div class="v-note t-quote">如何如何如何quote</div>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;div class="v-note t-quote">如何如何如何quote&#x3C;/div></span></span></code></pre>
+<h3 id="折叠">折叠</h3>
+<details class="v-folding is-green"><summary>Tips: volantis</summary><div class="v-folding-body">
+<div class="v-note t-info">volantis 开发</div>
+<div class="v-note t-bug t-danger">volantis 开发</div>
+</div></details>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;details class="v-folding is-green">&#x3C;summary>Tips: volantis&#x3C;/summary>&#x3C;div class="v-folding-body"></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-note t-info">volantis 开发&#x3C;/div></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-note t-bug t-danger">volantis 开发&#x3C;/div></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;/div>&#x3C;/details></span></span>
+<span class="line"><span></span></span></code></pre>
+<p>{%folding%}</p>
+<p>1</p>
+<p>2</p>
+<p>3</p>
+<p>4</p>
+<p>5</p>
+<p>6</p>
+<p>7</p>
+<p>{%endfolding%}</p>
+<h3 id="嵌入mp34">嵌入MP3/4</h3>
+<p>{% video ./assets/demo.mp4, width=100% %}</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{% video ./assets/demo.mp4, width=100% %}</span></span></code></pre>
+<p>{% audio ./assets/demo.mp3，width=100% %}</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{% audio ./assets/demo.mp3，width=100% %}</span></span></code></pre>
+<h3 id="卡片链接">卡片链接</h3>
+<p><a class="v-link" href="https://volantis.js.org/v7/getting-started/" target="_blank" rel="noopener"><img class="v-link-icon" src="https://unpkg.com/volantis-static@0.0.1649552113628/media/twemoji/assets/svg/1f433.svg" alt="" loading="lazy"><span class="v-link-title">示例博客</span></a></p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;a class="v-link" href="https://volantis.js.org/v7/getting-started/" target="_blank" rel="noopener">&#x3C;img class="v-link-icon" src="https://unpkg.com/volantis-static@0.0.1649552113628/media/twemoji/assets/svg/1f433.svg" alt="" loading="lazy">&#x3C;span class="v-link-title">示例博客&#x3C;/span>&#x3C;/a></span></span></code></pre>
+<h3 id="标题">标题</h3>
+<p>
+<span class="v-span vs-logo vs-center vs-large"><sup> </sup>Volantis<sup>7</sup></span>
+<span class="v-span vs-center vs-small vs-logo">A Wonderful Theme for Hexo</span>
+</p>
+<br>
+<p>写作：</p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;p></span></span>
+<span class="line"><span>&#x3C;span class="v-span vs-logo vs-center vs-large">&#x3C;sup>&#x26;ensp;&#x3C;/sup>Volantis&#x3C;sup>7&#x3C;/sup>&#x3C;/span></span></span>
+<span class="line"><span>&#x3C;span class="v-span vs-center vs-small vs-logo">A Wonderful Theme for Hexo&#x3C;/span></span></span>
+<span class="line"><span>&#x3C;/p></span></span>
+<span class="line"><span>&#x3C;br></span></span></code></pre>
+<h3 id="分栏">分栏</h3>
+<div class="v-tabs"><div class="v-tabs-nav"><button class="v-tabs-tab is-active" data-vtab="0" type="button">第一个</button><button class="v-tabs-tab" data-vtab="1" type="button">第二个</button></div><div class="v-tabs-pane is-active" data-vtab-pane="0">
+<p>如何如何如何1</p>
+</div>
+<div class="v-tabs-pane" data-vtab-pane="1">
+<p>如何如何如何2</p>
+</div></div>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span></span></span>
+<span class="line"><span>&#x3C;div class="v-tabs">&#x3C;div class="v-tabs-nav">&#x3C;button class="v-tabs-tab is-active" data-vtab="0" type="button">第一个&#x3C;/button>&#x3C;button class="v-tabs-tab" data-vtab="1" type="button">第二个&#x3C;/button>&#x3C;/div>&#x3C;div class="v-tabs-pane is-active" data-vtab-pane="0"></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>如何如何如何1</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;/div></span></span>
+<span class="line"><span>&#x3C;div class="v-tabs-pane" data-vtab-pane="1"></span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>如何如何如何2</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;/div>&#x3C;/div></span></span>
+<span class="line"><span></span></span></code></pre>
+<h3 id="按钮">按钮</h3>
+<p><a class="v-btn" href="https://volantis.js.org/v7/getting-started/" target="_blank" rel="noopener">按钮</a></p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>&#x3C;a class="v-btn" href="https://volantis.js.org/v7/getting-started/" target="_blank" rel="noopener">按钮&#x3C;/a> </span></span></code></pre>
+<h3 id="链接">链接</h3>
+<p><a href="https://volantis.js.org/v7/getting-started/">volantis</a></p>
+<h3 id="文字">文字</h3>
+<p>{% emp 着重文字 %}<br>
+{% wavy 波浪线文字 %}<br>
+{% del 删除线文字 %}<br>
+{% u 下划线文字 %}</p>
+<p><u>这里有下划线</u></p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>{% emp 着重文字 %} </span></span>
+<span class="line"><span>{% wavy 波浪线文字 %} </span></span>
+<span class="line"><span>{% del 删除线文字 %}</span></span>
+<span class="line"><span>{% u 下划线文字 %} </span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>&#x3C;u>这里有下划线&#x3C;/u></span></span></code></pre>
+<h3 id="注音下标">注音下标</h3>
+<p><ruby>基字<rt>注音</rt></ruby></p>
+<p><sup>上标内容</sup><br>
+<sub>下标内容</sub></p>
+<pre class="astro-code one-dark-pro" style="background-color:#282c34;color:#abb2bf; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="plaintext"><code><span class="line"><span>基字注音&#x3C;ruby>基字&#x3C;rt>注音&#x3C;/rt>&#x3C;/ruby></span></span>
+<span class="line"><span>&#x3C;sup>上标内容&#x3C;/sup></span></span>
+<span class="line"><span> &#x3C;sub>下标内容&#x3C;/sub></span></span></code></pre></article><div class="share"><span>分享：</span><a href="https://service.weibo.com/share/share.php?url=https%3A%2F%2Fkinghaonan.github.io%2Fblogs%2FVolantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%2F&amp;title=Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">微博</a><a href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https%3A%2F%2Fkinghaonan.github.io%2Fblogs%2FVolantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%2F&amp;title=Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">QQ 空间</a><a href="https://connect.qq.com/widget/shareqq/index.html?url=https%3A%2F%2Fkinghaonan.github.io%2Fblogs%2FVolantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%2F&amp;title=Volantis%E5%8D%9A%E5%AE%A2%E4%B9%A6%E5%86%99%E9%97%AE%E9%A2%98" target="_blank" rel="noopener">QQ 好友</a></div><div class="copyright-block"><b>版权声明</b>：本文章为博主原创，采用 <b>CC BY-NC-SA 4.0</b> 许可——转载请附原文链接与作者信息。<br><b>本文链接</b>：<a href="https://kinghaonan.github.io/blogs/Volantis博客书写/">https://kinghaonan.github.io/blogs/Volantis博客书写/</a></div></div></div><div class="prev-next"><a class="prev" href="/projects/CET-6/"><span class="dir">← 上一篇</span><span class="t">项目</span></a><a class="next" href="/blogs/Volantis配置指南/"><span class="dir">下一篇 →</span><span class="t">Volantis社区模板配置指南</span></a></div></main><aside class="sidebar"><nav class="widget card glass toc-widget" aria-label="文章目录"><h3 class="widget-title">文章目录</h3><ol><li style="margin-left: 0px;"><a href="#数学公式渲染引擎选择">数学公式渲染引擎选择</a></li><li style="margin-left: 14px;"><a href="#mathjax方案兼容性优先">MathJax方案（兼容性优先）</a></li><li style="margin-left: 14px;"><a href="#katex方案性能优先">KaTeX方案（性能优先）</a></li><li style="margin-left: 0px;"><a href="#volantis-主题内置前端渲染方案">Volantis 主题内置前端渲染方案</a></li><li style="margin-left: 0px;"><a href="#数学公式的语法冲突">数学公式的语法冲突</a></li><li style="margin-left: 0px;"><a href="#mathjax-与-markdown-的语法冲突">Mathjax 与 Markdown 的语法冲突</a></li><li style="margin-left: 0px;"><a href="#mathjax-与-nunjucks-的语法冲突">Mathjax 与 Nunjucks 的语法冲突</a></li><li style="margin-left: 0px;"><a href="#图片插入">图片插入</a></li><li style="margin-left: 0px;"><a href="#小问题">小问题</a></li><li style="margin-left: 0px;"><a href="#美观技巧">美观技巧</a></li><li style="margin-left: 14px;"><a href="#时间线">时间线</a></li><li style="margin-left: 14px;"><a href="#块">块</a></li><li style="margin-left: 14px;"><a href="#折叠">折叠</a></li><li style="margin-left: 14px;"><a href="#嵌入mp34">嵌入MP3/4</a></li><li style="margin-left: 14px;"><a href="#卡片链接">卡片链接</a></li><li style="margin-left: 14px;"><a href="#标题">标题</a></li><li style="margin-left: 14px;"><a href="#分栏">分栏</a></li><li style="margin-left: 14px;"><a href="#按钮">按钮</a></li><li style="margin-left: 14px;"><a href="#链接">链接</a></li><li style="margin-left: 14px;"><a href="#文字">文字</a></li><li style="margin-left: 14px;"><a href="#注音下标">注音下标</a></li></ol></nav><div class="widget card glass widget-cats"><h3 class="widget-title">文章分类</h3><div class="row"><a href="/categories/note/">note</a><span class="count">(27)</span></div><div class="row"><a href="/categories/blog/">blog</a><span class="count">(3)</span></div><div class="row"><a href="/categories/project/">project</a><span class="count">(1)</span></div></div><div class="widget card glass"><h3 class="widget-title">热门标签</h3><div class="widget-cloud"><a href="/tags/%E8%87%AA%E5%8A%A8%E6%8E%A7%E5%88%B6%E5%8E%9F%E7%90%86/" style="font-size: 1.15rem;">自动控制原理</a><a href="/tags/%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F/" style="font-size: 1.15rem;">控制系统</a><a href="/tags/%E8%BD%A8%E9%81%93%E5%8A%9B%E5%AD%A6/" style="font-size: 1.15rem;">轨道力学</a><a href="/tags/%E6%95%B0%E5%AD%A6/" style="font-size: 1.15rem;">数学</a><a href="/tags/%E7%AC%94%E8%AE%B0/" style="font-size: 1.15rem;">笔记</a><a href="/tags/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0/" style="font-size: 1.04rem;">复变函数</a><a href="/tags/%E9%A2%91%E5%9F%9F%E5%88%86%E6%9E%90/" style="font-size: 1.04rem;">频域分析</a><a href="/tags/%E6%97%B6%E5%9F%9F%E5%88%86%E6%9E%90/" style="font-size: 1.04rem;">时域分析</a><a href="/tags/%E9%A2%91%E7%8E%87%E5%93%8D%E5%BA%94/" style="font-size: 0.96rem;">频率响应</a><a href="/tags/%E9%A2%91%E7%8E%87%E7%89%B9%E6%80%A7/" style="font-size: 0.96rem;">频率特性</a><a href="/tags/%E7%A8%B3%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90/" style="font-size: 0.96rem;">稳定性分析</a><a href="/tags/%E8%B6%85%E5%89%8D%E6%A0%A1%E6%AD%A3/" style="font-size: 0.96rem;">超前校正</a><a href="/tags/%E6%BB%9E%E5%90%8E%E6%A0%A1%E6%AD%A3/" style="font-size: 0.96rem;">滞后校正</a><a href="/tags/%E5%8F%B6%E7%B4%A0%E5%8E%9F%E7%90%86/" style="font-size: 0.88rem;">叶素原理</a></div></div><div class="widget card glass webinfo"><h3 class="widget-title">站点统计</h3><div class="row"><span>文章数目：</span><b>31 篇</b></div><div class="row"><span>最后更新：</span><b>2026-03-22</b></div><div class="row"><span>建站天数：</span><b>2496 天</b></div><div class="row"><span>本站总访问量：</span><b id="busuanzi_value_site_pv">…</b></div></div></aside><script type="module">fetch(`https://v1.jinrishici.com/all`).then(e=>e.json()).then(e=>{let t=document.getElementById(`jinrishici`);t&&e.content&&(t.textContent=e.content)}).catch(()=>{});</script></div></div><footer class="site-footer"><div class="socials"><a href="https://github.com/kinghaonan" target="_blank" rel="noopener" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-1.97c-3.2.7-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.72-1.54-2.55-.29-5.23-1.28-5.23-5.68 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .96-.31 3.15 1.18a10.9 10.9 0 0 1 5.74 0c2.19-1.49 3.15-1.18 3.15-1.18.62 1.59.23 2.76.11 3.05.73.81 1.18 1.83 1.18 3.09 0 4.41-2.69 5.38-5.25 5.67.41.35.77 1.05.77 2.12v3.14c0 .31.21.68.8.56A11.52 11.52 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"></path></svg></a><a href="https://kinghaonan.github.io/atom.xml" aria-label="RSS"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4.5a15.5 15.5 0 0 1 15.5 15.5h-3A12.5 12.5 0 0 0 4 7.5v-3zm0 6a9.5 9.5 0 0 1 9.5 9.5h-3A6.5 6.5 0 0 0 4 13.5v-3zM5.5 18a1.75 1.75 0 1 1 0-3.5 1.75 1.75 0 0 1 0 3.5z"></path></svg></a></div><div>Copyright © 2025 Ki Haonan · CC BY-NC-SA 4.0</div></footer><button class="backtop" aria-label="返回顶部">↑</button><div class="toast" role="status"></div><astro-island uid="ZBsljP" prefix="r3" component-url="/_astro/SearchPopup.ClD99tsi.js" component-export="default" renderer-url="/_astro/client.CzWaolnw.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;SearchPopup&quot;,&quot;value&quot;:true}" await-children><div class="overlay-mask"></div><div class="search-popup" role="dialog" aria-label="站内搜索"><div class="search-bar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg><input placeholder="搜索文章…" value=""/><span class="hint">ESC 关闭</span></div><div class="results"><div class="empty">输入关键词，检索全部 31 篇文章</div></div></div><!--astro:end--></astro-island><astro-island uid="UTvsn" prefix="r4" component-url="/_astro/RightMenu.DL3Ed3GH.js" component-export="default" renderer-url="/_astro/client.CzWaolnw.js" props="{}" ssr client="load" opts="{&quot;name&quot;:&quot;RightMenu&quot;,&quot;value&quot;:true}" await-children><div class="rightmenu" style="left:0;top:0"><button class="rm-item" disabled=""><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>复制选中文本</button><button class="rm-item" disabled=""><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>站内搜索选中词</button><button class="rm-item" disabled=""><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>Bing 搜索</button><div class="rm-sep"></div><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>后退</button><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>前进</button><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>刷新</button><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>回顶部</button><div class="rm-sep"></div><button class="rm-item" disabled=""><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>上一篇</button><button class="rm-item" disabled=""><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>下一篇</button><div class="rm-sep"></div><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>打印模式</button><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>阅读模式</button><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>暗色模式</button><div class="rm-sep"></div><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>联系我</button><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>关于站主</button><button class="rm-item"><span class="ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"></svg></span>本站源码</button></div><!--astro:end--></astro-island><!-- 水效背景引擎（Paper Design Water, Apache-2.0）+ 主题脚本 --><script defer src="/js/paper-shaders.js"></script><script defer src="/js/water-bg.js"></script></body></html>

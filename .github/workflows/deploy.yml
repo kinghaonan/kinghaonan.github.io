@@ -12,11 +12,13 @@ jobs:
   build-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
-          node-version: 22
+          # package-lock.json 由 npm 11（本机 Node 24）生成，npm 10 的 npm ci 会报
+          # "Missing: fill-range@7.1.1 from lock file" 直接退出
+          node-version: 24
           cache: npm
 
       - run: npm ci
